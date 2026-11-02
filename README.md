@@ -15,6 +15,8 @@ Site vitrine statique pour des cours et astuces autour de l'IA, pour les niveaux
 ├── index.html                  # Structure et contenu fixe
 ├── styles.css                  # Design, motion system, responsive
 ├── app.js                      # Hero, cours, astuces, newsletter, interactions
+├── kou-intro-chatgpt.html      # Fiche de cours bilingue (créole / français)
+├── course.css                  # Styles de la fiche de cours + impression
 ├── assets/
 │   ├── favicon.svg
 │   ├── hero-poster.jpg         # Première image de la vidéo
@@ -36,9 +38,18 @@ python3 -m http.server 8080
 
 Les données sont dans `app.js` :
 
-- `COURSES` : six cours, répartis entre les parcours `amateur` et `pro`.
+- `COURSES` : six cours, répartis entre les parcours `amateur` et `pro`. Un champ
+  `url` rend le titre cliquable et `note` ajoute une étiquette dans les métadonnées.
 - `TIPS` : douze astuces, catégories `prompting`, `tools`, `workflow`, `code`.
 - Les cartes sont générées au chargement ; aucun CMS ni backend n'est branché.
+
+### `kou-intro-chatgpt.html`
+
+Fiche de cours complète du cours 1 (12 leçons, 3 blocs, fiche de prompts, notes
+d'animation). Le contenu est écrit deux fois, en `<span lang="ht">` et `<span lang="fr">` :
+`course.css` masque la langue inactive selon `<html lang>`, et le script de la page
+bascule `document.documentElement.lang` et mémorise le choix en `localStorage`
+(`akademi-lang`). Les textes restent lisibles sans JavaScript et à l'impression.
 
 La newsletter et les liens marqués `data-soon` sont des démonstrations. Ils affichent
 un message « bientôt disponible » et doivent être branchés avant une mise en production.

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kou Entwodiksyon ChatGPT — 12 leson, 2 èdtan, pou debitan nivo 0. Cours d'introduction à ChatGPT en créole haïtien et en français.">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="dark">
+    <title>Entwodiksyon ChatGPT — Akademi Clairtech</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+    <a class="skip-link" href="#main">
+        <span lang="ht">Ale dirèk nan kontni an</span>
+        <span lang="fr">Aller au contenu</span>
+    </a>
+
+    <header class="course-topbar">
+        <div class="course-wrap course-topbar-inner">
+            <a class="course-back" href="./">
+                <span lang="ht">← Retounen sou sit la</span>
+                <span lang="fr">← Retour au site</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Lang / Langue">
+                <button type="button" class="lang-btn" data-lang="ht" aria-pressed="true">Kreyòl</button>
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- PREZANTASYON -->
+        <section class="course-hero">
+            <div class="course-wrap">
+                <p class="course-kicker">
+                    <span lang="ht">Kou 1 · Parcours Amateur</span>
+                    <span lang="fr">Cours 1 · Parcours Amateur</span>
+                </p>
+
+                <h1 class="course-title">
+                    <span lang="ht">Entwodiksyon ChatGPT</span>
+                    <span lang="fr">Introduction à ChatGPT</span>
+                </h1>
+
+                <p class="course-objective" lang="ht">
+                    <strong>Objektif jeneral:</strong> nan fen kou a, patisipan yo ap kapab itilize ChatGPT pou rezoud
+                    pwoblèm toulejou, ekonomize tan ak lajan, epi rekonet ke ChatGPT se yon zouti pratik, pa yon
+                    konplike teknoloji.
+                </p>
+                <p class="course-objective" lang="fr">
+                    <strong>Objectif général :</strong> à la fin du cours, les participants savent utiliser ChatGPT pour
+                    résoudre des problèmes du quotidien, économiser du temps et de l'argent, et reconnaissent que
+                    ChatGPT est un outil pratique, pas une complication technologique.
+                </p>
+
+                <dl class="fact-grid">
+                    <div class="fact">
+                        <dt><span lang="ht">Dire</span><span lang="fr">Durée</span></dt>
+                        <dd><span lang="ht">2 èdtan</span><span lang="fr">2 heures</span></dd>
+                        <dd class="fact-sub"><span lang="ht">12 leson × 10 minit</span><span lang="fr">12 leçons × 10 minutes</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Piblik</span><span lang="fr">Public</span></dt>
+                        <dd><span lang="ht">Debitan nivo 0</span><span lang="fr">Débutants, niveau 0</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Pa gen okenn prérequis teknik</span><span lang="fr">Aucun prérequis technique</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Lang</span><span lang="fr">Langue</span></dt>
+                        <dd><span lang="ht">Kreyòl obligatwa</span><span lang="fr">Créole obligatoire</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Fransè an paralèl</span><span lang="fr">Français en parallèle</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></dt>
+                        <dd><span lang="ht">Telefòn oswa òdinatè</span><span lang="fr">Téléphone ou ordinateur</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Ak yon koneksyon entènèt</span><span lang="fr">Avec une connexion Internet</span></dd>
+                    </div>
+                </dl>
+
+                <table class="plan-table">
+                    <caption class="sr-only">
+                        <span lang="ht">Estrikti jeneral kou a: 3 blòk, 12 leson, 120 minit</span>
+                        <span lang="fr">Structure générale du cours : 3 blocs, 12 leçons, 120 minutes</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span lang="ht">Blòk</span><span lang="fr">Bloc</span></th>
+                            <th scope="col"><span lang="ht">Leson</span><span lang="fr">Leçons</span></th>
+                            <th scope="col"><span lang="ht">Objektif</span><span lang="fr">Objectif</span></th>
+                            <th scope="col"><span lang="ht">Dire</span><span lang="fr">Durée</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 1: Dekouvèt</span><span lang="fr">Bloc 1 : Découverte</span></th>
+                            <td>1–4</td>
+                            <td><span lang="ht">Konprann kisa ChatGPT ye, kijan pou louvri l, epi kijan pou poze yon bon kesyon (prompt).</span><span lang="fr">Comprendre ce qu'est ChatGPT, comment l'ouvrir, et comment poser une bonne question (prompt).</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 2: Pratik Dirèk</span><span lang="fr">Bloc 2 : Pratique directe</span></th>
+                            <td>5–8</td>
+                            <td><span lang="ht">Itilize ChatGPT pou rezoud bezwen konkrè: manje, bidjè, faks, planifikasyon.</span><span lang="fr">Utiliser ChatGPT pour des besoins concrets : repas, budget, tâches, planification.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 3: Metòd &amp; Sekirite</span><span lang="fr">Bloc 3 : Méthode &amp; sécurité</span></th>
+                            <td>9–12</td>
+                            <td><span lang="ht">Aprann verifye repons, korije erè, epi kreye yon bwat zouti pwofon pèsonèl.</span><span lang="fr">Apprendre à vérifier les réponses, corriger les erreurs et créer une boîte à outils de prompts personnelle.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOMMÈ -->
+        <section class="course-section">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Sommè leson yo</span>
+                    <span lang="fr">Sommaire des leçons</span>
+                </h2>
+                <ol class="toc">
+                    <li><a href="#lesson-1"><span lang="ht">Kisa ChatGPT Ye?</span><span lang="fr">Qu'est-ce que ChatGPT ?</span></a></li>
+                    <li><a href="#lesson-2"><span lang="ht">Kijan Pou Kòmanse</span><span lang="fr">Comment commencer</span></a></li>
+                    <li><a href="#lesson-3"><span lang="ht">Kesyon Pwopriye vs Move Kesyon</span><span lang="fr">Bonnes questions vs mauvaises questions</span></a></li>
+                    <li><a href="#lesson-4"><span lang="ht">« Pale ak ChatGPT » — Pa Kite L Fè Tout Bagay Sèl</span><span lang="fr">« Parler à ChatGPT » — ne laissez pas l'outil tout faire seul</span></a></li>
+                    <li><a href="#lesson-5"><span lang="ht">Planifye Manje ak Achte</span><span lang="fr">Planifier les repas et les achats</span></a></li>
+                    <li><a href="#lesson-6"><span lang="ht">Jesyon Lajan Senp</span><span lang="fr">Gestion simple de l'argent</span></a></li>
+                    <li><a href="#lesson-7"><span lang="ht">Ekri Mesaj ak Dokiman</span><span lang="fr">Écrire messages et documents</span></a></li>
+                    <li><a href="#lesson-8"><span lang="ht">Planifye ak Òganize</span><span lang="fr">Planifier et s'organiser</span></a></li>
+                    <li><a href="#lesson-9"><span lang="ht">Verifye Repons — Pa Kwè Tout Bagay</span><span lang="fr">Vérifier les réponses — ne croyez pas tout</span></a></li>
+                    <li><a href="#lesson-10"><span lang="ht">Korije ak Amelyore Repons</span><span lang="fr">Corriger et améliorer une réponse</span></a></li>
+                    <li><a href="#lesson-11"><span lang="ht">Kreye Bwat Zouti Pwofon Pèsonèl Ou</span><span lang="fr">Créez votre boîte à outils de prompts</span></a></li>
+                    <li><a href="#lesson-12"><span lang="ht">Limit ChatGPT ak Bon Pratik</span><span lang="fr">Limites de ChatGPT et bonnes pratiques</span></a></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- BLÒK 1 -->
+        <section class="course-section" id="block-1">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 1 · Dekouvèt</span>
+                    <span lang="fr">Bloc 1 · Découverte</span>
+                    <span class="block-meta"><span lang="ht">leson 1–4 · 40 min</span><span lang="fr">leçons 1–4 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-1">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">1</span>
+                        <h3><span lang="ht">Kisa ChatGPT Ye?</span><span lang="fr">Qu'est-ce que ChatGPT ?</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT se yon asistan dijital ou ka pale avè l. Li ka ede w ekri, aprann, rezime, planifye, epi rezoud pwoblèm toulejou. Li pa yon moun, li pa toutkonnen, men li trè itil si w konnen kijan pou poze l kesyon.</p>
+                        <p lang="fr">ChatGPT est un assistant numérique à qui vous pouvez parler. Il peut aider à écrire, apprendre, résumer, planifier et résoudre les problèmes du quotidien. Ce n'est pas une personne et il ne sait pas tout, mais il est très utile quand on sait comment lui poser des questions.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Mwen bezwen ekri yon mesaj pou mande yon ranvwa nan travay. Ede m. » → Ou wè repons lan touswit.</p>
+                        <p lang="fr">« Je dois écrire un message pour demander un report de congé au travail. Aide-moi. » → La réponse s'affiche immédiatement.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo louvri ChatGPT epi poze yon kesyon senp sou yon bagay yo bezwen fè jodi a.</p>
+                        <p lang="fr">Les participants ouvrent ChatGPT et posent une question simple sur quelque chose qu'ils doivent faire aujourd'hui.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-2">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">2</span>
+                        <h3><span lang="ht">Kijan Pou Kòmanse</span><span lang="fr">Comment commencer</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kreye yon kont gratis (si sa nesesè), dekouvri bwat chat la, epi konprann ou ka klike « New Chat » pou kòmanse yon konvèsasyon fre.</p>
+                        <p lang="fr">Créer un compte gratuit (si nécessaire), découvrir la fenêtre de chat, et comprendre qu'on peut cliquer sur « New Chat » pour démarrer une conversation neuve.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Montre ekran an — kote pou tape, kote repons lan parèt, epi kijan pou w klike sou yon ansyen konvèsasyon nan meni bò kote a.</p>
+                        <p lang="fr">Montrer l'écran — où taper, où la réponse apparaît, et comment cliquer sur une ancienne conversation dans le menu latéral.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun tape yon premye mesaj: « Bonjou, kisa ou ka fè pou mwen? »</p>
+                        <p lang="fr">Chacun tape un premier message : « Bonjour, que peux-tu faire pour moi ? »</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-3">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">3</span>
+                        <h3><span lang="ht">Kesyon Pwopriye vs Move Kesyon</span><span lang="fr">Bonnes questions vs mauvaises questions</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon move kesyon tankou « Ede m òganize tèt mwen » pa bay bon rezilta. Yon bon kesyon gen plis kontèks: ki moun ou ye?, kisa ou vle?, ki limit ou genyen?, ki fòma ou vle?. Se sa ki fè yon repons jeneral vin yon repons ou ka itilize.</p>
+                        <p lang="fr">Une mauvaise question comme « Aide-moi à m'organiser » ne donne pas de bon résultat. Une bonne question contient plus de contexte : qui êtes-vous ?, que voulez-vous ?, quelles sont vos limites ?, quel format voulez-vous ?. C'est ce qui transforme une réponse générale en réponse utilisable.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <ul class="pair">
+                            <li class="bad" lang="ht"><strong>Move:</strong> « Ban m yon plan manje. »</li>
+                            <li class="bad" lang="fr"><strong>Mauvaise :</strong> « Donne-moi un plan de repas. »</li>
+                            <li class="good" lang="ht"><strong>Bon:</strong> « Mwen se yon etidyan ki gen 20 dola pou manje pou yon semèn. Ban m yon plan 5 manje ki pa chè, ki senp pou kwit, epi ki gen pwoteyin. » → Repons lan vin pi egzak.</li>
+                            <li class="good" lang="fr"><strong>Bonne :</strong> « Je suis étudiant et j'ai 20 dollars pour manger pendant une semaine. Donne-moi un plan de 5 repas qui ne coûtent pas cher, qui sont simples à cuisiner et qui contiennent des protéines. » → La réponse devient précise.</li>
+                        </ul>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo pran yon move kesyon epi transfòme l an bon kesyon.</p>
+                        <p lang="fr">Les participants prennent une mauvaise question et la transforment en bonne question.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-4">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">4</span>
+                        <h3><span lang="ht">« Pale ak ChatGPT » — Pa Kite L Fè Tout Bagay Sèl</span><span lang="fr">« Parler à ChatGPT » — ne laissez pas l'outil tout faire seul</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT pa bay repons pafè premye fwa. Ou dwe fè follow-up: mande plis detay, korije l, mande l eksplike pi senp. Konvèsasyon an se metòd la — ChatGPT pa yon motè rechèch.</p>
+                        <p lang="fr">ChatGPT ne donne pas une réponse parfaite du premier coup. Il faut enchaîner : demander plus de détails, le corriger, lui demander d'expliquer plus simplement. La conversation est la méthode — ChatGPT n'est pas un moteur de recherche.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Mèsi, men fè plan an pi kout. » oswa « Eksplike m sa an kreyòl senp. »</p>
+                        <p lang="fr">« Merci, mais rends le plan plus court. » ou « Explique-moi ça en créole simple. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo poze yon kesyon, jwenn yon repons, epi poze yon dezyèm kesyon pou amelyore repons lan.</p>
+                        <p lang="fr">Les participants posent une question, obtiennent une réponse, puis posent une deuxième question pour améliorer cette réponse.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 2 -->
+        <section class="course-section" id="block-2">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 2 · Pratik Dirèk</span>
+                    <span lang="fr">Bloc 2 · Pratique directe</span>
+                    <span class="block-meta"><span lang="ht">leson 5–8 · 40 min</span><span lang="fr">leçons 5–8 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-5">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">5</span>
+                        <h3><span lang="ht">Planifye Manje ak Achte</span><span lang="fr">Planifier les repas et les achats</span><span class="tag"><span lang="ht">Ekonomize lajan</span><span lang="fr">Économiser de l'argent</span></span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT ka kreye yon plan manje ki baze sou sa w gen nan frijidè a, epi li ka pwopoze yon lis achte ki pa chè.</p>
+                        <p lang="fr">ChatGPT peut créer un plan de repas basé sur ce que vous avez dans le réfrigérateur et proposer une liste de courses économique.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Mwen gen diri, pwa, ak yon ti poul nan frijidè a. Ban m yon resèt pou 4 moun ki pa koute chè. »</p>
+                        <p lang="fr">« J'ai du riz, des haricots et un peu de poulet dans le réfrigérateur. Donne-moi une recette pour 4 personnes qui ne coûte pas cher. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun dekri sa l gen lakay li epi mande yon resèt.</p>
+                        <p lang="fr">Chacun décrit ce qu'il a chez lui et demande une recette.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-6">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">6</span>
+                        <h3><span lang="ht">Jesyon Lajan Senp</span><span lang="fr">Gestion simple de l'argent</span><span class="tag"><span lang="ht">Ekonomize lajan</span><span lang="fr">Économiser de l'argent</span></span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ou ka mande ChatGPT pou l ede w fè yon bidjè senp, pou l idantifye depans ki pa nesesè, oswa pou l konpare pri abònman.</p>
+                        <p lang="fr">Vous pouvez demander à ChatGPT de vous aider à faire un budget simple, d'identifier les dépenses inutiles, ou de comparer des prix d'abonnements.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Mwen gen 300 dola pa mwa. Ede m fè yon bidjè pou manje, kouran, ak transport. Montre m kote m ka koupe 20 dola. »</p>
+                        <p lang="fr">« J'ai 300 dollars par mois. Aide-moi à faire un budget pour la nourriture, l'électricité et le transport. Montre-moi où je peux couper 20 dollars. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo bay yon revni fiktif epi mande yon bidjè.</p>
+                        <p lang="fr">Les participants donnent un revenu fictif et demandent un budget.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-7">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">7</span>
+                        <h3><span lang="ht">Ekri Mesaj ak Dokiman</span><span lang="fr">Écrire messages et documents</span><span class="tag"><span lang="ht">Ekonomize tan</span><span lang="fr">Gagner du temps</span></span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT ka ekri yon imèl, yon mesaj pou patwon, oswa yon lèt demisyon an kèk segonn. Ou jis bay li ton an (kourtwazi, fòmèl, senp) ak longè ou vle.</p>
+                        <p lang="fr">ChatGPT peut écrire un e-mail, un message pour son patron ou une lettre de démission en quelques secondes. Il suffit de lui donner le ton (courtois, formel, simple) et la longueur voulue.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Ekri yon imèl kout pou mande yon odyans ak direktè a. Ton an dwe kourtwazi epi li pa dwe depase 100 mo. »</p>
+                        <p lang="fr">« Écris un e-mail court pour demander un entretien au directeur. Le ton doit être courtois et il ne doit pas dépasser 100 mots. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri yon mesaj yo te bezwen ekri depi lontan.</p>
+                        <p lang="fr">Chacun écrit un message qu'il repoussait depuis longtemps.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-8">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">8</span>
+                        <h3><span lang="ht">Planifye ak Òganize</span><span lang="fr">Planifier et s'organiser</span><span class="tag"><span lang="ht">Ekonomize tan</span><span lang="fr">Gagner du temps</span></span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Sèvi ak ChatGPT pou fè yon orè, yon plan vwayaj, oswa pou rezime nòt nan yon dokiman.</p>
+                        <p lang="fr">Utiliser ChatGPT pour établir un horaire, un plan de voyage, ou résumer les notes d'un document.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Mwen gen yon entèvyou travay jedi. Ban m yon plan pou 3 jou ki gen tan pou prepare, ki gen ladan rechèch sou konpayi an ak pratik kesyon. »</p>
+                        <p lang="fr">« J'ai un entretien d'embauche jeudi. Donne-moi un plan sur 3 jours avec du temps de préparation, incluant des recherches sur l'entreprise et un entraînement aux questions. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo mande yon plan pou yon evènman pèsonèl — fèt, vwayaj, elatriye.</p>
+                        <p lang="fr">Les participants demandent un plan pour un événement personnel — fête, voyage, etc.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 3 -->
+        <section class="course-section" id="block-3">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 3 · Metòd &amp; Sekirite</span>
+                    <span lang="fr">Bloc 3 · Méthode &amp; sécurité</span>
+                    <span class="block-meta"><span lang="ht">leson 9–12 · 40 min</span><span lang="fr">leçons 9–12 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-9">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">9</span>
+                        <h3><span lang="ht">Verifye Repons — Pa Kwè Tout Bagay</span><span lang="fr">Vérifier les réponses — ne croyez pas tout</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT ka fè erè — li ka envante chif oswa non. Li enpòtan pou w toujou verifye enfòmasyon enpòtan (sante, lajan, lwa) ak yon sous ou konnen.</p>
+                        <p lang="fr">ChatGPT peut faire des erreurs — il peut inventer des chiffres ou des noms. Il est important de toujours vérifier les informations importantes (santé, argent, droit) avec une source que vous connaissez.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Mande l yon dat istorik, epi verifye l sou Google. Mande l yon pri, epi verifye l sou yon sit reyèl.</p>
+                        <p lang="fr">Demander une date historique et la vérifier sur Google. Demander un prix et le vérifier sur un site réel.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo jwenn yon erè nan yon repons epi korije l.</p>
+                        <p lang="fr">Les participants trouvent une erreur dans une réponse et la corrigent.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-10">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">10</span>
+                        <h3><span lang="ht">Korije ak Amelyore Repons</span><span lang="fr">Corriger et améliorer une réponse</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ou pa oblije aksepte premye repons lan. Ou ka mande l « fè l pi senp », « fè l pi kout », oswa « bay mwen 3 lòt opsyon ».</p>
+                        <p lang="fr">Vous n'êtes pas obligé d'accepter la première réponse. Vous pouvez demander « rends-la plus simple », « rends-la plus courte » ou « donne-moi 3 autres options ».</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Repons ou a twò long. Rezime l an 3 pwen. »</p>
+                        <p lang="fr">« Ta réponse est trop longue. Résume-la en 3 points. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo pran yon repons epi mande 3 vèsyon diferan: kout, senp, detaye.</p>
+                        <p lang="fr">Les participants prennent une réponse et demandent 3 versions différentes : courte, simple, détaillée.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-11">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">11</span>
+                        <h3><span lang="ht">Kreye Bwat Zouti Pwofon Pèsonèl Ou</span><span lang="fr">Créez votre boîte à outils de prompts</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ou pa bezwen chache yon nouvo pwofon chak fwa. Ou ka kreye yon bibliyotèk pwofon pou bezwen ki repete nan lavi w: manje, bidjè, imèl, elatriye. Fich ki anba a ka distribiye.</p>
+                        <p lang="fr">Vous n'avez pas besoin de chercher un nouveau prompt à chaque fois. Vous pouvez créer une bibliothèque de prompts pour les besoins qui reviennent dans votre vie : repas, budget, e-mails, etc. La fiche ci-dessous peut être distribuée.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik — yon pwofon majik</span><span lang="fr">Exemple pratique — le prompt passe-partout</span></p>
+                        <p lang="ht">« Mwen vle [rezilta]. Moun m ap ekri a se [piblik]. Sèvi ak sèlman [enfòmasyon m bay]. Respekte [ton, fòma, longè]. Si w pa konnen, di m. »</p>
+                        <p lang="fr">« Je veux [résultat]. La personne à qui j'écris est [public]. Utilise uniquement [informations que je donne]. Respecte [ton, format, longueur]. Si tu ne sais pas, dis-le-moi. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 2 pwofon pou 2 sitiyasyon yo fè souvan.</p>
+                        <p lang="fr">Chacun écrit 2 prompts pour 2 situations qu'il rencontre souvent.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-12">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">12</span>
+                        <h3><span lang="ht">Limit ChatGPT ak Bon Pratik</span><span lang="fr">Limites de ChatGPT et bonnes pratiques</span></h3>
+                        <span class="lesson-time">10 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">ChatGPT pa yon avoka, yon doktè, ni yon kontab. Li pa gen aksè ak enfòmasyon pèsonèl ou si w pa bay li. Pa janm pataje nimewo kat kredi, modpas, oswa done sansib.</p>
+                        <p lang="fr">ChatGPT n'est ni un avocat, ni un médecin, ni un comptable. Il n'a pas accès à vos informations personnelles si vous ne les lui donnez pas. Ne partagez jamais un numéro de carte de crédit, un mot de passe ou une donnée sensible.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Mande l konsèy sou sante → li ka bay enfòmasyon jeneral, men li pa ranplase yon doktè.</p>
+                        <p lang="fr">Lui demander un conseil de santé → il peut donner des informations générales, mais il ne remplace pas un médecin.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Diskisyon gwoup sou « Ki sa mwen pa dwe janm mande ChatGPT? »</p>
+                        <p lang="fr">Discussion de groupe sur « Que ne dois-je jamais demander à ChatGPT ? »</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FICH PWOFON -->
+        <section class="course-section" id="fich-pwofon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Fich Pwofon — pou distribiye bay patisipan yo</span>
+                    <span lang="fr">Fiche de prompts — à distribuer aux participants</span>
+                </h2>
+                <p class="section-lead" lang="ht">Kopye yon pwofon, ranplas sa ki ant mak [ ] yo, epi kole l nan ChatGPT.</p>
+                <p class="section-lead" lang="fr">Copiez un prompt, remplacez ce qui est entre crochets [ ], puis collez-le dans ChatGPT.</p>
+
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Pwofon Manje</span><span lang="fr">Prompt Repas</span></h3>
+                        <p class="prompt-text" lang="ht">Mwen gen [lis engredyan]. Ban m yon resèt pou [kantite moun] ki pa chè epi ki pran mwens pase 30 minit pou kwit.</p>
+                        <p class="prompt-text" lang="fr">J'ai [liste d'ingrédients]. Donne-moi une recette pour [nombre de personnes] qui ne coûte pas cher et qui prend moins de 30 minutes à cuisiner.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Pwofon Bidjè</span><span lang="fr">Prompt Budget</span></h3>
+                        <p class="prompt-text" lang="ht">Revni m se [montan] pa mwa. Depans fiks mwen se [lis]. Ede m fè yon bidjè pou rès la, epi montre m kote m ka ekonomize [montan].</p>
+                        <p class="prompt-text" lang="fr">Mon revenu est de [montant] par mois. Mes dépenses fixes sont [liste]. Aide-moi à faire un budget avec le reste et montre-moi où je peux économiser [montant].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Pwofon Imèl</span><span lang="fr">Prompt E-mail</span></h3>
+                        <p class="prompt-text" lang="ht">Ekri yon imèl pou [moun/destinatè] sou [sijè]. Ton an dwe [kourtwazi/fòmèl/senp]. Pa depase [longè] mo.</p>
+                        <p class="prompt-text" lang="fr">Écris un e-mail pour [personne/destinataire] à propos de [sujet]. Le ton doit être [courtois/formel/simple]. Ne dépasse pas [longueur] mots.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Pwofon Planifikasyon</span><span lang="fr">Prompt Planification</span></h3>
+                        <p class="prompt-text" lang="ht">Mwen bezwen planifye [evènman] pou [dat]. Ban m yon orè etap pa etap ak tan pou chak etap.</p>
+                        <p class="prompt-text" lang="fr">Je dois planifier [événement] pour le [date]. Donne-moi un horaire étape par étape avec le temps de chaque étape.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Pwofon Verifye</span><span lang="fr">Prompt Vérification</span></h3>
+                        <p class="prompt-text" lang="ht">Ban mwen 3 rezon ki fè repons ou a ta ka mal. Ki sa mwen dwe verifye?</p>
+                        <p class="prompt-text" lang="fr">Donne-moi 3 raisons pour lesquelles ta réponse pourrait être fausse. Que dois-je vérifier ?</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card prompt-card--magic">
+                        <h3><span lang="ht">Pwofon Majik · Leson 11</span><span lang="fr">Prompt passe-partout · leçon 11</span></h3>
+                        <p class="prompt-text" lang="ht">Mwen vle [rezilta]. Moun m ap ekri a se [piblik]. Sèvi ak sèlman [enfòmasyon m bay]. Respekte [ton, fòma, longè]. Si w pa konnen, di m.</p>
+                        <p class="prompt-text" lang="fr">Je veux [résultat]. La personne à qui j'écris est [public]. Utilise uniquement [informations que je donne]. Respecte [ton, format, longueur]. Si tu ne sais pas, dis-le-moi.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÒT ANIMASYON -->
+        <section class="course-section" id="not-animasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Nòt pou Animasyon — Kreyòl &amp; Fransè</span>
+                    <span lang="fr">Notes d'animation — créole &amp; français</span>
+                </h2>
+
+                <div class="note-grid">
+                    <div class="note">
+                        <h3><span lang="ht">Lang</span><span lang="fr">Langue</span></h3>
+                        <p lang="ht">Prezante chak leson an kreyòl. Sou chak flich, mete yon ti tradiksyon fransè anba a — pa egzanp: « Kisa ChatGPT Ye? / Qu'est-ce que ChatGPT ? ». Pwofon yo tou ka gen yon vèsyon fransè.</p>
+                        <p lang="fr">Présentez chaque leçon en créole. Sur chaque diapositive, ajoutez une petite traduction française en dessous — par exemple : « Kisa ChatGPT Ye? / Qu'est-ce que ChatGPT ? ». Les prompts peuvent aussi avoir une version française.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Ritm</span><span lang="fr">Rythme</span></h3>
+                        <p lang="ht">10 minit pa leson se kout, kidonk pa gen tan pou teyori long. Chak leson dwe gen: 2 min eksplikasyon + 5 min egzanp pratik + 3 min aktivite.</p>
+                        <p lang="fr">10 minutes par leçon, c'est court : pas le temps pour une longue théorie. Chaque leçon doit contenir : 2 min d'explication + 5 min d'exemple pratique + 3 min d'activité.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></h3>
+                        <p lang="ht">Yon telefòn oswa yon òdinatè ak entènèt. Si patisipan pa gen kont, yo ka itilize yon sèl kont demonstrasyon pou gwoup la, men pi bon se chak moun gen pa l.</p>
+                        <p lang="fr">Un téléphone ou un ordinateur avec Internet. Si les participants n'ont pas de compte, un seul compte de démonstration peut servir au groupe, mais il vaut mieux que chacun ait le sien.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Evalyasyon</span><span lang="fr">Évaluation</span></h3>
+                        <p lang="ht">Nan fen kou a, mande chak patisipan pou l di yon bagay konkè yo pral fè ak ChatGPT semèn sa a — pa egzanp: « Mwen pral fè bidjè mwen » oswa « Mwen pral ekri yon imèl pou patwon mwen ».</p>
+                        <p lang="fr">À la fin du cours, demandez à chaque participant de citer une chose concrète qu'il fera avec ChatGPT cette semaine — par exemple : « Je vais faire mon budget » ou « Je vais écrire un e-mail à mon patron ».</p>
+                    </div>
+                </div>
+
+                <p class="course-disclaimer" lang="ht">Nòt: sa a se yon gid animasyon, pa yon manyèl ofisyèl OpenAI. ChatGPT ak OpenAI se mak komèsyal pwopriyetè yo.</p>
+                <p class="course-disclaimer" lang="fr">Note : ceci est un guide d'animation, pas un manuel officiel OpenAI. ChatGPT et OpenAI sont des marques déposées de leurs propriétaires.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="course-footer">
+        <div class="course-wrap">
+            <p>
+                <a href="./#track-amateur"><span lang="ht">← Retounen nan Parcours Amateur</span><span lang="fr">← Retour au Parcours Amateur</span></a>
+                · Akademi Clairtech · 2026
+            </p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script>
+        (() => {
+            const TITLE = {
+                ht: 'Entwodiksyon ChatGPT — Akademi Clairtech',
+                fr: 'Introduction à ChatGPT — Akademi Clairtech'
+            };
+            const COPIED = { ht: 'Pwofon an kopye.', fr: 'Prompt copié.' };
+            const toast = document.getElementById('toast');
+            const buttons = [...document.querySelectorAll('.lang-btn')];
+            let lang = 'ht';
+            let toastTimer;
+
+            function setLang(next) {
+                lang = next === 'fr' ? 'fr' : 'ht';
+                document.documentElement.lang = lang;
+                document.title = TITLE[lang];
+                buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+                try {
+                    localStorage.setItem('akademi-lang', lang);
+                } catch (err) {
+                    /* stockage indisponible : le choix tient pour la page courante */
+                }
+            }
+
+            function showToast(text) {
+                if (!toast) return;
+                toast.textContent = text;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => setLang(button.dataset.lang));
+            });
+
+            document.querySelectorAll('[data-copy]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const card = button.closest('.prompt-card');
+                    const source = card && card.querySelector(`.prompt-text[lang="${lang}"]`);
+                    if (!source) return;
+                    const text = source.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (err) {
+                        const area = document.createElement('textarea');
+                        area.value = text;
+                        area.setAttribute('readonly', '');
+                        area.className = 'sr-only';
+                        document.body.appendChild(area);
+                        area.select();
+                        const ok = document.execCommand('copy');
+                        area.remove();
+                        if (!ok) return;
+                    }
+                    showToast(COPIED[lang]);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('akademi-lang');
+            } catch (err) {
+                /* ignore */
+            }
+            setLang(saved || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'ht'));
+        })();
+    </script>
+</body>
+</html>

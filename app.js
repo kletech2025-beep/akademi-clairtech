@@ -491,7 +491,7 @@
 
     // -- CONTENT --
     const COURSES = [
-        { title: 'Introduction à ChatGPT', track: 'amateur', desc: "Apprenez à utiliser l'outil le plus puissant du moment.", duration: '2 h', lessons: 12 },
+        { title: 'Introduction à ChatGPT', track: 'amateur', desc: "Apprenez à utiliser l'outil le plus puissant du moment.", duration: '2 h', lessons: 12, url: 'kou-intro-chatgpt.html', note: 'Kreyòl · FR' },
         { title: 'IA Générative d\'Images', track: 'amateur', desc: 'Maîtrisez Midjourney et Stable Diffusion pour créer des visuels uniques.', duration: '4 h', lessons: 18 },
         { title: 'Automatisation No-Code', track: 'amateur', desc: "Connectez vos outils préférés à l'IA sans écrire une ligne de code.", duration: '3 h', lessons: 15 },
         { title: 'Fine-Tuning de LLMs', track: 'pro', desc: 'Apprenez à adapter des modèles open-source à vos besoins spécifiques.', duration: '10 h', lessons: 25 },
@@ -609,7 +609,14 @@
             counts[course.track]++;
 
             const title = document.createElement('h3');
-            title.textContent = course.title;
+            if (course.url) {
+                const link = document.createElement('a');
+                link.href = course.url;
+                link.textContent = course.title;
+                title.appendChild(link);
+            } else {
+                title.textContent = course.title;
+            }
 
             const desc = document.createElement('p');
             desc.textContent = course.desc;
@@ -617,7 +624,10 @@
             const meta = document.createElement('div');
             meta.className = 'course-meta';
 
-            [course.duration, `${course.lessons} leçons`].forEach(text => {
+            const metaItems = [course.duration, `${course.lessons} leçons`];
+            if (course.note) metaItems.push(course.note);
+
+            metaItems.forEach(text => {
                 const item = document.createElement('span');
                 item.textContent = text;
                 meta.appendChild(item);
