@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kou Kreye Imaj ak IA — Midjourney ak Stable Diffusion: 18 leson, 4 èdtan, pou debitan nivo 0. Cours d'introduction à l'IA générative d'images en créole haïtien et en français.">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="dark">
+    <title>Kreye Imaj ak IA — Akademi Clairtech</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+    <a class="skip-link" href="#main">
+        <span lang="ht">Ale dirèk nan kontni an</span>
+        <span lang="fr">Aller au contenu</span>
+    </a>
+
+    <header class="course-topbar">
+        <div class="course-wrap course-topbar-inner">
+            <a class="course-back" href="./">
+                <span lang="ht">← Retounen sou sit la</span>
+                <span lang="fr">← Retour au site</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Lang / Langue">
+                <button type="button" class="lang-btn" data-lang="ht" aria-pressed="true">Kreyòl</button>
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- PREZANTASYON -->
+        <section class="course-hero">
+            <div class="course-wrap">
+                <p class="course-kicker">
+                    <span lang="ht">Kou 2 · Parcours Amateur</span>
+                    <span lang="fr">Cours 2 · Parcours Amateur</span>
+                </p>
+
+                <h1 class="course-title">
+                    <span lang="ht">Kreye Imaj ak IA — Midjourney ak Stable Diffusion</span>
+                    <span lang="fr">IA Générative d'Images — Midjourney et Stable Diffusion</span>
+                </h1>
+
+                <p class="course-objective" lang="ht">
+                    <strong>Objektif jeneral:</strong> nan fen kou a, patisipan yo ap kapab ekri yon prompt imaj ki gen
+                    kontèks, kontwole rezilta yo (varyasyon, limyè, kad, fòma), epi kreye imaj itil pou yon ti biznis,
+                    yon afich oswa yon piblikasyon — san yo pa vyole dwa moun ak verite a.
+                </p>
+                <p class="course-objective" lang="fr">
+                    <strong>Objectif général :</strong> à la fin du cours, les participants savent écrire un prompt
+                    d'image contextualisé, contrôler le résultat (variations, lumière, cadrage, format) et créer des
+                    images utiles pour un petit commerce, une affiche ou une publication — sans violer les droits des
+                    personnes ni la vérité.
+                </p>
+
+                <dl class="fact-grid">
+                    <div class="fact">
+                        <dt><span lang="ht">Dire</span><span lang="fr">Durée</span></dt>
+                        <dd><span lang="ht">4 èdtan</span><span lang="fr">4 heures</span></dd>
+                        <dd class="fact-sub"><span lang="ht">18 leson × 13 minit</span><span lang="fr">18 leçons × 13 minutes</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Piblik</span><span lang="fr">Public</span></dt>
+                        <dd><span lang="ht">Debitan nivo 0</span><span lang="fr">Débutants, niveau 0</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Pa gen okenn prérequis teknik</span><span lang="fr">Aucun prérequis technique</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Zouti</span><span lang="fr">Outils</span></dt>
+                        <dd><span lang="ht">Midjourney oswa Stable Diffusion</span><span lang="fr">Midjourney ou Stable Diffusion</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Chwazi yon sèl zouti pou gwoup la</span><span lang="fr">Un seul outil choisi pour le groupe</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></dt>
+                        <dd><span lang="ht">Telefòn oswa òdinatè</span><span lang="fr">Téléphone ou ordinateur</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Ak yon koneksyon entènèt</span><span lang="fr">Avec une connexion Internet</span></dd>
+                    </div>
+                </dl>
+
+                <table class="plan-table">
+                    <caption class="sr-only">
+                        <span lang="ht">Estrikti jeneral kou a: 6 blòk, 18 leson, 240 minit</span>
+                        <span lang="fr">Structure générale du cours : 6 blocs, 18 leçons, 240 minutes</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span lang="ht">Blòk</span><span lang="fr">Bloc</span></th>
+                            <th scope="col"><span lang="ht">Leson</span><span lang="fr">Leçons</span></th>
+                            <th scope="col"><span lang="ht">Objektif</span><span lang="fr">Objectif</span></th>
+                            <th scope="col"><span lang="ht">Dire</span><span lang="fr">Durée</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 1: Dekouvèt</span><span lang="fr">Bloc 1 : Découverte</span></th>
+                            <td>1–3</td>
+                            <td><span lang="ht">Konprann kijan yon IA jeneratif imaj mache, chwazi yon zouti, epi jenerasyon premye imaj la.</span><span lang="fr">Comprendre comment fonctionne une IA générative d'images, choisir un outil, générer la première image.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 2: Ekri Prompt Imaj</span><span lang="fr">Bloc 2 : Écrire le prompt</span></th>
+                            <td>4–6</td>
+                            <td><span lang="ht">Bati yon prompt ak 5 brik yo, mete limyè, kad ak fòma, epi chwazi yon style.</span><span lang="fr">Construire un prompt en 5 briques, ajouter lumière, cadrage et format, choisir un style.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 3: Kontwòl Rezilta</span><span lang="fr">Bloc 3 : Contrôler le résultat</span></th>
+                            <td>7–9</td>
+                            <td><span lang="ht">Jene varyasyon san rekòmanse depi nan kòmansman, itilize prompt negatif, epi konnen limit zouti a.</span><span lang="fr">Obtenir des variations sans repartir de zéro, utiliser le prompt négatif, connaître les limites de l'outil.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 4: Repare ak Amelyore</span><span lang="fr">Bloc 4 : Réparer et améliorer</span></th>
+                            <td>10–12</td>
+                            <td><span lang="ht">Sèvi ak yon foto kòm baz, repare yon ti moso (men, objè), elaji kad la, epi agrandi imaj la.</span><span lang="fr">Partir d'une photo, réparer une zone (mains, objet), élargir le cadre, agrandir l'image.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 5: Itilizasyon Konkrè</span><span lang="fr">Bloc 5 : Usages concrets</span></th>
+                            <td>13–15</td>
+                            <td><span lang="ht">Kreye yon afich, yon seri imaj pou rezo sosyal, ak ilistrasyon ki kenbe menm pèsonaj la.</span><span lang="fr">Créer une affiche, une série pour les réseaux sociaux, et des illustrations qui gardent le même personnage.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 6: Dwa &amp; Sekirite</span><span lang="fr">Bloc 6 : Droits &amp; sécurité</span></th>
+                            <td>16–18</td>
+                            <td><span lang="ht">Konnen kiyè imaj la, pa bay fo enfòmasyon, epi bati yon bwat zouti prompt avanse pèsonèl.</span><span lang="fr">Savoir à qui appartient l'image, ne pas désinformer, construire sa boîte à outils de prompts personnelle.</span></td>
+                            <td>40 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOMMÈ -->
+        <section class="course-section">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Sommè leson yo</span>
+                    <span lang="fr">Sommaire des leçons</span>
+                </h2>
+                <ol class="toc">
+                    <li><a href="#lesson-1"><span lang="ht">Kisa yon IA Jeneratif Imaj Ye?</span><span lang="fr">Qu'est-ce qu'une IA générative d'images ?</span></a></li>
+                    <li><a href="#lesson-2"><span lang="ht">Chwazi Zouti Ou</span><span lang="fr">Choisir son outil</span></a></li>
+                    <li><a href="#lesson-3"><span lang="ht">Premye Imaj Ou</span><span lang="fr">Votre première image</span></a></li>
+                    <li><a href="#lesson-4"><span lang="ht">5 Brik Yon Prompt Imaj</span><span lang="fr">Les 5 briques d'un prompt d'image</span></a></li>
+                    <li><a href="#lesson-5"><span lang="ht">Limyè, Kad ak Fòma</span><span lang="fr">Lumière, cadrage et format</span></a></li>
+                    <li><a href="#lesson-6"><span lang="ht">Chwazi yon Style</span><span lang="fr">Choisir un style</span></a></li>
+                    <li><a href="#lesson-7"><span lang="ht">Varyasyon ak Seed</span><span lang="fr">Variations et seed</span></a></li>
+                    <li><a href="#lesson-8"><span lang="ht">Prompt Negatif</span><span lang="fr">Prompt négatif</span></a></li>
+                    <li><a href="#lesson-9"><span lang="ht">Paramèt ak Limit Zouti a</span><span lang="fr">Paramètres et limites de l'outil</span></a></li>
+                    <li><a href="#lesson-10"><span lang="ht">Image-to-Image</span><span lang="fr">Image vers image</span></a></li>
+                    <li><a href="#lesson-11"><span lang="ht">Repare ak Elaji (Inpainting)</span><span lang="fr">Réparer et élargir (inpainting)</span></a></li>
+                    <li><a href="#lesson-12"><span lang="ht">Agrandi ak Retouch</span><span lang="fr">Agrandir et retoucher</span></a></li>
+                    <li><a href="#lesson-13"><span lang="ht">Afich pou Yon Ti Biznis</span><span lang="fr">Affiche pour un petit commerce</span></a></li>
+                    <li><a href="#lesson-14"><span lang="ht">Seri Imaj pou Rezo Sosyal</span><span lang="fr">Série d'images pour les réseaux</span></a></li>
+                    <li><a href="#lesson-15"><span lang="ht">Ilistrasyon ak Menm Pèsonaj La</span><span lang="fr">Illustrations et constance du personnage</span></a></li>
+                    <li><a href="#lesson-16"><span lang="ht">Kilès Ki Pwopriyetè Imaj IA a?</span><span lang="fr">À qui appartient l'image générée ?</span></a></li>
+                    <li><a href="#lesson-17"><span lang="ht">Pa Bay Fo Enfòmasyon</span><span lang="fr">Ne pas désinformer</span></a></li>
+                    <li><a href="#lesson-18"><span lang="ht">Bwat Zouti Ou ak Limit yo</span><span lang="fr">Boîte à outils et limites</span></a></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- BLÒK 1 -->
+        <section class="course-section" id="block-1">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 1 · Dekouvèt</span>
+                    <span lang="fr">Bloc 1 · Découverte</span>
+                    <span class="block-meta"><span lang="ht">leson 1–3 · 40 min</span><span lang="fr">leçons 1–3 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-1">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">1</span>
+                        <h3><span lang="ht">Kisa yon IA Jeneratif Imaj Ye?</span><span lang="fr">Qu'est-ce qu'une IA générative d'images ?</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Zouti a pa chèche yon foto nan yon bank imaj: li bati yon imaj ki pa t janm egziste, pati sou yon briya (bruit) rive sou yon rezilta dapre deskripsyon ou bay la. Se pou sa mo ou yo enpòtan — sa w pa di a, li envante l.</p>
+                        <p lang="fr">L'outil ne cherche pas une photo dans une banque d'images : il construit une image qui n'a jamais existé, à partir d'un bruit jusqu'au résultat, selon la description que vous donnez. C'est pourquoi vos mots comptent — ce que vous ne dites pas, il l'invente.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Yon machann fwi nan yon mache, maten, limyè natirèl, foto 35 mm. » → menm deskripsyon an ap bay 4 imaj diferan.</p>
+                        <p lang="fr">« Une vendeuse de fruits au marché, le matin, lumière naturelle, photo 35 mm. » → la même description donne 4 images différentes.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun dekri yon sèn yo konnen nan katye yo epi jene premye imaj la.</p>
+                        <p lang="fr">Chacun décrit une scène de son quartier et génère sa première image.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-2">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">2</span>
+                        <h3><span lang="ht">Chwazi Zouti Ou</span><span lang="fr">Choisir son outil</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Midjourney mache nan Discord epi li mande yon abònman peye. Stable Diffusion se yon modèl louvri: ou ka itilize l gratis sou yon òdinatè ki gen kapasite, oswa sou sit ki bay aksè rapid. Chwazi yon sèl zouti pou gwoup la. Pri ak aksè yo chanje — verifye avan w pwomèt anyen bay patisipan yo.</p>
+                        <p lang="fr">Midjourney fonctionne dans Discord et demande un abonnement payant. Stable Diffusion est un modèle ouvert : gratuit sur un ordinateur assez puissant, ou accessible via des sites en ligne. Choisissez un seul outil pour le groupe. Les prix et les accès changent — vérifiez avant de promettre quoi que ce soit aux participants.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Montre de fwa: kote pou ekri prompt nan (nan Midjourney se yon kòmand /imagine; nan Stable Diffusion se yon bwat « prompt »), epi kote imaj la parèt.</p>
+                        <p lang="fr">Montrez deux fois : où écrire le prompt (dans Midjourney une commande /imagine ; dans Stable Diffusion une boîte « prompt ») et où l'image apparaît.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo ouvri zouti yo chwazi a; moun ki pa gen aksè gade kont demonstrasyon animatè a.</p>
+                        <p lang="fr">Les participants ouvrent l'outil choisi ; ceux qui n'ont pas d'accès regardent le compte de démonstration de l'animateur.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-3">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">3</span>
+                        <h3><span lang="ht">Premye Imaj Ou</span><span lang="fr">Votre première image</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon sèl fraz, senp, ase pou kòmanse. Pa eseye fè tout bagay nan yon sèl prompt: jere, gade sa ki soti, epi ajoute yon detay apre.</p>
+                        <p lang="fr">Une seule phrase simple suffit pour commencer. N'essayez pas de tout mettre dans un prompt : générez, regardez le résultat, puis ajoutez un détail.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Yon chat kouch sou yon rebod fenèt, solèy ap klere. » → 4 varyasyon parèt → chwazi youn → note ki detay ou renmen ladan l.</p>
+                        <p lang="fr">« Un chat couché sur un rebord de fenêtre, au soleil. » → 4 variations apparaissent → on en choisit une → on note le détail qu'on aime.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun jene yon imaj ak yon sèl fraz epi montre vwazen yo sa ki soti.</p>
+                        <p lang="fr">Chacun génère une image en une seule phrase et montre le résultat à son voisin.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 2 -->
+        <section class="course-section" id="block-2">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 2 · Ekri Prompt Imaj</span>
+                    <span lang="fr">Bloc 2 · Écrire le prompt</span>
+                    <span class="block-meta"><span lang="ht">leson 4–6 · 40 min</span><span lang="fr">leçons 4–6 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-4">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">4</span>
+                        <h3><span lang="ht">5 Brik Yon Prompt Imaj</span><span lang="fr">Les 5 briques d'un prompt d'image</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon prompt ki mache gen 5 eleman: (1) sijè, (2) aksyon oswa poz, (3) anviwònman, (4) style, (5) detay teknik (limyè, kad, fòma). Mete yo nan lòd sa a — sa ki anvan yo gen plis pwa.</p>
+                        <p lang="fr">Un prompt qui fonctionne a 5 éléments : (1) sujet, (2) action ou pose, (3) environnement, (4) style, (5) détails techniques (lumière, cadrage, format). Gardez cet ordre — ce qui vient avant a plus de poids.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Move: « yon bèl imaj biznis ». Bon: « yon machann manje ap sèvi yon kliyan nan yon ti kiyòs, jou klè, stil foto dokimantè, limyè natirèl, kad 4:5 ».</p>
+                        <p lang="fr">Mauvais : « une belle image de business ». Bon : « une vendeuse de nourriture servant un client dans une petite échoppe, jour clair, style photo documentaire, lumière naturelle, cadrage 4:5 ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Patisipan yo pran premye imaj Leson 3 la epi reekri prompt nan ak 5 bri yo.</p>
+                        <p lang="fr">Les participants reprennent l'image de la leçon 3 et réécrivent le prompt avec les 5 briques.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-5">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">5</span>
+                        <h3><span lang="ht">Limyè, Kad ak Fòma</span><span lang="fr">Lumière, cadrage et format</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa mo ka chanje tout imaj la: kalite limyè a (maten, solèy ap kouche, atifisyèl), kad la (gwo plan, plan mitan, plan laj) ak fòma a (1:1 kare, 4:5 pòtrè, 16:9 lajè, 9:16 pou telefòn).</p>
+                        <p lang="fr">Trois mots peuvent changer toute l'image : la lumière (matin, contre-jour, artificielle), le cadrage (gros plan, plan moyen, plan large) et le format (1:1 carré, 4:5 portrait, 16:9 large, 9:16 pour téléphone).</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm sijè a, 3 fwa: « ...limyè maten, plan laj », « ...kontre-jou, gwo plan », « ...limyè atifisyèl, plan mitan, fòma 9:16 ».</p>
+                        <p lang="fr">Même sujet, 3 fois : « ... lumière du matin, plan large », « ... contre-jour, gros plan », « ... lumière artificielle, plan moyen, format 9:16 ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun jene menm sijè a nan 2 fòma diferan epi di ki youn ki pi bon pou sa l vle fè a.</p>
+                        <p lang="fr">Chacun génère le même sujet en 2 formats différents et dit lequel convient à son usage.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-6">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">6</span>
+                        <h3><span lang="ht">Chwazi yon Style</span><span lang="fr">Choisir un style</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Mo style yo se mo jeneral: aquarelle, linw grav, foto 35 mm, sinematik, isometrik, flat design, 3D renderer, stil afich vintage. Pa sèvi ak non yon atis ki vivan ni yon mak komèsyal — se yon risk legal ak etik.</p>
+                        <p lang="fr">Les mots de style sont des mots généraux : aquarelle, gravure sur bois, photo 35 mm, cinématique, isométrique, flat design, rendu 3D, style affiche vintage. N'utilisez pas le nom d'un artiste vivant ni une marque commerciale — risque juridique et éthique.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Yon mòn ak yon larivyè, stil aquarelle, koulè cho » vs « menm sèn nan, stil afich voyage vintage, koulè fre ».</p>
+                        <p lang="fr">« Une montagne et une rivière, style aquarelle, tons chauds » contre « la même scène, style affiche de voyage vintage, tons froids ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun eseye 2 style sou menm sijè a epi chwazi stil pèsonèl yo pral sèvi ak li nan kou a.</p>
+                        <p lang="fr">Chacun essaie 2 styles sur le même sujet et choisit le style qu'il gardera pour la suite du cours.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 3 -->
+        <section class="course-section" id="block-3">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 3 · Kontwòl Rezilta</span>
+                    <span lang="fr">Bloc 3 · Contrôler le résultat</span>
+                    <span class="block-meta"><span lang="ht">leson 7–9 · 40 min</span><span lang="fr">leçons 7–9 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-7">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">7</span>
+                        <h3><span lang="ht">Varyasyon ak Seed</span><span lang="fr">Variations et seed</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Lè yon imaj prèske bon, pa rekòmanse depi nan kòmansman: sèvi ak varyasyon fèb (weak vary) oswa varyasyon fò (strong vary), epi konsève menm « seed » la pou ret jwenn menm konpozisyon an ak ti chanjman.</p>
+                        <p lang="fr">Quand une image est presque bonne, ne repartez pas de zéro : utilisez la variation faible ou forte, et gardez la même « seed » pour retrouver la même composition avec de petits changements.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon imaj bon men figi a pa bon → varyasyon fèb → konpozisyon an rete, sèlman detay yo bouje.</p>
+                        <p lang="fr">Image bonne mais visage raté → variation faible → la composition reste, seuls les détails bougent.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun pran yon imaj « preske bon » epi fè 2 varyasyon pou jwenn vèsyon final la.</p>
+                        <p lang="fr">Chacun prend une image « presque bonne » et fait 2 variations pour obtenir la version finale.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-8">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">8</span>
+                        <h3><span lang="ht">Prompt Negatif</span><span lang="fr">Prompt négatif</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Nan Stable Diffusion, gen yon dezyèm bwat: sa ou PA vle. Egzanp: « flou, twòp dwèt, tèks, logo, vizaj defòme ». Midjourney pa gen menm bwat la — ou ka itilize « --no » pou menm lide a.</p>
+                        <p lang="fr">Dans Stable Diffusion, il y a une deuxième boîte : ce que vous ne voulez PAS. Exemple : « flou, doigts en trop, texte, logo, visage déformé ». Midjourney n'a pas cette boîte — on utilise « --no » pour la même idée.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm prompt nan, yon fwa ak prompt negatif, yon fwa san li — konpare kantite erè men ak tèks ki soti.</p>
+                        <p lang="fr">Même prompt, une fois avec le négatif, une fois sans — comparez les erreurs de mains et le texte parasite.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri yon prompt negatif 5 mo pou pwòp tèm yo.</p>
+                        <p lang="fr">Chacun écrit un prompt négatif de 5 mots adapté à son sujet.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-9">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">9</span>
+                        <h3><span lang="ht">Paramèt ak Limit Zouti a</span><span lang="fr">Paramètres et limites de l'outil</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Paramèt debaz yo: fòma (--ar), degre stilizasyon, kalite. Men limit yo: zouti a pa ekri tè ki li byen, li pa konte objè egzakteman, li pa konn jeyometri yon logo, epi li pa konnen reyalite peyi a (li ka envante yon moniman).</p>
+                        <p lang="fr">Paramètres de base : format (--ar), degré de stylisation, qualité. Mais les limites sont claires : l'outil n'écrit pas de texte lisible, ne compte pas les objets exactement, ne maîtrise pas la géométrie d'un logo, et peut inventer la réalité (un monument imaginaire).</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Mande l « yon afich ak non biznis mwen ekri sou li » → gade kijan tèks la kase. Se la w konprann limit la.</p>
+                        <p lang="fr">Demander « une affiche avec le nom de mon commerce écrit dessus » → voir le texte cassé. C'est là qu'on comprend la limite.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Gwoup la fè yon lis 3 bagay yo pa dwe mande yon jeneratè imaj fè.</p>
+                        <p lang="fr">Le groupe écrit une liste de 3 choses à ne pas demander à un générateur d'images.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 4 -->
+        <section class="course-section" id="block-4">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 4 · Repare ak Amelyore</span>
+                    <span lang="fr">Bloc 4 · Réparer et améliorer</span>
+                    <span class="block-meta"><span lang="ht">leson 10–12 · 40 min</span><span lang="fr">leçons 10–12 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-10">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">10</span>
+                        <h3><span lang="ht">Image-to-Image</span><span lang="fr">Image vers image</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ou ka bay yon foto kòm baz epi mande IA a transfòme l: yon desen vin yon ilistrasyon, yon foto pwodwi vin yon sèn ak dekò. Nivo « enpòtans prompt nan » (denoising strength) deside konbyen l ap chanje.</p>
+                        <p lang="fr">Vous pouvez donner une photo comme base et demander à l'IA de la transformer : un croquis devient illustration, une photo de produit devient une scène décorée. Le réglage de force (denoising strength) décide à quel point l'image change.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon foto yon sak kafe sou yon tab → « sak kafe sou yon tab bwa, limyè maten, stil foto pwodwi » → menm objè a, prezantasyon pwofesyonèl.</p>
+                        <p lang="fr">Photo d'un sac de café sur une table → « sac de café sur table en bois, lumière du matin, photo produit » → même objet, présentation professionnelle.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun pote yon foto pwodwi oswa yon desen epi transfòme l ak yon prompt kout.</p>
+                        <p lang="fr">Chacun apporte une photo de produit ou un dessin et le transforme avec un prompt court.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-11">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">11</span>
+                        <h3><span lang="ht">Repare ak Elaji (Inpainting)</span><span lang="fr">Réparer et élargir (inpainting)</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Inpainting = seleksyone yon ti zòn epi mande IA a rekreye sèlman zòn sa a (yon men, yon objè ki anpeche). Outpainting = elaji imaj la deyò kad la pou jwenn yon fòma pi laj san rekòmanse tout la.</p>
+                        <p lang="fr">Inpainting = sélectionner une petite zone et demander à l'IA de ne recréer que cette zone (une main, un objet gênant). Outpainting = étendre l'image hors du cadre pour obtenir un format plus large sans tout relancer.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon pòtrè ak 6 dwèt → seleksyone men an → « yon men nòmal, 5 dwèt, po natirèl » → sèlman men an chanje.</p>
+                        <p lang="fr">Portrait à 6 doigts → sélectionner la main → « main naturelle à 5 doigts, peau réaliste » → seule la main change.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun repare yon defo nan yon imaj yo te jene epi elaji youn nan fòma 9:16.</p>
+                        <p lang="fr">Chacun répare un défaut dans une image générée et élargit une image au format 9:16.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-12">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">12</span>
+                        <h3><span lang="ht">Agrandi ak Retouch</span><span lang="fr">Agrandir et retoucher</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Agrandi (upscale) = rezolisyon pi wo pou enprime oswa pou yon afich. Retouch final la pa fèt nan IA a: ajoute tèks la nan yon lo ou itilize chak jou (Canva, PowerPoint) — tèks IA a toujou mal ekri.</p>
+                        <p lang="fr">L'agrandissement (upscale) donne une résolution suffisante pour l'impression ou une affiche. La retouche finale ne se fait pas dans l'IA : ajoutez le texte dans un outil du quotidien (Canva, PowerPoint) — le texte généré par l'IA reste faux.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Imaj la → upscale → ajoute non biznis la ak adrès la nan yon lòt lo → yon afich pare pou enprime.</p>
+                        <p lang="fr">Image → upscale → ajout du nom du commerce et de l'adresse dans un autre logiciel → affiche prête à imprimer.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun chwazi yon imaj, upscale l, epi mete yon ti tèks sou li nan yon lòt lo.</p>
+                        <p lang="fr">Chacun choisit une image, l'agrandit et ajoute un texte dans un autre outil.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 5 -->
+        <section class="course-section" id="block-5">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 5 · Itilizasyon Konkrè</span>
+                    <span lang="fr">Bloc 5 · Usages concrets</span>
+                    <span class="block-meta"><span lang="ht">leson 13–15 · 40 min</span><span lang="fr">leçons 13–15 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-13">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">13</span>
+                        <h3><span lang="ht">Afich pou Yon Ti Biznis</span><span lang="fr">Affiche pour un petit commerce</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Metòd: yon sèl prompt, 3 varyasyon, menm palèt koulè, epi tèks la ajoute apre. Pa mete mak ou pa pwopriyetè (Coca-Cola, Nike) nan yon afich pou ou — se yon vyolasyon mak.</p>
+                        <p lang="fr">Méthode : un seul prompt, 3 variations, même palette de couleurs, puis ajout du texte après coup. Ne mettez pas une marque qui ne vous appartient pas (Coca-Cola, Nike) dans votre affiche — violation de marque.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Yon ti kiyòs manje lokal, stil ilistrasyon flat, koulè zoranj ak mawon, espas vid anlè pou tèks, fòma 4:5 ».</p>
+                        <p lang="fr">« Petite échoppe de cuisine locale, style illustration flat, tons orange et marron, espace vide en haut pour le texte, format 4:5 ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun kreye yon afich pou yon biznis reyèl (pa yo oswa yon zanmi) epi montre 3 opsyon.</p>
+                        <p lang="fr">Chacun crée une affiche pour un commerce réel (le sien ou celui d'un ami) et présente 3 options.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-14">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">14</span>
+                        <h3><span lang="ht">Seri Imaj pou Rezo Sosyal</span><span lang="fr">Série d'images pour les réseaux</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pou yon seri ki parèt menm jan: kenbe menm fraz style la, menm seed la, epi chanje sèlman sijè a. Fòma: 1:1 pou post, 9:16 pou istwa/Reels.</p>
+                        <p lang="fr">Pour une série cohérente : gardez la même phrase de style, la même seed, et changez seulement le sujet. Formats : 1:1 pour un post, 9:16 pour une story/Reel.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« [menm stil, menm koulè] + 1) yon manje maten, 2) yon bwason cho, 3) yon pakè ki pare pou livrezon » → 3 imaj ki sanble soti nan menm mak la.</p>
+                        <p lang="fr">« [même style, mêmes couleurs] + 1) petit-déjeuner, 2) boisson chaude, 3) colis prêt à livrer » → 3 images qui forment une même marque.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun jene 3 imaj ki sanble pou yon semèn pibliyikasyon.</p>
+                        <p lang="fr">Chacun génère 3 images cohérentes pour une semaine de publication.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-15">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">15</span>
+                        <h3><span lang="ht">Ilistrasyon ak Menm Pèsonaj La</span><span lang="fr">Illustrations et constance du personnage</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pou yon istwa timoun oswa yon pamflèt, dekri pèsonaj la egzakteman menm jan an nan chak prompt: laj, rad, kwafyur, koulè po, stil. IA a pa gen memwa — se deskripsyon an ki fè konsistans lan.</p>
+                        <p lang="fr">Pour une histoire d'enfants ou une brochure, décrivez le personnage exactement de la même façon dans chaque prompt : âge, vêtements, coiffure, couleur de peau, style. L'IA n'a pas de mémoire — c'est la description qui crée la constance.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Ti Madou, 8 an, wòb ble, cheve nwa nan de ti queue, stil aquarelle » → repete fraz sa a nan 3 sèn diferan.</p>
+                        <p lang="fr">« Ti Madou, 8 ans, robe bleue, cheveux tressés en deux queues, style aquarelle » → répéter cette phrase dans 3 scènes différentes.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri yon fich pèsonaj (5 liy) epi jene 2 sèn ak menm pèsonaj la.</p>
+                        <p lang="fr">Chacun écrit une fiche personnage (5 lignes) et génère 2 scènes avec le même personnage.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 6 -->
+        <section class="course-section" id="block-6">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 6 · Dwa &amp; Sekirite</span>
+                    <span lang="fr">Bloc 6 · Droits &amp; sécurité</span>
+                    <span class="block-meta"><span lang="ht">leson 16–18 · 40 min</span><span lang="fr">leçons 16–18 · 40 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-16">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">16</span>
+                        <h3><span lang="ht">Kilès Ki Pwopriyetè Imaj IA a?</span><span lang="fr">À qui appartient l'image générée ?</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Dwa a depann de zouti a ak kondisyon sèvis li: kèk pèmèt itilizasyon komèsyal, kèk mande yon abònman peye, kèk defann vann imaj yo. Li kondisyon yo anvan ou vann yon afich ki fèt ak IA, epi kenbe prompt yo kòm prèv travay ou.</p>
+                        <p lang="fr">Les droits dépendent de l'outil et de ses conditions d'utilisation : certains autorisent l'usage commercial, d'autres exigent un abonnement payant, d'autres interdisent la vente. Lisez les conditions avant de vendre une affiche créée par IA, et conservez vos prompts comme preuve de votre travail.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Chèche nan sit zouti a: « commercial use », « who owns the images », « terms of service ».</p>
+                        <p lang="fr">Chercher sur le site de l'outil : « commercial use », « who owns the images », « terms of service ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Gwoup la nòte 2 reg zouti nou itilize a sou itilizasyon komèsyal.</p>
+                        <p lang="fr">Le groupe note 2 règles de l'outil utilisé concernant l'usage commercial.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-17">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">17</span>
+                        <h3><span lang="ht">Pa Bay Fo Enfòmasyon</span><span lang="fr">Ne pas désinformer</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pa kreye imaj yon moun reyèl san konsantman l, pa kreye sèn katastwòf oswa vyolans pou poste tankou si se te vre, pa sèvi ak yon imaj IA pou fè moun kwè yon bagay ki pa t fèt. Si yon imaj enpakte emosyèlman, di klèman ke se yon imaj IA.</p>
+                        <p lang="fr">Ne créez pas l'image d'une personne réelle sans son consentement, ne mettez en scène ni catastrophe ni violence pour les publier comme si elles étaient vraies, ne utilisez pas une image d'IA pour faire croire à un événement fictif. Si une image a un impact émotionnel, indiquez clairement qu'elle est générée par IA.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon imaj « inondasyon nan yon vil » → si se pa yon foto reyèl, poste l ak yon etikèt « imaj jeneratif, pa yon evènman reyèl ».</p>
+                        <p lang="fr">Image « inondation d'une ville » → si ce n'est pas une photo réelle, publier avec la mention « image générée, événement fictif ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Diskisyon: ki 3 ka patisipan yo wè sou rezo sosyal kote yon imaj IA ta ka bay pwoblèm?</p>
+                        <p lang="fr">Discussion : quels 3 cas vus sur les réseaux où une image d'IA aurait pu poser problème ?</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-18">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">18</span>
+                        <h3><span lang="ht">Bwat Zouti Ou ak Limit yo</span><span lang="fr">Boîte à outils et limites</span></h3>
+                        <span class="lesson-time">13 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ranmase 3 prompt avanse ou itilize souvan (afich, rezo sosyal, pèsonaj) nan yon ti dokiman. Epi rekonet ki lè pou pa itilize IA a: yon logo ki dwe egzak, yon foto ofisyèl yon moun, yon dokiman legal → se yon pwofesyonèl ki pou fè l.</p>
+                        <p lang="fr">Rassemblez vos 3 prompts avancés les plus utiles (affiche, réseaux, personnage) dans un petit document. Et sachez quand ne pas utiliser l'IA : un logo devant être exact, la photo officielle d'une personne, un document juridique → cela relève d'un professionnel.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Fich pèsonèl: [sijè] + [aksyon] + [anviwònman] + [style] + [limyè/kad/fòma] + [prompt negatif] → vide pou chak bezwen.</p>
+                        <p lang="fr">Fiche personnelle : [sujet] + [action] + [environnement] + [style] + [lumière/cadrage/format] + [prompt négatif] → à remplir selon le besoin.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Evalyasyon: chak patisipan di yon imaj konkè li pral kreye semèn sa a ak IA a.</p>
+                        <p lang="fr">Évaluation : chaque participant cite une image concrète qu'il créera cette semaine avec l'IA.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FICH PROMPT AVANSE -->
+        <section class="course-section" id="fich-prompt-avanse">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Fich Prompt Avanse — pou distribiye bay patisipan yo</span>
+                    <span lang="fr">Fiche de prompts avancés — à distribuer aux participants</span>
+                </h2>
+                <p class="section-lead" lang="ht">Kopye yon prompt avanse, ranplase sa ki ant mak [ ] yo, epi kole l nan zouti imaj ou chwazi a.</p>
+                <p class="section-lead" lang="fr">Copiez un prompt avancé, remplacez ce qui est entre crochets [ ], puis collez-le dans votre outil d'images.</p>
+
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Prompt Avanse: Afich Pwodwi</span><span lang="fr">Prompt avancé : Affiche produit</span></h3>
+                        <p class="prompt-text" lang="ht">Yon [pwodwi] poze sou [sipò], [anviwònman], limyè [dous/fort], stil foto pwodwi, koulè [palèt], espas vid pou tèks, fòma [4:5]. Pa gen tèks, pa gen logo.</p>
+                        <p class="prompt-text" lang="fr">Un [produit] posé sur [support], [environnement], lumière [douce/forte], style photo produit, tons [palette], espace vide pour le texte, format [4:5]. Pas de texte, pas de logo.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Prompt Avanse: Pòtrè</span><span lang="fr">Prompt avancé : Portrait</span></h3>
+                        <p class="prompt-text" lang="ht">Pòtrè yon [moun/deskripsyon], [poz], background [senp], limyè natirèl, gwo plan, foto 50 mm, fòma [1:1]. Prompt negatif: flou, twòp dwèt, tèks, vizaj defòme.</p>
+                        <p class="prompt-text" lang="fr">Portrait d'une [personne/description], [pose], fond [simple], lumière naturelle, gros plan, photo 50 mm, format [1:1]. Prompt négatif : flou, doigts en trop, texte, visage déformé.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Prompt Avanse: Peyizaj</span><span lang="fr">Prompt avancé : Paysage</span></h3>
+                        <p class="prompt-text" lang="ht">Yon [kote] nan [lè jounen], plan laj, koulè [cho/fre], stil [foto dokimantè/aquarelle], detay natirèl, fòma [16:9]. Pa gen moun, pa gen mak.</p>
+                        <p class="prompt-text" lang="fr">Un [lieu] à [moment de la journée], plan large, tons [chauds/froids], style [photo documentaire/aquarelle], détails naturels, format [16:9]. Sans personne, sans marque.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Prompt Avanse: Ilistrasyon Timoun</span><span lang="fr">Prompt avancé : Illustration enfants</span></h3>
+                        <p class="prompt-text" lang="ht">Menm pèsonaj la: [non, laj, rad, kwafyur, koulè po]. Sèn: [aksyon] nan [kote]. Stil aquarelle pou timoun, koulè klere, kontou dou, fòma [1:1]. Repete deskripsyon pèsonaj la mo pou mo.</p>
+                        <p class="prompt-text" lang="fr">Même personnage : [nom, âge, vêtements, coiffure, couleur de peau]. Scène : [action] dans [lieu]. Style aquarelle pour enfants, couleurs vives, contours doux, format [1:1]. Répéter la description du personnage mot pour mot.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Prompt Avanse: Seri Rezo Sosyal</span><span lang="fr">Prompt avancé : Série réseaux</span></h3>
+                        <p class="prompt-text" lang="ht">Seri 3 imaj ki sanble: menm [stil], menm [palèt koulè], menm [ekleraj]. Vèsyon 1: [sijè A]. Vèsyon 2: [sijè B]. Vèsyon 3: [sijè C]. Fòma [9:16], espas vid anlè pou tèks.</p>
+                        <p class="prompt-text" lang="fr">Série de 3 images cohérentes : même [style], même [palette], même [éclairage]. Version 1 : [sujet A]. Version 2 : [sujet B]. Version 3 : [sujet C]. Format [9:16], espace vide en haut pour le texte.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card prompt-card--magic">
+                        <h3><span lang="ht">Prompt Avanse Majik · Leson 4–5</span><span lang="fr">Prompt passe-partout · leçons 4–5</span></h3>
+                        <p class="prompt-text" lang="ht">[sijè] + [aksyon/poz] + [anviwònman] + [style jeneral] + [limyè] + [kad] + [fòma]. Pa non atis vivan, pa mak komèsyal. Si rezilta a mal, di m kisa ki mal la anvan w rekòmanse.</p>
+                        <p class="prompt-text" lang="fr">[sujet] + [action/pose] + [environnement] + [style général] + [lumière] + [cadrage] + [format]. Pas de nom d'artiste vivant, pas de marque commerciale. Si le résultat est mauvais, dis-moi ce qui cloche avant de recommencer.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÒT ANIMASYON -->
+        <section class="course-section" id="not-animasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Nòt pou Animasyon — Kreyòl &amp; Fransè</span>
+                    <span lang="fr">Notes d'animation — créole &amp; français</span>
+                </h2>
+
+                <div class="note-grid">
+                    <div class="note">
+                        <h3><span lang="ht">Lang</span><span lang="fr">Langue</span></h3>
+                        <p lang="ht">Prezante chak leson an kreyòl. Sou chak slide, mete yon ti tradiksyon fransè anba a. Men prompt yo: ekri yo an anglè oswa franse nan zouti a, paske kèk modèl konprann anglè pi byen — se sa ki fè n ap bay fraz pare pou kopye.</p>
+                        <p lang="fr">Présentez chaque leçon en créole. Sur chaque diapositive, ajoutez une traduction française en dessous. Les prompts, eux, s'écrivent en anglais ou en français dans l'outil : certains modèles comprennent mieux l'anglais — d'où les formulations prêtes à copier.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Ritm</span><span lang="fr">Rythme</span></h3>
+                        <p lang="ht">13 minit pa leson: 2 min eksplikasyon + 7 min demonstrasyon sou ekran an + 4 min aktivite. Si tan manke, koupe nan demonstrasyon an, pa nan aktivite a.</p>
+                        <p lang="fr">13 minutes par leçon : 2 min d'explication + 7 min de démonstration à l'écran + 4 min d'activité. S'il manque du temps, coupez la démonstration, jamais l'activité.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></h3>
+                        <p lang="ht">Chwazi yon sèl zouti pou gwoup la epi verifye pri a avan kou a. San kont, patisipan yo ka gade demonstrasyon animatè a sou yon sèl ekran; yon telefòn sufiz pou note prompt yo.</p>
+                        <p lang="fr">Choisissez un seul outil pour le groupe et vérifiez son prix avant le cours. Sans compte, les participants suivent la démonstration de l'animateur sur un seul écran ; un téléphone suffit pour noter les prompts.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Evalyasyon</span><span lang="fr">Évaluation</span></h3>
+                        <p lang="ht">Nan fen kou a, chak patisipan montre yon imaj li kreye pandan kou a epi di ki itilizasyon li gen pou l semèn sa a — ak kijan l ap di ke se yon imaj IA.</p>
+                        <p lang="fr">À la fin du cours, chaque participant montre une image créée pendant la séance, cite l'usage qu'il en fera cette semaine — et comment il indiquera qu'elle est générée par IA.</p>
+                    </div>
+                </div>
+
+                <p class="course-disclaimer" lang="ht">Nòt: sa a se yon gid animasyon. Midjourney, Stable Diffusion, Discord ak OpenAI se mak pwopriyetè yo. Pri, aksè ak kondisyon sèvis yo chanje — verifye sou sit ofisyèl zouti a avan ou bay gwoup la yon enfòmasyon.</p>
+                <p class="course-disclaimer" lang="fr">Note : ceci est un guide d'animation. Midjourney, Stable Diffusion, Discord et OpenAI sont des marques de leurs propriétaires. Prix, accès et conditions d'utilisation évoluent — vérifiez sur le site officiel de l'outil avant d'affirmer quoi que ce soit au groupe.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="course-footer">
+        <div class="course-wrap">
+            <p>
+                <a href="./#track-amateur"><span lang="ht">← Retounen nan Parcours Amateur</span><span lang="fr">← Retour au Parcours Amateur</span></a>
+                · <a href="kou-intro-chatgpt.html"><span lang="ht">Kou 1</span><span lang="fr">Cours 1</span></a>
+                · <a href="kou-otomatisasyon.html"><span lang="ht">Kou 3</span><span lang="fr">Cours 3</span></a>
+                · Akademi Clairtech · 2026
+            </p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script>
+        (() => {
+            const TITLE = {
+                ht: 'Kreye Imaj ak IA — Akademi Clairtech',
+                fr: 'IA Générative d\'Images — Akademi Clairtech'
+            };
+            const COPIED = { ht: 'Prompt avanse a kopye.', fr: 'Prompt avancé copié.' };
+            const toast = document.getElementById('toast');
+            const buttons = [...document.querySelectorAll('.lang-btn')];
+            let lang = 'ht';
+            let toastTimer;
+
+            function setLang(next) {
+                lang = next === 'fr' ? 'fr' : 'ht';
+                document.documentElement.lang = lang;
+                document.title = TITLE[lang];
+                buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+                try {
+                    localStorage.setItem('akademi-lang', lang);
+                } catch (err) {
+                    /* stockage indisponible : le choix tient pour la page courante */
+                }
+            }
+
+            function showToast(text) {
+                if (!toast) return;
+                toast.textContent = text;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => setLang(button.dataset.lang));
+            });
+
+            document.querySelectorAll('[data-copy]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const card = button.closest('.prompt-card');
+                    const source = card && card.querySelector(`.prompt-text[lang="${lang}"]`);
+                    if (!source) return;
+                    const text = source.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (err) {
+                        const area = document.createElement('textarea');
+                        area.value = text;
+                        area.setAttribute('readonly', '');
+                        area.className = 'sr-only';
+                        document.body.appendChild(area);
+                        area.select();
+                        const ok = document.execCommand('copy');
+                        area.remove();
+                        if (!ok) return;
+                    }
+                    showToast(COPIED[lang]);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('akademi-lang');
+            } catch (err) {
+                /* ignore */
+            }
+            setLang(saved || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'ht'));
+        })();
+    </script>
+</body>
+</html>

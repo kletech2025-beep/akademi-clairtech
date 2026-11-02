@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kou Otomatizasyon San Code — konekte zouti ou yo ak IA: 15 leson, 3 èdtan, pou debitan nivo 0. Cours d'automatisation no-code et IA en créole haïtien et en français.">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="dark">
+    <title>Otomatizasyon San Code — Akademi Clairtech</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+    <a class="skip-link" href="#main">
+        <span lang="ht">Ale dirèk nan kontni an</span>
+        <span lang="fr">Aller au contenu</span>
+    </a>
+
+    <header class="course-topbar">
+        <div class="course-wrap course-topbar-inner">
+            <a class="course-back" href="./">
+                <span lang="ht">← Retounen sou sit la</span>
+                <span lang="fr">← Retour au site</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Lang / Langue">
+                <button type="button" class="lang-btn" data-lang="ht" aria-pressed="true">Kreyòl</button>
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- PREZANTASYON -->
+        <section class="course-hero">
+            <div class="course-wrap">
+                <p class="course-kicker">
+                    <span lang="ht">Kou 3 · Parcours Amateur</span>
+                    <span lang="fr">Cours 3 · Parcours Amateur</span>
+                </p>
+
+                <h1 class="course-title">
+                    <span lang="ht">Otomatizasyon San Code — Konekte Zouti Ou Ak IA</span>
+                    <span lang="fr">Automatisation No-Code — Connectez vos outils à l'IA</span>
+                </h1>
+
+                <p class="course-objective" lang="ht">
+                    <strong>Objektif jeneral:</strong> nan fen kou a, patisipan yo ap kapab bati yon workflow senp
+                    (deklanche → kondisyon → aksyon), konekte de zouti yo itilize chak jou, epi mete yon blo IA nan
+                    mitan an pou rezime, klasifye oswa ekstrè done — san yo pa ekri yon liy code epi san yo pa mete
+                    done sansib an danje.
+                </p>
+                <p class="course-objective" lang="fr">
+                    <strong>Objectif général :</strong> à la fin du cours, les participants savent construire un
+                    workflow simple (déclencheur → condition → action), connecter deux outils du quotidien et y placer
+                    un bloc IA pour résumer, classer ou extraire des données — sans écrire une ligne de code et sans
+                    mettre leurs données sensibles en danger.
+                </p>
+
+                <dl class="fact-grid">
+                    <div class="fact">
+                        <dt><span lang="ht">Dire</span><span lang="fr">Durée</span></dt>
+                        <dd><span lang="ht">3 èdtan</span><span lang="fr">3 heures</span></dd>
+                        <dd class="fact-sub"><span lang="ht">15 leson × 12 minit</span><span lang="fr">15 leçons × 12 minutes</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Piblik</span><span lang="fr">Public</span></dt>
+                        <dd><span lang="ht">Debitan nivo 0</span><span lang="fr">Débutants, niveau 0</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Pa gen okenn prérequis teknik</span><span lang="fr">Aucun prérequis technique</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Zouti</span><span lang="fr">Outils</span></dt>
+                        <dd><span lang="ht">Make, Zapier, n8n oswa Power Automate</span><span lang="fr">Make, Zapier, n8n ou Power Automate</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Chwazi yon sèl zouti pou gwoup la</span><span lang="fr">Un seul outil choisi pour le groupe</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></dt>
+                        <dd><span lang="ht">Telefòn oswa òdinatè</span><span lang="fr">Téléphone ou ordinateur</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Ak yon imèl pou teste</span><span lang="fr">Avec une adresse e-mail de test</span></dd>
+                    </div>
+                </dl>
+
+                <table class="plan-table">
+                    <caption class="sr-only">
+                        <span lang="ht">Estrikti jeneral kou a: 5 blòk, 15 leson, 180 minit</span>
+                        <span lang="fr">Structure générale du cours : 5 blocs, 15 leçons, 180 minutes</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span lang="ht">Blòk</span><span lang="fr">Bloc</span></th>
+                            <th scope="col"><span lang="ht">Leson</span><span lang="fr">Leçons</span></th>
+                            <th scope="col"><span lang="ht">Objektif</span><span lang="fr">Objectif</span></th>
+                            <th scope="col"><span lang="ht">Dire</span><span lang="fr">Durée</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 1: Dekouvèt</span><span lang="fr">Bloc 1 : Découverte</span></th>
+                            <td>1–3</td>
+                            <td><span lang="ht">Konprann sa yon otomatizasyon ye, chwazi yon zouti, epi kouri premye workflow la.</span><span lang="fr">Comprendre ce qu'est une automatisation, choisir un outil, exécuter le premier workflow.</span></td>
+                            <td>36 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 2: Deklanche ak Aksyon</span><span lang="fr">Bloc 2 : Déclencheurs et actions</span></th>
+                            <td>4–6</td>
+                            <td><span lang="ht">Rekonet kalite deklanche yo ak aksyon yo, epi konekte yon kont san danje.</span><span lang="fr">Reconnaître les types de déclencheurs et d'actions, connecter un compte en sécurité.</span></td>
+                            <td>36 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 3: IA Nan Mitan</span><span lang="fr">Bloc 3 : L'IA au milieu</span></th>
+                            <td>7–9</td>
+                            <td><span lang="ht">Ajoute yon blo IA ki rezime, klasifye oswa ekstrè done nan workflow la.</span><span lang="fr">Ajouter un bloc IA qui résume, classe ou extrait des données dans le workflow.</span></td>
+                            <td>36 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 4: Lojik ak Kontwòl</span><span lang="fr">Bloc 4 : Logique et contrôle</span></th>
+                            <td>10–12</td>
+                            <td><span lang="ht">Mete kondisyon si/sinon, filtre sa ki pase, epi jwenn kote workflow la kase.</span><span lang="fr">Poser des conditions si/sinon, filtrer ce qui passe, trouver où le workflow casse.</span></td>
+                            <td>36 min</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 5: Ka Konkrè &amp; Sekirite</span><span lang="fr">Bloc 5 : Cas concrets &amp; sécurité</span></th>
+                            <td>13–15</td>
+                            <td><span lang="ht">Bati otomasyon biznis ak pèsonèl, epi konnen limit yo ak risk done yo.</span><span lang="fr">Construire des automatisations métier et personnelles, connaître les limites et les risques sur les données.</span></td>
+                            <td>36 min</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOMMÈ -->
+        <section class="course-section">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Sommè leson yo</span>
+                    <span lang="fr">Sommaire des leçons</span>
+                </h2>
+                <ol class="toc">
+                    <li><a href="#lesson-1"><span lang="ht">Kisa Otomatizasyon San Code Ye?</span><span lang="fr">Qu'est-ce que l'automatisation no-code ?</span></a></li>
+                    <li><a href="#lesson-2"><span lang="ht">Chwazi Zouti Ou</span><span lang="fr">Choisir son outil</span></a></li>
+                    <li><a href="#lesson-3"><span lang="ht">Premye Workflow Ou</span><span lang="fr">Votre premier workflow</span></a></li>
+                    <li><a href="#lesson-4"><span lang="ht">Kalite Deklanche Yo</span><span lang="fr">Les types de déclencheurs</span></a></li>
+                    <li><a href="#lesson-5"><span lang="ht">Kalite Aksyon Yo</span><span lang="fr">Les types d'actions</span></a></li>
+                    <li><a href="#lesson-6"><span lang="ht">Konekte Yon Kont San Danje</span><span lang="fr">Connecter un compte en sécurité</span></a></li>
+                    <li><a href="#lesson-7"><span lang="ht">Mete Yon Blo IA Nan Mitan</span><span lang="fr">Placer un bloc IA au milieu</span></a></li>
+                    <li><a href="#lesson-8"><span lang="ht">Prompt Ki Travay Nan Workflow</span><span lang="fr">Le prompt qui marche dans un workflow</span></a></li>
+                    <li><a href="#lesson-9"><span lang="ht">Klasifye ak Ekstrè Done</span><span lang="fr">Classer et extraire des données</span></a></li>
+                    <li><a href="#lesson-10"><span lang="ht">Kondisyon Si / Sinon</span><span lang="fr">Conditions si / sinon</span></a></li>
+                    <li><a href="#lesson-11"><span lang="ht">Filtè, Retade ak Wout Altènatif</span><span lang="fr">Filtres, délais et routes alternatives</span></a></li>
+                    <li><a href="#lesson-12"><span lang="ht">Debogaj Ak Istoric Egzekisyon</span><span lang="fr">Débogage et historique d'exécution</span></a></li>
+                    <li><a href="#lesson-13"><span lang="ht">Twa Otomasyon Pou Yon Ti Biznis</span><span lang="fr">Trois automatisations pour un commerce</span></a></li>
+                    <li><a href="#lesson-14"><span lang="ht">Otomatize Travay Pèsonèl Ou</span><span lang="fr">Automatiser son travail personnel</span></a></li>
+                    <li><a href="#lesson-15"><span lang="ht">Sekirite Done ak Limit Yo</span><span lang="fr">Sécurité des données et limites</span></a></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- BLÒK 1 -->
+        <section class="course-section" id="block-1">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 1 · Dekouvèt</span>
+                    <span lang="fr">Bloc 1 · Découverte</span>
+                    <span class="block-meta"><span lang="ht">leson 1–3 · 36 min</span><span lang="fr">leçons 1–3 · 36 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-1">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">1</span>
+                        <h3><span lang="ht">Kisa Otomatizasyon San Code Ye?</span><span lang="fr">Qu'est-ce que l'automatisation no-code ?</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon otomatizasyon se yon fraz: « si bagay sa a pase, fè bagay sa a ». Zouti a bay 3 moso: yon deklanche (sa ki lanche l), yon kondisyon (si genyen), ak yon aksyon (sa l fè). Ou pa ekri code — ou ranpli bwat epi ou konekte yo.</p>
+                        <p lang="fr">Une automatisation est une phrase : « si ceci se produit, fais cela ». L'outil donne 3 morceaux : un déclencheur (ce qui lance), une condition (s'il y en a une), une action (ce que ça fait). On n'écrit pas de code — on remplit des cases et on les relie.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Lè mwen resevwa yon imèl ki gen mo "fakti" nan sijè a, mete non moun nan ak montan an nan yon fèy Google Sheets. » → sa a se yon workflow konplè.</p>
+                        <p lang="fr">« Quand je reçois un e-mail contenant le mot « facture », écris le nom de la personne et le montant dans une Google Sheet. » → c'est un workflow complet.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri yon fraz « si … lè sa a … » sou yon travay yo repete chak jou.</p>
+                        <p lang="fr">Chacun écrit une phrase « si … alors … » sur une tâche qu'il répète chaque jour.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-2">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">2</span>
+                        <h3><span lang="ht">Chwazi Zouti Ou</span><span lang="fr">Choisir son outil</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Gen plizyè zouti: Make, Zapier, Power Automate, n8n. Yo tout fè menm travay la, men yo pa menm pri epi yo pa konekte menm aplikasyon yo. Chwazi youn, epi verifye de bagay: èske zouti ou yo ladan l, ak konbyen egzekisyon plan gratis la pèmèt pa mwa.</p>
+                        <p lang="fr">Plusieurs outils existent : Make, Zapier, Power Automate, n8n. Ils font le même travail, mais avec des prix et des applications différents. Choisissez-en un et vérifiez deux choses : vos outils y figurent-ils, et combien d'exécutions le plan gratuit permet-il par mois.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Chèche nan lis entegrasyon zouti a: Gmail, Google Sheets, WhatsApp Business, Telegram, Google Forms, Google Drive.</p>
+                        <p lang="fr">Chercher dans la liste des intégrations : Gmail, Google Sheets, WhatsApp Business, Telegram, Google Forms, Google Drive.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Gwoup la deside yon sèl zouti pou kou a; moun ki pa gen aksè itilize kont demonstrasyon animatè a.</p>
+                        <p lang="fr">Le groupe décide d'un seul outil pour le cours ; ceux qui n'ont pas d'accès suivent sur le compte de démonstration.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-3">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">3</span>
+                        <h3><span lang="ht">Premye Workflow Ou</span><span lang="fr">Votre premier workflow</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kòmanse ak yon workflow ki gen 2 blo sèlman: yon deklanche ak yon aksyon. Pa ajoute kondisyon ni IA nan premye esè a. Objektif la se wè workflow la kouri yon fwa san erè.</p>
+                        <p lang="fr">Commencez par un workflow de 2 blocs seulement : un déclencheur et une action. N'ajoutez ni condition ni IA au premier essai. L'objectif est de voir le workflow s'exécuter une fois sans erreur.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Deklanche: « yon nouvo liy nan Google Forms » → Aksyon: « voye yon imèl otomatik ak non moun nan ». Teste ak pwòp kòmand ou.</p>
+                        <p lang="fr">Déclencheur : « nouvelle ligne dans Google Forms » → Action : « envoyer un e-mail avec le nom de la personne ». Testez avec votre propre soumission.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun bati workflow 2 blo a epi kouri l omwen yon fwa devan yon lòt patisipan.</p>
+                        <p lang="fr">Chacun construit le workflow à 2 blocs et le lance au moins une fois devant un autre participant.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 2 -->
+        <section class="course-section" id="block-2">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 2 · Deklanche ak Aksyon</span>
+                    <span lang="fr">Bloc 2 · Déclencheurs et actions</span>
+                    <span class="block-meta"><span lang="ht">leson 4–6 · 36 min</span><span lang="fr">leçons 4–6 · 36 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-4">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">4</span>
+                        <h3><span lang="ht">Kalite Deklanche Yo</span><span lang="fr">Les types de déclencheurs</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Gen 3 kalite deklanche: (1) yon evènman reyèl (nouvo imèl, nouvo liy, nouvo kòmand), (2) yon orè (chak 15 minit, chak maten 6 è), (3) yon lyen oswa yon fòm moun ranpli. Orè a pi senp pou kòmanse, men li ka kouri san anyen pa pase — sa konsome egzekisyon ou yo.</p>
+                        <p lang="fr">Trois familles de déclencheurs : (1) un événement réel (nouvel e-mail, nouvelle ligne, nouvelle commande), (2) une horloge (toutes les 15 minutes, chaque matin à 6 h), (3) un lien ou un formulaire rempli. L'horloge est plus simple pour débuter, mais elle s'exécute même sans nouveauté — ça consomme vos exécutions.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Konpare: « chak 30 minit, tcheke bwat imèl la » vs « lè yon imèl rive, kouri ». Menm rezilta a, dezyèm lan pi piti konsomasyon.</p>
+                        <p lang="fr">Comparer : « toutes les 30 minutes, vérifier la boîte » contre « quand un e-mail arrive, exécuter ». Même résultat, la seconde consomme moins.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun chwazi deklanche ki pi apwopriye pou fraz Leson 1 la epi eksplike poukisa.</p>
+                        <p lang="fr">Chacun choisit le déclencheur adapté à sa phrase de la leçon 1 et explique pourquoi.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-5">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">5</span>
+                        <h3><span lang="ht">Kalite Aksyon Yo</span><span lang="fr">Les types d'actions</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Aksyon yo pi souvan: voye yon imèl oswa yon mesaj, ajoute yon liy nan yon fèy, kreye yon dosye oswa yon dokiman, mete yon rapèl nan kalandriye, telechaje yon pyès jwenti. Yon workflow ka gen plizyè aksyon youn dèyè lòt — se lòd yo ki konte.</p>
+                        <p lang="fr">Les actions les plus courantes : envoyer un e-mail ou un message, ajouter une ligne dans un tableur, créer un document, poser un rappel au calendrier, télécharger une pièce jointe. Un workflow peut enchaîner plusieurs actions — c'est leur ordre qui compte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kòmand antre → (1) ajoute liy nan Sheets → (2) voye mesaj WhatsApp pou kliyan an → (3) mete rapèl nan kalandriye pou livrezon an.</p>
+                        <p lang="fr">Commande reçue → (1) ajouter la ligne dans Sheets → (2) envoyer un message WhatsApp au client → (3) créer un rappel calendrier pour la livraison.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ajoute yon dezyèm aksyon nan workflow pa l la epi verifye lòd la bon.</p>
+                        <p lang="fr">Chacun ajoute une deuxième action à son workflow et vérifie l'ordre.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-6">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">6</span>
+                        <h3><span lang="ht">Konekte Yon Kont San Danje</span><span lang="fr">Connecter un compte en sécurité</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Toujou konekte ak bouton ofisyèl zouti a (OAuth), pa ak yon modpas ou tape manyèlman. Chwazi dwa minimal: si workflow la sèlman li imèl yo, pa bay dwa pou l efase yo. Itilize yon imèl test separe pou kou a, epi dekonekte kont yo apre.</p>
+                        <p lang="fr">Connectez toujours via le bouton officiel de l'outil (OAuth), jamais avec un mot de passe tapé à la main. Donnez le minimum de droits : si le workflow lit les e-mails, ne donnez pas le droit de les supprimer. Utilisez une adresse de test séparée pour le cours, puis déconnectez les comptes après.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Montre ekran otorizasyon an: ki sa k ap li, ki sa k ap ekri, ki sa k ap efase → refize sa workflow la pa bezwen an.</p>
+                        <p lang="fr">Montrer l'écran d'autorisation : ce qui sera lu, écrit, supprimé → refuser ce dont le workflow n'a pas besoin.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun konekte yon kont ak OAuth epi li lis 2 dwa li refize bay la.</p>
+                        <p lang="fr">Chacun connecte un compte via OAuth et note 2 droits qu'il a refusés.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 3 -->
+        <section class="course-section" id="block-3">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 3 · IA Nan Mitan</span>
+                    <span lang="fr">Bloc 3 · L'IA au milieu</span>
+                    <span class="block-meta"><span lang="ht">leson 7–9 · 36 min</span><span lang="fr">leçons 7–9 · 36 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-7">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">7</span>
+                        <h3><span lang="ht">Mete Yon Blo IA Nan Mitan</span><span lang="fr">Placer un bloc IA au milieu</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kote ki pi itil pou IA a nan yon workflow: apre done yo antre, anvan rezilta a soti. Egzanp: imèl long → blo IA ki rezime l → aksyon ki voye rezime a nan yon mesaj. IA a se yon blo nan mitan, li pa chèf la.</p>
+                        <p lang="fr">Le meilleur placement pour l'IA dans un workflow : après l'entrée des données, avant la sortie du résultat. Exemple : e-mail long → bloc IA qui le résume → action qui envoie le résumé par message. L'IA est un maillon, pas le chef.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Rezime imèl sa a an 2 fraz kreyòl senp, epi mete yon liy "aksyon pou m fè": {kò imèl la} ».</p>
+                        <p lang="fr">« Résume cet e-mail en 2 phrases en créole simple, puis ajoute une ligne « action à faire » : {corps de l'e-mail} ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ajoute yon blo IA nan workflow pa l la ant 2 aksyon.</p>
+                        <p lang="fr">Chacun ajoute un bloc IA dans son workflow, entre deux actions.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-8">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">8</span>
+                        <h3><span lang="ht">Prompt Ki Travay Nan Workflow</span><span lang="fr">Le prompt qui marche dans un workflow</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Nan yon workflow, pèsonn pa la pou korije IA a. Fòk prompt nan fèmen: di kisa pou fè, ki lang, ki longè, ki fòma, epi sa pou fè lè done a manke. Itilize chanj (variable) zouti a pou insere tèks la — pa ekri l manyèlman.</p>
+                        <p lang="fr">Dans un workflow, personne n'est là pour corriger l'IA. Le prompt doit donc être fermé : dire quoi faire, dans quelle langue, en quelle longueur, dans quel format, et que faire si la donnée manque. Insérez le texte via les variables de l'outil — ne le recopiez pas à la main.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« Ekstrè non, telefòn, ak dat livrezon. Reponn sèlman ak 3 liy: NON=, TELEFON=, DAT=. Si yon bagay manke, ekri "MANKE". Pa ajoute okenn lòt tèks. »</p>
+                        <p lang="fr">« Extrais le nom, le téléphone et la date de livraison. Réponds uniquement en 3 lignes : NOM=, TELEFONE=, DATE=. Si une information manque, écris « MANQUE ». N'ajoute aucun autre texte. »</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun fèmen prompt blo IA pa l la ak 4 kondisyon: lang, longè, fòma, sa pou fè lè gen enfòmasyon ki manke.</p>
+                        <p lang="fr">Chacun ferme le prompt de son bloc IA avec 4 contraintes : langue, longueur, format, conduite si information manquante.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-9">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">9</span>
+                        <h3><span lang="ht">Klasifye ak Ekstrè Done</span><span lang="fr">Classer et extraire des données</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">De travay IA a fè byen nan otomatizasyon: klasifye (ki kalite mesaj sa a: ijans / kòmand / plent / spam) ak ekstrè (ki done presiz ki ladan l). Klasman an pèmèt workflow la pran 2 wout diferan.</p>
+                        <p lang="fr">Deux tâches où l'IA réussit bien en automatisation : classer (quel type de message : urgence / commande / plainte / spam) et extraire (quelles données précises). Le classement permet au workflow de prendre deux routes différentes.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Mesaj WhatsApp antre → IA klasifye « PLEN » → kondisyon voye l bay moun ki responsab sèvis kliyan an olye pou l al nan lis jeneral la.</p>
+                        <p lang="fr">Message WhatsApp entrant → l'IA classe « PLAINT » → la condition l'envoie au responsable du service client au lieu de la liste générale.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini 3 kategori pou pwòp travay li epi ajoute yo nan prompt klasman an.</p>
+                        <p lang="fr">Chacun définit 3 catégories pour son propre travail et les ajoute au prompt de classement.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 4 -->
+        <section class="course-section" id="block-4">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 4 · Lojik ak Kontwòl</span>
+                    <span lang="fr">Bloc 4 · Logique et contrôle</span>
+                    <span class="block-meta"><span lang="ht">leson 10–12 · 36 min</span><span lang="fr">leçons 10–12 · 36 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-10">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">10</span>
+                        <h3><span lang="ht">Kondisyon Si / Sinon</span><span lang="fr">Conditions si / sinon</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon kondisyon di workflow la ki lè pou l kontinye. Mete l apre deklanche a, anvan aksyon ki chè oswa ki vizib yo (voye mesaj, fakti). Yon sèl kondisyon klè pi bon pase twa ki melanje.</p>
+                        <p lang="fr">Une condition dit au workflow quand continuer. Placez-la après le déclencheur, avant les actions coûteuses ou visibles (envoi de message, facturation). Une seule condition claire vaut mieux que trois qui s'embrouillent.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Si montan fakti a pi gran pase 5000 goud → voye bay direktè a. Sinon → ajoute l nan fèy la sèlman.</p>
+                        <p lang="fr">Si le montant de la facture dépasse 5000 gourdes → envoyer au directeur. Sinon → ajouter seulement à la feuille.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ajoute yon kondisyon nan workflow pa l la epi teste ak 2 ka: youn ki pase, youn ki pa pase.</p>
+                        <p lang="fr">Chacun ajoute une condition à son workflow et la teste sur 2 cas : un qui passe, un qui ne passe pas.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-11">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">11</span>
+                        <h3><span lang="ht">Filtè, Retade ak Wout Altènatif</span><span lang="fr">Filtres, délais et routes alternatives</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa zouti kontwòl: yon filtè (rete sèlman sa ki matche), yon retade (tann X èdtan anvan aksyon an), ak yon dezyèm wout lè yon bagay rate (imèl la pa rive → voye yon rapèl). Retade a itil pou pa reponn twò vit nan yon kliyan.</p>
+                        <p lang="fr">Trois outils de contrôle : un filtre (ne garder que ce qui correspond), un délai (attendre X heures avant l'action), et une route alternative si quelque chose manque (e-mail non reçu → envoyer un rappel). Le délai évite de répondre trop vite à un client.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kòmand ki rive 6 è nan aswè → retade 2 èdtan → si kliyan an pa anile, voye mesaj konfimasyon → sinon, mete l nan yon liy « anile ».</p>
+                        <p lang="fr">Commande à 18 h → délai de 2 heures → si le client n'annule pas, envoyer la confirmation → sinon, l'ajouter à la ligne « annulée ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ajoute yon filtè oswa yon retade nan workflow pa l la.</p>
+                        <p lang="fr">Chacun ajoute un filtre ou un délai à son workflow.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-12">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">12</span>
+                        <h3><span lang="ht">Debogaj Ak Istoric Egzekisyon</span><span lang="fr">Débogage et historique d'exécution</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Lè workflow la pa mache, pa rekòmanse depi nan kòmansman: gade istorik egzekisyon an, chèche ki blo ki wouj, li mesaj erè a. Teste ak done fo (yon imèl ou voye ba ou menm), epi toujou verifye workflow la pa kouri 2 fwa menm kòmand lan.</p>
+                        <p lang="fr">Quand le workflow ne marche pas, ne repartez pas de zéro : ouvrez l'historique d'exécution, cherchez le bloc en rouge, lisez le message d'erreur. Testez avec de fausses données (un e-mail que vous vous envoyez) et vérifiez toujours que le workflow ne traite pas deux fois la même commande.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Erè « chan manke » → se aksyon an ki t ap chèche yon non ki pa nan fòm lan → ajoute yon valè pa defo: « si vid, ekri ENKONI ».</p>
+                        <p lang="fr">Erreur « champ manquant » → l'action cherchait un nom absent du formulaire → ajouter une valeur par défaut : « si vide, écrire INCONNU ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Animatè a kase yon workflow demonstrasyon; gwoup la jwenn blo a nan istorik la epi repare l.</p>
+                        <p lang="fr">L'animateur casse un workflow de démonstration ; le groupe trouve le bloc dans l'historique et le répare.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 5 -->
+        <section class="course-section" id="block-5">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 5 · Ka Konkrè &amp; Sekirite</span>
+                    <span lang="fr">Bloc 5 · Cas concrets &amp; sécurité</span>
+                    <span class="block-meta"><span lang="ht">leson 13–15 · 36 min</span><span lang="fr">leçons 13–15 · 36 min</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-13">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">13</span>
+                        <h3><span lang="ht">Twa Otomasyon Pou Yon Ti Biznis</span><span lang="fr">Trois automatisations pour un commerce</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa workflow ki bay rezilta rapid: (1) kòmand → liy nan tablo → mesaj konfimasyon; (2) fòm kontak → rezime IA → imèl bay moun ki responsab; (3) imèl fakti → dosye nan Drive → rapò chak semèn. Chwazi youn, pa twa.</p>
+                        <p lang="fr">Trois workflows qui rapportent vite : (1) commande → ligne au tableur → message de confirmation ; (2) formulaire de contact → résumé IA → e-mail au responsable ; (3) e-mail de facture → dossier dans Drive → rapport hebdomadaire. Choisissez-en un, pas trois.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Chak maten 6 è: rasanble kòmand veyè yo → IA fè yon rezime 5 pwen → voye l nan yon gwoup WhatsApp biznis la.</p>
+                        <p lang="fr">Chaque matin à 6 h : rassembler les commandes de la veille → l'IA fait un résumé en 5 points → l'envoyer au groupe WhatsApp du commerce.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun bati youn nan 3 workflow yo pou pwòp biznis pa l oswa travay pa l.</p>
+                        <p lang="fr">Chacun construit l'un des 3 workflows pour son propre commerce ou son travail.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-14">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">14</span>
+                        <h3><span lang="ht">Otomatize Travay Pèsonèl Ou</span><span lang="fr">Automatiser son travail personnel</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Menm prensip la pou lavi pèsonèl: nòt vokal → tèks → liy nan yon lis travay; imaj tikè → dosye ak dat; yon mesaj « rapèl mwen demen 8 è » → rapèl nan kalandriye. Objektif la se retire travay ki pa mande jijman ou.</p>
+                        <p lang="fr">Même principe pour la vie personnelle : note vocale → texte → ligne dans une liste de tâches ; photo de ticket → dossier daté ; message « rappelle-moi demain 8 h » → rappel au calendrier. L'objectif est de retirer le travail qui ne demande pas votre jugement.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Nòt vokal nan telefòn nan → IA transfòme l an 3 aksyon ki klè → li ajoute yo nan lis travay la.</p>
+                        <p lang="fr">Note vocale sur le téléphone → l'IA la transforme en 3 actions claires → la liste de tâches les ajoute.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini yon sèl ti travay li vle otomatize semèn sa a epi ekri workflow la sou papye.</p>
+                        <p lang="fr">Chacun définit une seule petite tâche à automatiser cette semaine et écrit le workflow sur papier.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-15">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">15</span>
+                        <h3><span lang="ht">Sekirite Done ak Limit Yo</span><span lang="fr">Sécurité des données et limites</span></h3>
+                        <span class="lesson-time">12 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pa janm pase nan yon workflow: modpas, nimewo kat, done medikal, oswa enfòmasyon yon kliyan san konsantman l. Pa otomatize yon mesaj ki ale deyò san yon moun valide l omwen premye semèn nan. Epi konnen limit la: yon workflow ki pa janm echwe se yon workflow ki pa t fèt pou travay reyèl.</p>
+                        <p lang="fr">Ne faites jamais transiter par un workflow : mots de passe, numéros de carte, données médicales, ni les informations d'un client sans son consentement. Ne laissez pas un message sortant partir sans validation humaine pendant la première semaine. Et connaissez la limite : un workflow qui n'échoue jamais est un workflow qui ne traitait pas de vrai travail.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Workflow repons otomatik pou plent → mete yon etap « tann apwobasyon moun nan » anvan mesaj la pati.</p>
+                        <p lang="fr">Workflow de réponse automatique aux plaintes → ajouter une étape « attendre l'approbation d'une personne » avant l'envoi.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Evalyasyon: chak moun di ki otomasyon li pral kouri semèn sa a, ak ki etap imen li kite ladan l.</p>
+                        <p lang="fr">Évaluation : chacun dit quelle automatisation il lancera cette semaine, et quelle étape humaine il y laisse.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FICH MODÈL WORKFLOW -->
+        <section class="course-section" id="fich-modeles">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Fich Modèl Workflow — pou distribiye bay patisipan yo</span>
+                    <span lang="fr">Fiche de modèles de workflows — à distribuer aux participants</span>
+                </h2>
+                <p class="section-lead" lang="ht">Kopye yon modèl, ranplase sa ki ant mak [ ] yo, epi rebati l nan zouti otomatizasyon ou chwazi a.</p>
+                <p class="section-lead" lang="fr">Copiez un modèle, remplacez ce qui est entre crochets [ ], puis reconstruisez-le dans votre outil d'automatisation.</p>
+
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Modèl: Kòmand Vant</span><span lang="fr">Modèle : Commande de vente</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: [fòm / mesaj WhatsApp] nouvo. Aksyon 1: ajoute [non, telefòn, pwodwi, montan] nan [fèy Sheets]. Aksyon 2: voye mesaj konfimasyon bay kliyan an. Kondisyon: sèlman si montan &gt; [X].</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : nouveau [formulaire / message WhatsApp]. Action 1 : ajouter [nom, téléphone, produit, montant] dans [Google Sheets]. Action 2 : envoyer une confirmation au client. Condition : seulement si montant &gt; [X].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Modèl: Fòm Kontak + IA</span><span lang="fr">Modèle : Formulaire de contact + IA</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: nouvo repons fòm. Aksyon 1: blo IA → « Rezime mesaj sa a an 2 fraz kreyòl, klase l nan [KÒMAND/PLEN/LOT], ekstrè telefòn nan. Si telefòn manke, ekri MANKE. » Aksyon 2: voye rezime a bay [moun responsab].</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : nouvelle réponse du formulaire. Action 1 : bloc IA → « Résume ce message en 2 phrases en créole, classe-le dans [COMMANDE/PLAINTE/AUTRE], extrais le téléphone. Si le téléphone manque, écris MANQUE. » Action 2 : envoyer le résumé au [responsable].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Modèl: Rezime Maten</span><span lang="fr">Modèle : Résumé du matin</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: chak jou 6:00. Aksyon 1: rasanble [imèl / mesaj] depi [vèspre]. Aksyon 2: blo IA → « Fè yon rezime 5 pwen an kreyòl senp, mete aksyon yo an premye, pa depase 80 mo. » Aksyon 3: voye l nan [WhatsApp / imèl].</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : chaque jour à 6 h 00. Action 1 : rassembler les [e-mails / messages] depuis [hier soir]. Action 2 : bloc IA → « Fais un résumé en 5 points en créole simple, mets les actions d'abord, ne dépasse pas 80 mots. » Action 3 : envoyer vers [WhatsApp / e-mail].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Modèl: Ekstrè Done Fakti</span><span lang="fr">Modèle : Extraction de facture</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: imèl ak pyès jwenti [PDF]. Aksyon 1: blo IA → « Ekstrè NON FOUNISÈ, DAT, MONTAN, VAT. Reponn sèlman ak 4 liy FMT: KEY=VALUE. » Aksyon 2: ajoute rezilta a nan [fèy]. Aksyon 3: sere PDF la nan [dosye Drive ak mwa a].</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : e-mail avec pièce jointe [PDF]. Action 1 : bloc IA → « Extrais FOURNISSEUR, DATE, MONTANT, TVA. Réponds uniquement en 4 lignes au format CLE=VALEUR. » Action 2 : ajouter le résultat au [tableur]. Action 3 : archiver le PDF dans [dossier Drive par mois].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Modèl: Notifikasyon WhatsApp</span><span lang="fr">Modèle : Notification WhatsApp</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: [estati kòmand] chanje. Kondisyon: sèlman si estati a = [pare pou livrezon]. Aksyon: voye mesaj: « Bonjou {non}, kòmand {n} ou pare. Livrezon: {dat}. » Retade: tann [2 èdtan] anvan premye rapèl.</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : changement de [statut de commande]. Condition : seulement si statut = [prêt à livrer]. Action : envoyer « Bonjour {nom}, votre commande {n} est prête. Livraison : {date}. » Délai : attendre [2 heures] avant le premier rappel.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card prompt-card--magic">
+                        <h3><span lang="ht">Modèl Majik · Tout Workflow</span><span lang="fr">Modèle passe-partout · Tout workflow</span></h3>
+                        <p class="prompt-text" lang="ht">Deklanche: [ki bagay ki rive]. Filtè: sèlman si [kondisyon]. Done: pran [chan yo]. IA: [aksyon IA] nan [lang], [longè], [fòma]; si done a manke → [valè pa defo]. Aksyon: [rezilta a ale ki kote]. Pwoteksyon: [ki etap yon moun dwe valide] epi pa janm pase [done sansib].</p>
+                        <p class="prompt-text" lang="fr">Déclencheur : [ce qui se passe]. Filtre : seulement si [condition]. Données : capturer [les champs]. IA : [action de l'IA] dans [langue], [longueur], [format] ; si la donnée manque → [valeur par défaut]. Action : [où va le résultat]. Protection : [étape à valider par un humain] et ne jamais faire transiter [donnée sensible].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÒT ANIMASYON -->
+        <section class="course-section" id="not-animasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Nòt pou Animasyon — Kreyòl &amp; Fransè</span>
+                    <span lang="fr">Notes d'animation — créole &amp; français</span>
+                </h2>
+
+                <div class="note-grid">
+                    <div class="note">
+                        <h3><span lang="ht">Lang</span><span lang="fr">Langue</span></h3>
+                        <p lang="ht">Prezante chak leson an kreyòl, mete tradiksyon fransè a anba a sou chak slide. Mo teknik yo (trigger, action, variable, OAuth) rete an anglè paske se konsa yo parèt nan zouti a — eksplike yo yon fwa, epi repete yo.</p>
+                        <p lang="fr">Présentez chaque leçon en créole, avec la traduction française en dessous sur chaque diapositive. Les mots techniques (trigger, action, variable, OAuth) restent en anglais car c'est ainsi qu'ils apparaissent dans l'outil — expliquez-les une fois, puis répétez-les.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Ritm</span><span lang="fr">Rythme</span></h3>
+                        <p lang="ht">12 minit pa leson: 2 min eksplikasyon + 6 min demonstrasyon sou zouti a + 4 min patisipan yo bati. Pa kite demonstrasyon an manje tan aktivite a — se la aprantisaj la fèt.</p>
+                        <p lang="fr">12 minutes par leçon : 2 min d'explication + 6 min de démonstration dans l'outil + 4 min de construction par les participants. Ne laissez pas la démonstration voler le temps de l'activité — c'est là que l'apprentissage se produit.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></h3>
+                        <p lang="ht">Prepare avan kou a: yon kont zouti otomatizasyon ak plan gratis la, yon imèl test, yon fèy Google Sheets vid, ak yon fòm ki deja gen 2 repons. San prepare sa, Blòk 1 ap depase 36 minit.</p>
+                        <p lang="fr">Préparer avant le cours : un compte d'automatisation avec le plan gratuit, une adresse de test, une Google Sheet vide et un formulaire contenant déjà 2 réponses. Sans cela, le bloc 1 dépassera 36 minutes.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Sekirite</span><span lang="fr">Sécurité</span></h3>
+                        <p lang="ht">Pa janm konekte kont pèsonèl patisipan yo nan kont demonstrasyon an. Pa mete done reyèl kliyan nan kou a — itilize non fo (« Kliyan Test »). Apre kou a, di gwoup la dekonekte kont yo epi efase workflow demonstrasyon yo.</p>
+                        <p lang="fr">Ne connectez jamais les comptes personnels des participants au compte de démonstration. N'utilisez pas de vraies données clients — employez de faux noms (« Client Test »). À la fin, demandez au groupe de déconnecter les comptes et de supprimer leurs workflows de démonstration.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Evalyasyon</span><span lang="fr">Évaluation</span></h3>
+                        <p lang="ht">Nan fen kou a, chak patisipan montre yon workflow ki kouri omwen yon fwa (istorik la parèt) epi di ki travay reyèl li pral retire semèn sa a.</p>
+                        <p lang="fr">À la fin du cours, chaque participant montre un workflow exécuté au moins une fois (l'historique s'affiche) et cite la tâche réelle qu'il supprimera cette semaine.</p>
+                    </div>
+                </div>
+
+                <p class="course-disclaimer" lang="ht">Nòt: sa a se yon gid animasyon. Make, Zapier, n8n, Power Automate, Google ak WhatsApp se mak pwopriyetè yo. Pri, plan gratis ak lis entegrasyon yo chanje — verifye sou sit ofisyèl zouti a avan ou bay gwoup la yon enfòmasyon.</p>
+                <p class="course-disclaimer" lang="fr">Note : ceci est un guide d'animation. Make, Zapier, n8n, Power Automate, Google et WhatsApp sont des marques de leurs propriétaires. Prix, plans gratuits et listes d'intégrations évoluent — vérifiez sur le site officiel de l'outil avant d'affirmer quoi que ce soit au groupe.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="course-footer">
+        <div class="course-wrap">
+            <p>
+                <a href="./#track-amateur"><span lang="ht">← Retounen nan Parcours Amateur</span><span lang="fr">← Retour au Parcours Amateur</span></a>
+                · <a href="kou-intro-chatgpt.html"><span lang="ht">Kou 1</span><span lang="fr">Cours 1</span></a>
+                · <a href="kou-ia-images.html"><span lang="ht">Kou 2</span><span lang="fr">Cours 2</span></a>
+                · Akademi Clairtech · 2026
+            </p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script>
+        (() => {
+            const TITLE = {
+                ht: 'Otomatizasyon San Code — Akademi Clairtech',
+                fr: 'Automatisation No-Code — Akademi Clairtech'
+            };
+            const COPIED = { ht: 'Modèl la kopye.', fr: 'Modèle copié.' };
+            const toast = document.getElementById('toast');
+            const buttons = [...document.querySelectorAll('.lang-btn')];
+            let lang = 'ht';
+            let toastTimer;
+
+            function setLang(next) {
+                lang = next === 'fr' ? 'fr' : 'ht';
+                document.documentElement.lang = lang;
+                document.title = TITLE[lang];
+                buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+                try {
+                    localStorage.setItem('akademi-lang', lang);
+                } catch (err) {
+                    /* stockage indisponible : le choix tient pour la page courante */
+                }
+            }
+
+            function showToast(text) {
+                if (!toast) return;
+                toast.textContent = text;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => setLang(button.dataset.lang));
+            });
+
+            document.querySelectorAll('[data-copy]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const card = button.closest('.prompt-card');
+                    const source = card && card.querySelector(`.prompt-text[lang="${lang}"]`);
+                    if (!source) return;
+                    const text = source.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (err) {
+                        const area = document.createElement('textarea');
+                        area.value = text;
+                        area.setAttribute('readonly', '');
+                        area.className = 'sr-only';
+                        document.body.appendChild(area);
+                        area.select();
+                        const ok = document.execCommand('copy');
+                        area.remove();
+                        if (!ok) return;
+                    }
+                    showToast(COPIED[lang]);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('akademi-lang');
+            } catch (err) {
+                /* ignore */
+            }
+            setLang(saved || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'ht'));
+        })();
+    </script>
+</body>
+</html>

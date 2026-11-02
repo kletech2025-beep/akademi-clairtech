@@ -15,8 +15,10 @@ Site vitrine statique pour des cours et astuces autour de l'IA, pour les niveaux
 ├── index.html                  # Structure et contenu fixe
 ├── styles.css                  # Design, motion system, responsive
 ├── app.js                      # Hero, cours, astuces, newsletter, interactions
-├── kou-intro-chatgpt.html      # Fiche de cours bilingue (créole / français)
-├── course.css                  # Styles de la fiche de cours + impression
+├── kou-intro-chatgpt.html      # Fiche de cours 1 : Introduction à ChatGPT
+├── kou-ia-images.html          # Fiche de cours 2 : IA générative d'images
+├── kou-otomatisasyon.html      # Fiche de cours 3 : Automatisation no-code
+├── course.css                  # Styles des fiches de cours + impression
 ├── assets/
 │   ├── favicon.svg
 │   ├── hero-poster.jpg         # Première image de la vidéo
@@ -43,13 +45,20 @@ Les données sont dans `app.js` :
 - `TIPS` : douze astuces, catégories `prompting`, `tools`, `workflow`, `code`.
 - Les cartes sont générées au chargement ; aucun CMS ni backend n'est branché.
 
-### `kou-intro-chatgpt.html`
+### Fiches de cours (`kou-*.html`)
 
-Fiche de cours complète du cours 1 (12 leçons, 3 blocs, fiche de prompts, notes
-d'animation). Le contenu est écrit deux fois, en `<span lang="ht">` et `<span lang="fr">` :
-`course.css` masque la langue inactive selon `<html lang>`, et le script de la page
-bascule `document.documentElement.lang` et mémorise le choix en `localStorage`
-(`akademi-lang`). Les textes restent lisibles sans JavaScript et à l'impression.
+`kou-intro-chatgpt.html` (12 leçons, 3 blocs), `kou-ia-images.html` (18 leçons, 6 blocs)
+et `kou-otomatisasyon.html` (15 leçons, 5 blocs) portent le plan complet du cours : leçons
+(contenu / exemple / activité), fiche de prompts ou de modèles, et notes d'animation. Le
+contenu est écrit deux fois, en `<span lang="ht">` et
+`<span lang="fr">` : `course.css` masque la langue inactive selon `<html lang>`, et le
+script de la page bascule `document.documentElement.lang` et mémorise le choix en
+`localStorage` (`akademi-lang`). Les textes restent lisibles sans JavaScript et à
+l'impression.
+
+Pour ajouter un cours : copier une fiche, remplacer les textes, garder les classes de
+`course.css`, déclarer le fichier dans la liste `cp` du workflow de déploiement, puis
+renseigner `url` et `note` dans `COURSES`.
 
 La newsletter et les liens marqués `data-soon` sont des démonstrations. Ils affichent
 un message « bientôt disponible » et doivent être branchés avant une mise en production.
