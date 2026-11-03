@@ -64,7 +64,8 @@ script de la page bascule `document.documentElement.lang` et mémorise le choix 
 l'impression.
 
 Chaque leçon de `kou-intro-chatgpt.html` (10 minutes), de `kou-ia-images.html`
-(13 minutes) et de `kou-otomatisasyon.html` (12 minutes) porte aussi un **déroulé minute par minute**
+(13 minutes), de `kou-otomatisasyon.html` (12 minutes) et de `kou-fine-tuning.html`
+(24 minutes) porte aussi un **déroulé minute par minute**
 (`.part-run` : quatre créneaux `.run-step` dont les durées s'enchaînent et somment la
 durée de la leçon, plus deux lignes `.run-side` — ce qu'on écrit au tableau, ce qu'il faut
 éviter) et une **figure SVG inline** (`<figure class="figure">` : silhouettes et diagrammes
@@ -72,8 +73,8 @@ dessinés à la main dans le fichier, avec `<text lang="ht">` / `<text lang="fr"
 une légende bilingue). Ces deux blocs sont purement additifs : les classes vivent dans
 `course.css`, les animations se coupent en `prefers-reduced-motion` et à l'impression, et
 sur petit écran la figure se fait défiler horizontalement au lieu de réduire ses libellés.
-Les trois fiches restantes doivent adopter le même motif, en adaptant les bornes des
-créneaux à la durée de leurs leçons (24, 20 ou 22 minutes).
+Les deux fiches restantes doivent adopter le même motif, en adaptant les bornes des
+créneaux à la durée de leurs leçons (20 ou 22 minutes).
 
 Pour ajouter un cours : copier une fiche, remplacer les textes, garder les classes de
 `course.css`, déclarer le fichier dans la liste `cp` du workflow de déploiement, l'ajouter
