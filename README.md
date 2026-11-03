@@ -63,8 +63,8 @@ script de la page bascule `document.documentElement.lang` et mémorise le choix 
 `localStorage` (`akademi-lang`). Les textes restent lisibles sans JavaScript et à
 l'impression.
 
-Chaque leçon de `kou-intro-chatgpt.html` (10 minutes) et de `kou-ia-images.html`
-(13 minutes) porte aussi un **déroulé minute par minute**
+Chaque leçon de `kou-intro-chatgpt.html` (10 minutes), de `kou-ia-images.html`
+(13 minutes) et de `kou-otomatisasyon.html` (12 minutes) porte aussi un **déroulé minute par minute**
 (`.part-run` : quatre créneaux `.run-step` dont les durées s'enchaînent et somment la
 durée de la leçon, plus deux lignes `.run-side` — ce qu'on écrit au tableau, ce qu'il faut
 éviter) et une **figure SVG inline** (`<figure class="figure">` : silhouettes et diagrammes
