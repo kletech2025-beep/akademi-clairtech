@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kou Otimizasyon Modèl yo — mezire, kwantifye, taye epi sèvi yon modèl IA an prodiksyon: 30 leson, 12 èdtan, nivo pro. Cours d'optimisation et d'inférence de modèles IA en créole haïtien et en français.">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="dark">
+    <title>Otimizasyon Modèl yo — Akademi Clairtech</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+    <a class="skip-link" href="#main">
+        <span lang="ht">Ale dirèk nan kontni an</span>
+        <span lang="fr">Aller au contenu</span>
+    </a>
+
+    <header class="course-topbar">
+        <div class="course-wrap course-topbar-inner">
+            <a class="course-back" href="./">
+                <span lang="ht">← Retounen sou sit la</span>
+                <span lang="fr">← Retour au site</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Lang / Langue">
+                <button type="button" class="lang-btn" data-lang="ht" aria-pressed="true">Kreyòl</button>
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- PREZANTASYON -->
+        <section class="course-hero">
+            <div class="course-wrap">
+                <p class="course-kicker">
+                    <span lang="ht">Kou 6 · Parcours Expert</span>
+                    <span lang="fr">Cours 6 · Parcours Expert</span>
+                </p>
+
+                <h1 class="course-title">
+                    <span lang="ht">Otimizasyon Modèl yo — Rann IA Ou Pèfòman an Prodiksyon</span>
+                    <span lang="fr">Optimisation de Modèles — Rendre vos IA performantes en production</span>
+                </h1>
+
+                <p class="course-objective" lang="ht">
+                    <strong>Objektif jeneral:</strong> nan fen kou a, patisipan yo ap kapab mezire pèfòmans yon modèl an
+                    prodiksyon, kwantifye l oswa taye l san yo pa pèdi kalite kritik, chwazi yon estrateji sèvis (batch,
+                    cache, routing), epi defann desizyon yo ak chif: tan, pri, memwa ak kalite.
+                </p>
+                <p class="course-objective" lang="fr">
+                    <strong>Objectif général :</strong> à la fin du cours, les participants savent mesurer la performance
+                    d'un modèle en production, le quantifier ou l'élaguer sans perdre la qualité critique, choisir une
+                    stratégie de serving (batch, cache, routage) et défendre leurs décisions par les chiffres : latence,
+                    coût, mémoire et qualité.
+                </p>
+
+                <dl class="fact-grid">
+                    <div class="fact">
+                        <dt><span lang="ht">Dire</span><span lang="fr">Durée</span></dt>
+                        <dd><span lang="ht">12 èdtan</span><span lang="fr">12 heures</span></dd>
+                        <dd class="fact-sub"><span lang="ht">30 leson × 22 minit + 6 poz</span><span lang="fr">30 leçons × 22 min + 6 pauses</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Piblik</span><span lang="fr">Public</span></dt>
+                        <dd><span lang="ht">Devlopè ki deja deplwaye yon modèl</span><span lang="fr">Développeurs ayant déjà déployé un modèle</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Konfòtab ak Python ak liy kòmand</span><span lang="fr">À l'aise avec Python et ligne de commande</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Anviwònman</span><span lang="fr">Environnement</span></dt>
+                        <dd><span lang="ht">Python 3.10+, PyTorch oswa llama.cpp</span><span lang="fr">Python 3.10+, PyTorch ou llama.cpp</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Yon GPU oswa yon CPU ak 16 GB RAM</span><span lang="fr">Un GPU ou un CPU avec 16 Go de RAM</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></dt>
+                        <dd><span lang="ht">Yon modèl louvri 7B pou teste</span><span lang="fr">Un modèle ouvert 7B à tester</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Ak yon seri tès 50 ka</span><span lang="fr">Et un jeu de test de 50 cas</span></dd>
+                    </div>
+                </dl>
+
+                <table class="plan-table">
+                    <caption class="sr-only">
+                        <span lang="ht">Estrikti jeneral kou a: 6 blòk, 30 leson, 660 minit travay ak 6 poz 10 minit</span>
+                        <span lang="fr">Structure générale du cours : 6 blocs, 30 leçons, 660 minutes de travail et 6 pauses de 10 minutes</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span lang="ht">Blòk</span><span lang="fr">Bloc</span></th>
+                            <th scope="col"><span lang="ht">Leson</span><span lang="fr">Leçons</span></th>
+                            <th scope="col"><span lang="ht">Objektif</span><span lang="fr">Objectif</span></th>
+                            <th scope="col"><span lang="ht">Dire</span><span lang="fr">Durée</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 1: Mezi anvan tout</span><span lang="fr">Bloc 1 : Mesurer d'abord</span></th>
+                            <td>1–5</td>
+                            <td><span lang="ht">Konprann sa pèfòmans ye, etabli yon bazlin reprodiktib, epi jwenn kote tan ak memwa pase.</span><span lang="fr">Définir la performance, poser une base line reproductible et localiser le temps et la mémoire.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 2: Kwantifikasyon</span><span lang="fr">Bloc 2 : Quantification</span></th>
+                            <td>6–10</td>
+                            <td><span lang="ht">Konprann fòma nonm yo, kwantifye yon modèl sou GPU oswa CPU, epi mezire pèt kalite a.</span><span lang="fr">Comprendre les formats numériques, quantifier sur GPU ou CPU et mesurer la perte de qualité.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 3: Taye ak Distilasyon</span><span lang="fr">Bloc 3 : Élagage et distillation</span></th>
+                            <td>11–15</td>
+                            <td><span lang="ht">Redwi gwosè modèl la pa taye, konpresyon oswa distilasyon, epi konpare ak ti modèl dirèk.</span><span lang="fr">Réduire la taille par élagage, compression ou distillation, et comparer aux petits modèles directs.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 4: Sèvis ak Eskalman</span><span lang="fr">Bloc 4 : Serving et scalabilité</span></th>
+                            <td>16–20</td>
+                            <td><span lang="ht">Ogmante debi a ak batch, cache KV ak PagedAttention, epi dimensionen enfrastrikti a.</span><span lang="fr">Débit, cache KV et attention paginée, puis dimensionnement de l'infrastructure.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 5: Kalite anba Kontraint</span><span lang="fr">Bloc 5 : Qualité sous contraintes</span></th>
+                            <td>21–25</td>
+                            <td><span lang="ht">Pwouve optimizasyon an pa kase repons yo, deplwaye dousman, epi prepare wout sekou a.</span><span lang="fr">Prouver que l'optimisation ne casse rien, déployer progressivement et prévoir le secours.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 6: Desizyon ak Rapò</span><span lang="fr">Bloc 6 : Décision et rapport</span></th>
+                            <td>26–30</td>
+                            <td><span lang="ht">Fè chwa a ak chif, ekri plan migrasyon an, epi prezante rezilta a san egzajere.</span><span lang="fr">Arbitrer par les chiffres, écrire le plan de migration et présenter les résultats sans enjoliver.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOMMÈ -->
+        <section class="course-section">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Sommè leson yo</span>
+                    <span lang="fr">Sommaire des leçons</span>
+                </h2>
+                <ol class="toc">
+                    <li><a href="#lesson-1"><span lang="ht">Kisa Pèfòmans Ye pou Yon Modèl?</span><span lang="fr">Qu'est-ce que la performance d'un modèle ?</span></a></li>
+                    <li><a href="#lesson-2"><span lang="ht">Bazlin: Mezi anvan Manyen</span><span lang="fr">Base line : mesurer avant de toucher</span></a></li>
+                    <li><a href="#lesson-3"><span lang="ht">Kote Tan ak Memwa Pase</span><span lang="fr">Où passent le temps et la mémoire</span></a></li>
+                    <li><a href="#lesson-4"><span lang="ht">Metrik Ki Gen Sans</span><span lang="fr">Des métriques qui ont du sens</span></a></li>
+                    <li><a href="#lesson-5"><span lang="ht">Bidjè ak SLA an Ekri</span><span lang="fr">Budget et SLA par écrit</span></a></li>
+                    <li><a href="#lesson-6"><span lang="ht">Fòma Nonm yo: FP16 a INT4</span><span lang="fr">Formats numériques : du FP16 à l'INT4</span></a></li>
+                    <li><a href="#lesson-7"><span lang="ht">PTQ vs QAT</span><span lang="fr">PTQ et QAT</span></a></li>
+                    <li><a href="#lesson-8"><span lang="ht">GPTQ ak AWQ pou GPU</span><span lang="fr">GPTQ et AWQ pour GPU</span></a></li>
+                    <li><a href="#lesson-9"><span lang="ht">GGUF ak llama.cpp pou CPU</span><span lang="fr">GGUF et llama.cpp pour CPU</span></a></li>
+                    <li><a href="#lesson-10"><span lang="ht">Mezi Pèt Kalite a</span><span lang="fr">Mesurer la perte de qualité</span></a></li>
+                    <li><a href="#lesson-11"><span lang="ht">Pruning: Ki Sa Pou W Taye?</span><span lang="fr">Élagage : quoi couper ?</span></a></li>
+                    <li><a href="#lesson-12"><span lang="ht">Konpresyon San Touchen Pwa yo</span><span lang="fr">Compression sans toucher aux poids</span></a></li>
+                    <li><a href="#lesson-13"><span lang="ht">Distilasyon: Gwo Modèl Enseyen Ti Modèl</span><span lang="fr">Distillation : le grand modèle enseigne le petit</span></a></li>
+                    <li><a href="#lesson-14"><span lang="ht">Ti Modèl Jodi a: Ki Sa Yo Ka Fè?</span><span lang="fr">Petits modèles actuels : que savent-ils faire ?</span></a></li>
+                    <li><a href="#lesson-15"><span lang="ht">Routing: Chwazi Modèl pa Demann</span><span lang="fr">Routage : choisir le modèle par requête</span></a></li>
+                    <li><a href="#lesson-16"><span lang="ht">Batch Dinamik</span><span lang="fr">Batch dynamique</span></a></li>
+                    <li><a href="#lesson-17"><span lang="ht">Cache KV: Memwa Kalkil La</span><span lang="fr">Cache KV : la mémoire du calcul</span></a></li>
+                    <li><a href="#lesson-18"><span lang="ht">PagedAttention ak vLLM</span><span lang="fr">Attention paginée et vLLM</span></a></li>
+                    <li><a href="#lesson-19"><span lang="ht">Decoding Espekilatif</span><span lang="fr">Décodage spéculatif</span></a></li>
+                    <li><a href="#lesson-20"><span lang="ht">Chwa Enfrastrikti: GPU, VRAM, Replik</span><span lang="fr">Choix d'infrastructure : GPU, VRAM, répliques</span></a></li>
+                    <li><a href="#lesson-21"><span lang="ht">Tès Regresyon: Optimize San Kase</span><span lang="fr">Tests de régression : optimiser sans casser</span></a></li>
+                    <li><a href="#lesson-22"><span lang="ht">Canary ak A/B pou Yon Modèl</span><span lang="fr">Canary et A/B pour un modèle</span></a></li>
+                    <li><a href="#lesson-23"><span lang="ht">Obsèrvabilite an Prodiksyon</span><span lang="fr">Observabilité en production</span></a></li>
+                    <li><a href="#lesson-24"><span lang="ht">Lisans, Done ak Sekirite Modèl</span><span lang="fr">Licences, données et sécurité du modèle</span></a></li>
+                    <li><a href="#lesson-25"><span lang="ht">Degradasyon Gras ak Wout Sekou</span><span lang="fr">Dégradation gracieuse et chemin de secours</span></a></li>
+                    <li><a href="#lesson-26"><span lang="ht">Etid Ka: Gwo Modèl vs Ti Modèl Kwantifye</span><span lang="fr">Étude de cas : grand modèle vs petit quantifié</span></a></li>
+                    <li><a href="#lesson-27"><span lang="ht">Prompt oswa Modèl: Ki Levye Ki Pi Vit?</span><span lang="fr">Prompt ou modèle : quel levier est plus rapide ?</span></a></li>
+                    <li><a href="#lesson-28"><span lang="ht">Plan Migrasyon ak Rollback</span><span lang="fr">Plan de migration et rollback</span></a></li>
+                    <li><a href="#lesson-29"><span lang="ht">Rapò Pèfòmans ak Chif Onèt</span><span lang="fr">Rapport de performance chiffré et honnête</span></a></li>
+                    <li><a href="#lesson-30"><span lang="ht">Prezante Optimizasyon Pa Ou</span><span lang="fr">Présentez votre optimisation</span></a></li>
+                </ol>
+            </div>
+        </section>
+        <!-- BLÒK 1 -->
+        <section class="course-section" id="block-1">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 1 · Mezi anvan tout</span>
+                    <span lang="fr">Bloc 1 · Mesurer d'abord</span>
+                    <span class="block-meta"><span lang="ht">leson 1–5 · 1 h 50 + poz</span><span lang="fr">leçons 1–5 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-1">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">1</span>
+                        <h3><span lang="ht">Kisa Pèfòmans Ye pou Yon Modèl?</span><span lang="fr">Qu'est-ce que la performance d'un modèle ?</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pèfòmans pa se « pi vit » sèlman: kat dimansyon — tan anvan premye mo a, dire total repons lan, kantite mo pa segond, memwa ak pri pa repons. Amelyore youn ka detwi lòt la: yon gwo batch bese pri a men li ogmante tan tann nan.</p>
+                        <p lang="fr">La performance n'est pas seulement la vitesse : quatre dimensions — délai avant le premier mot, durée totale, mots par seconde, mémoire et coût par réponse. Améliorer l'une peut dégrader l'autre : un batch plus grand baisse le coût mais allonge l'attente.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm modèl la: 1 demann alèz → premye mo nan 0,9 s · 40 demann an menm tan → premye mo nan 3 s, men 28 fwa plis repons pa minit.</p>
+                        <p lang="fr">Même modèle : une requête isolée → premier mot à 0,9 s · 40 requêtes simultanées → premier mot à 3 s, mais 28 fois plus de réponses par minute.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 4 chif yo vle kontwole pou ka pa yo ak limit ki akseptab pou chak youn.</p>
+                        <p lang="fr">Chacun note les 4 chiffres à surveiller pour son cas et la limite acceptable pour chacun.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-2">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">2</span>
+                        <h3><span lang="ht">Bazlin: Mezi anvan Manyen</span><span lang="fr">Base line : mesurer avant de toucher</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon bazlin se yon mezire reprodiktib: menm seri tès, menm grenn (seed), menm tanperati, menm machin, menm vèsyon pakè. San sa, w ap konpare bri ak bri — epi w ap deklare yon amelyorasyon ki pa egziste.</p>
+                        <p lang="fr">Une base line est une mesure reproductible : même jeu de tests, même graine, même température, même machine, même version de paquets. Sans cela, on compare du bruit avec du bruit et on déclare des améliorations fantômes.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">3 pase, 50 ka, tanperati 0: 11,2 s / 11,4 s / 11,3 s → bazlin solid. Si 8 s / 15 s / 11 s → bri a twò gwo pou konpare anyen.</p>
+                        <p lang="fr">Trois passes, 50 cas, température 0 : 11,2 s / 11,4 s / 11,3 s → base line solide. Si 8 s / 15 s / 11 s → le bruit empêche toute comparaison.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun kouri bazlin modèl pa yo epi note 3 chif: tan mwayèn, memwa maksimòm, pri pa 100 repons.</p>
+                        <p lang="fr">Chacun exécute la base line de son modèle et note 3 chiffres : temps moyen, mémoire maximale, coût pour 100 réponses.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-3">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">3</span>
+                        <h3><span lang="ht">Kote Tan ak Memwa Pase</span><span lang="fr">Où passent le temps et la mémoire</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Gen de faz: prefill (li tout kontèks la — se kalkil ki lou) ak decode (ekri yon mo pa fwa — se memwa ki manje l). Yon kontèks 8 000 mo ka koute plis pase yon repons 200 mo. Memwa a = pwa modèl la + cache kontèks la.</p>
+                        <p lang="fr">Deux phases : le prefill (lire tout le contexte — calcul intensif) et le décodage (un mot à la fois — gourmand en mémoire). 8 000 mots de contexte peuvent coûter plus que 200 mots de réponse. La mémoire, c'est les poids plus le cache de contexte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm repons lan: 200 mo kontèks → 1,1 s · 8 000 mo kontèks → 6,4 s → se kontèks la ki chè, pa repons lan.</p>
+                        <p lang="fr">Même réponse : 200 mots de contexte → 1,1 s · 8 000 mots → 6,4 s → ce qui coûte, c'est le contexte, pas la réponse.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun mezire faz prefill ak faz decode separeman sou yon menm demann epi di ki youn ki pi long.</p>
+                        <p lang="fr">Chacun mesure séparément le prefill et le décodage d'une même requête et dit laquelle des deux phases domine.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-4">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">4</span>
+                        <h3><span lang="ht">Metrik Ki Gen Sans</span><span lang="fr">Des métriques qui ont du sens</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Mwayèn nan kache pwoblèm nan: itilize p50 ak p95 (p99 si sèvis la kritik). Mezire tou repons ki echwe, repons ki twò long, ak pousantaj repons ki nan fòma ou mande a. Yon sèl chif pa janm ase pou defann yon desizyon.</p>
+                        <p lang="fr">La moyenne masque les problèmes : utiliser p50 et p95 (p99 si le service est critique). Mesurer aussi les échecs, les réponses trop longues et le pourcentage de réponses au format attendu. Un seul chiffre ne suffit jamais.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">p50 = 1,2 s · p95 = 4,8 s → 1 itilizatè sou 20 tann 4 fwa plis longè. Mwayèn 1,6 s kache sa nèt.</p>
+                        <p lang="fr">p50 = 1,2 s · p95 = 4,8 s → un utilisateur sur vingt attend quatre fois plus longtemps. La moyenne de 1,6 s le cache complètement.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini p50 ak p95 pou 2 metrik, ak ki valè ki dwe deklanche yon alèt.</p>
+                        <p lang="fr">Chacun définit p50 et p95 sur 2 métriques et le seuil qui doit déclencher une alerte.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-5">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">5</span>
+                        <h3><span lang="ht">Bidjè ak SLA an Ekri</span><span lang="fr">Budget et SLA par écrit</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ekri limit yo anvan w optimize: konbyen repons pa jou, ki tan maksimòm, ki pri maksimòm pa repons, ki kalite minimòm akseptab. San limit sa yo, yon « optimizasyon » se jis deplase bagay yo san fen.</p>
+                        <p lang="fr">Écrire les bornes avant d'optimiser : volume par jour, latence maximale, coût maximal par réponse, qualité minimale acceptable. Sans ces bornes, optimiser revient à déplacer des choses sans fin.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">20 000 repons/jou · p95 &lt; 3 s · pri ≤ 0,004 USD pa repons · eval ≥ 85/100 → tout chwa ki manke youn nan 4 liy sa yo tonbe.</p>
+                        <p lang="fr">20 000 réponses/jour · p95 &lt; 3 s · coût ≤ 0,004 USD par réponse · évaluation ≥ 85/100 → toute option qui manque un de ces quatre chiffres est écartée.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 4 limit pa yo epi idantifye ki youn ki pi sere jodi a.</p>
+                        <p lang="fr">Chacun écrit ses 4 limites et identifie celle qui est la plus contraignante aujourd'hui.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 2 -->
+        <section class="course-section" id="block-2">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 2 · Kwantifikasyon</span>
+                    <span lang="fr">Bloc 2 · Quantification</span>
+                    <span class="block-meta"><span lang="ht">leson 6–10 · 1 h 50 + poz</span><span lang="fr">leçons 6–10 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-6">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">6</span>
+                        <h3><span lang="ht">Fòma Nonm yo: FP16 a INT4</span><span lang="fr">Formats numériques : du FP16 à l'INT4</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Chak pwa se yon nonm: FP32 = 4 oktet, FP16/BF16 = 2 okte, INT8 = 1 okte, INT4 = yon demi okte. Mwens oktet = mwens memwa ak plis vitès, men plis erè arondi. Kwantifikasyon se chwazi konbyen erè ou pare pou aksepte.</p>
+                        <p lang="fr">Chaque poids est un nombre : FP32 = 4 octets, FP16/BF16 = 2, INT8 = 1, INT4 = un demi. Moins d'octets, c'est moins de mémoire et plus de vitesse, mais plus d'erreur d'arrondi. Quantifier, c'est choisir combien d'erreur on accepte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Modèl 7B: FP16 ≈ 14 GB · INT8 ≈ 7 GB · INT4 ≈ 3,5–4 GB → INT4 la antre sou yon kat 6 GB, FP16 la pa antre ditou.</p>
+                        <p lang="fr">Modèle 7B : FP16 ≈ 14 Go · INT8 ≈ 7 Go · INT4 ≈ 3,5–4 Go → l'INT4 tient sur une carte de 6 Go, le FP16 non plus.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun kalkile gwosè modèl pa yo nan 3 fòma epi di ki materyèl sa mande.</p>
+                        <p lang="fr">Chacun calcule la taille de son modèle dans 3 formats et indique le matériel nécessaire.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-7">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">7</span>
+                        <h3><span lang="ht">PTQ vs QAT</span><span lang="fr">PTQ et QAT</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">PTQ: pran modèl ki deja antrene a epi konvèti l — kout, fasil, ti done. QAT: antrene an simule fòma a — miyò kalite a 4 bit, men li mande kalkil ak done. Kòmanse ak PTQ; pase nan QAT sèlman si eval la di kalite a tonbe twòp.</p>
+                        <p lang="fr">PTQ : convertir un modèle déjà entraîné — court, simple, peu de données. QAT : entraîner en simulant le format — meilleure qualité à 4 bits, mais coûteux. Commencer par PTQ ; passer au QAT seulement si l'évaluation accuse une chute trop forte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm modèl la, eval 50 ka: FP16 88 · INT8 PTQ 87 · INT4 PTQ 82 · INT4 QAT 86 → QAT vo lapenn sèlman lè 4 bit obligatwa.</p>
+                        <p lang="fr">Même modèle, évaluation sur 50 cas : FP16 88 · INT8 PTQ 87 · INT4 PTQ 82 · INT4 QAT 86 → le QAT ne vaut la peine que si le 4 bits est obligatoire.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun chwazi PTQ oswa QAT pou ka yo epi ekri rezon an nan yon sèl fraz.</p>
+                        <p lang="fr">Chacun choisit PTQ ou QAT pour son cas et justifie en une phrase.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-8">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">8</span>
+                        <h3><span lang="ht">GPTQ ak AWQ pou GPU</span><span lang="fr">GPTQ et AWQ pour GPU</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">GPTQ ak AWQ se de metòd PTQ 4 bit pou GPU. Yo mande yon ti seri kalibrasyon (128 a 512 egzanp ki sanble ak pwodiksyon an). Si kalibrasyon an pa resanble ak itilizasyon reyèl la, modèl la pèdi presizyon egzakteman kote ki enpòtan an.</p>
+                        <p lang="fr">GPTQ et AWQ sont deux méthodes PTQ 4 bits pour GPU. Elles exigent un jeu de calibrage (128 à 512 exemples proches de la production). Un calibrage hors distribution dégrade précisément là où cela compte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kalibre ak tèks jeneral → repons jeneral yo bon, men fòma JSON ou mande a kase. Kalibre ak pwòp done pwodiksyon an → fòma a rete valab.</p>
+                        <p lang="fr">Calibrage sur texte généraliste : les réponses générales sont bonnes, mais le JSON demandé casse. Calibrage sur les données de production : le format tient.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun chwazi 3 kalite egzanp pou kalibrasyon ka yo epi ekri sa yo pa vle wè ladan l.</p>
+                        <p lang="fr">Chacun retient 3 types d'exemples pour son calibrage et écrit ce qu'il ne veut surtout pas y voir.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-9">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">9</span>
+                        <h3><span lang="ht">GGUF ak llama.cpp pou CPU</span><span lang="fr">GGUF et llama.cpp pour CPU</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">GGUF se fòma fichye llama.cpp: li mache sou CPU, sou Apple Silicon, ak sou ti GPU, ak nivo kwantifikasyon (Q8, Q6, Q5, Q4, Q3). Sa pèmèt yon modèl mache sou yon òdinatè, men debi a pa menm ak yon GPU.</p>
+                        <p lang="fr">GGUF est le format de llama.cpp : CPU, Apple Silicon et petits GPU, avec des niveaux de quantification (Q8, Q6, Q5, Q4, Q3). Cela fait tourner un modèle sur un ordinateur, mais le débit n'est pas celui d'un GPU.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm 7B la: Q4_K_M sou laptop ≈ 9 mo/s · INT4 sou GPU ≈ 48 mo/s → kesyon an se « kote pou m deplwaye », pa « ki solisyon ki pi pèfòman ».</p>
+                        <p lang="fr">Même modèle 7B : Q4_K_M sur un portable ≈ 9 mots/s · INT4 sur GPU ≈ 48 mots/s → la question est « où déployer », pas « qui est le plus rapide ».</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun teste yon nivo Q4 ak yon nivo Q8 sou machin yo epi konpare tan, memwa ak kalite.</p>
+                        <p lang="fr">Chacun teste un niveau Q4 et un niveau Q8 sur sa machine et compare temps, mémoire et qualité.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-10">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">10</span>
+                        <h3><span lang="ht">Mezi Pèt Kalite a</span><span lang="fr">Mesurer la perte de qualité</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pa baze sou enpresyon: menm seri tès, menm metrik, avan ak apre. Perplexity di kijan modèl la ezite, li pa di si repons lan bon — se evalyasyon sou tach ki di sa. Teste tou ka espesyal: chif, dat, long tèks ak lang.</p>
+                        <p lang="fr">Ne pas se fier à l'impression : même jeu de tests, mêmes métriques, avant/après. La perplexité mesure l'hésitation, pas la justesse ; seule l'évaluation sur tâches le fait. Tester aussi chiffres, dates, textes longs et langues.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">INT4: eval jeneral 82/100 (vs 88 an FP16) — men ekstraksyon chif: 61/100 (vs 90) → pèt la konsantre sou yon sèl kalite travay.</p>
+                        <p lang="fr">INT4 : évaluation générale 82/100 (contre 88 en FP16) — mais extraction de chiffres 61/100 (contre 90) → la perte se concentre sur un type de tâche.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun idantifye 1 kalite travay ki pi frajil nan ka yo epi mezire l avan/apre.</p>
+                        <p lang="fr">Chacun identifie le type de tâche le plus fragile de son cas et le mesure avant/après.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- BLÒK 3 -->
+        <section class="course-section" id="block-3">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 3 · Taye ak Distilasyon</span>
+                    <span lang="fr">Bloc 3 · Élagage et distillation</span>
+                    <span class="block-meta"><span lang="ht">leson 11–15 · 1 h 50 + poz</span><span lang="fr">leçons 11–15 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-11">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">11</span>
+                        <h3><span lang="ht">Pruning: Ki Sa Pou W Taye?</span><span lang="fr">Élagage : quoi couper ?</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pruning se retire pwa ki kontribye ti kras. Estriktirèl: w retire tout kolòn oswa tout tèt atansyon → matris la vin vrèman pi piti epi li akselere. Non-estriktirèl: w mete zewo endividyèl → kalite a rete bon, men li pa akselere san sipò materyèl. Apre taye, souvan fòk retrennen yon ti tan pou kalite a retounen.</p>
+                        <p lang="fr">L'élagage retire les poids qui contribuent peu. Structurel : on supprime des colonnes entières ou des têtes d'attention → la matrice devient vraiment plus petite et accélère. Non structurel : on met des zéros individuels → la qualité tient, mais rien n'accélère sans support matériel. Après élagage, une courte re-formation est souvent nécessaire.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Retire 30% nan pwa yo → modèl la 22% pi piti · eval tonbe 1 pwen apre retrennman · san retrennman: tonbe 9 pwen.</p>
+                        <p lang="fr">Retirer 30 % des poids → modèle 22 % plus petit · évaluation en baisse d'1 point après re-formation · sans re-formation : 9 points perdus.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun di ki sa yo ta taye an premye (kouch, tèt atansyon) ak ki metrik pou verifye apre.</p>
+                        <p lang="fr">Chacun indique ce qu'il élimerait en premier (couches, têtes d'attention) et la métrique de contrôle.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-12">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">12</span>
+                        <h3><span lang="ht">Konpresyon San Touchen Pwa yo</span><span lang="fr">Compression sans toucher aux poids</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Gen levye ki pa mande modifye modèl la: retire kontèks ki pa itil, kenbe memwa sesyon an kout, limite longè repons lan, fè prompt sistèm nan pi kout, epi mete repons ki idantik nan cache. Souvan levye sa yo bay plis ekonomi nan pri ak nan tan pase kwantifikasyon.</p>
+                        <p lang="fr">Des gains sans modifier le modèle : retirer du contexte inutile, raccourcir la mémoire de session, borner la longueur de réponse, écourter le prompt système et mettre en cache les requêtes identiques. Ces leviers rapportent souvent plus, plus vite, qu'une quantification.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kontèks 4 000 mo → 1 200 mo + cache sou 18% kesyon ki repete → pri pa repons tonbe 2,4 fwa, eval desann 1 pwen.</p>
+                        <p lang="fr">Contexte de 4 000 mots → 1 200 mots + cache sur 18 % de requêtes répétées → coût par réponse divisé par 2,4, évaluation en baisse d'1 point.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun site 3 levye ki pa nan modèl la epi yo ka itilize jodi a.</p>
+                        <p lang="fr">Chacun liste trois leviers hors du modèle applicables dès aujourd'hui.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-13">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">13</span>
+                        <h3><span lang="ht">Distilasyon: Gwo Modèl Enseyen Ti Modèl</span><span lang="fr">Distillation : le grand modèle enseigne le petit</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Distilasyon: yon gwo modèl jenere egzanp yo, yon ti modèl aprè sou egzanp sa yo. Ou ka distile repons final la oswa distribisyon pwobabilite yo — dezyèm lan bay plis enfòmasyon. Se yon depans yon sèl fwa; apre, ti modèl la koute mwens chak fwa l sèvi.</p>
+                        <p lang="fr">La distillation : un grand modèle génère les exemples, un petit les apprend. On peut distiller la réponse finale ou la distribution de probabilités — la seconde porte plus d'information. Coût payé une fois ; ensuite le petit modèle coûte moins cher à chaque usage.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">12 000 kesyon reyèl → gwo modèl la reponn yo → ti modèl la antrene sou repons sa yo: 74/100 kont 81, men 6 fwa mwens chè e 5 fwa pi vit.</p>
+                        <p lang="fr">12 000 questions réelles répondues par le grand modèle → entraînement du petit dessus : 74/100 contre 81, mais six fois moins cher et cinq fois plus rapide.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun deside sa li ta distile (repons, eskema, desizyon) ak ki sous done l ap itilize.</p>
+                        <p lang="fr">Chacun décide ce qu'il distillerait (réponse, schéma, décision) et la source de données utilisée.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-14">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">14</span>
+                        <h3><span lang="ht">Ti Modèl Jodi a: Ki Sa Yo Ka Fè?</span><span lang="fr">Petits modèles actuels : que savent-ils faire ?</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Anvan bati yon ti modèl, teste sa ki deja egziste. Modèl 1 a 8 milya fè ekstraksyon, klasifikasyon ak reformulasyon byen nan anpil ka. Bati pwòp modèl w se dènye chwa a, pa premye a — verifye ak pwòp tès ou anvan w envesti.</p>
+                        <p lang="fr">Avant d'entraîner un petit modèle, tester ceux du marché. Les modèles de 1 à 8 milliards font extraction, classification et reformulation correctement dans bien des cas. Entraîner soi-même est le dernier choix, pas le premier — à valider sur son propre jeu de tests.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Klasifikasyon: ti modèl ki deja sou mache a = 91% · ti modèl pèsonalize apre distilasyon = 93% → 2 pwen pa jistifye 3 semèn travay.</p>
+                        <p lang="fr">Classification : petit modèle du marché 91 % · petit modèle personnalisé après distillation 93 % → deux points ne justifient pas trois semaines de travail.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun teste 2 ti modèl sou 10 pwòp ka epi rapòte skor la ak pri a.</p>
+                        <p lang="fr">Chacun teste deux petits modèles sur 10 de ses cas et communique score et coût.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-15">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">15</span>
+                        <h3><span lang="ht">Routing: Chwazi Modèl pa Demann</span><span lang="fr">Routage : choisir le modèle par requête</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Routing = chwazi modèl la selon demann nan: senp → ti modèl, difisil → gwo modèl. Règ yo dwe detèminis (longè, entansyon, lang), oswa yon ti klasifikè deside lè règ yo pa sifi. Mezi de bagay: pousantaj demann ki ale sou gwo modèl la ak kalite mwayèn nan.</p>
+                        <p lang="fr">Le routage choisit le modèle selon la requête : simple → petit modèle, difficile → grand modèle. Règles déterministes (longueur, intention, langue), ou un classifieur bon marché pour départager. Deux mesures : la part de requêtes envoyées au grand modèle et la qualité moyenne.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">70% demann → ti modèl · 30% → gwo modèl → pri tonbe 58%, eval mwayèn desann 2 pwen · si rasyo a tounen 40/60, ekonomi a disparèt.</p>
+                        <p lang="fr">70 % des requêtes sur le petit modèle, 30 % sur le grand → coût réduit de 58 %, qualité moyenne en baisse de 2 points ; si le ratio dérive à 40/60, le gain disparaît.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 3 règ routing pou ka yo ak yon egzanp ka ki ta dwe ale sou move modèl la.</p>
+                        <p lang="fr">Chacun écrit 3 règles de routage pour son cas et les cas risquant d'aller du mauvais côté.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 4 -->
+        <section class="course-section" id="block-4">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 4 · Sèvis ak Eskalman</span>
+                    <span lang="fr">Bloc 4 · Serving et scalabilité</span>
+                    <span class="block-meta"><span lang="ht">leson 16–20 · 1 h 50 + poz</span><span lang="fr">leçons 16–20 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-16">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">16</span>
+                        <h3><span lang="ht">Batch Dinamik</span><span lang="fr">Batch dynamique</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Olye trete chak demann pou kont li, sèvis la ranmase demann k ap tann yo epi lanse yo ansanm. Debi a monte anpil paske se memwa ki bloke GPU a, pa kalkil la. Konprmi a: yon ti reta anplis pou chak demann.</p>
+                        <p lang="fr">Au lieu de traiter chaque requête isolément, le service regroupe les requêtes en attente et les lance ensemble. Le débit monte beaucoup car la mémoire, et non le calcul, bride le GPU. Contrepartie : un léger délai supplémentaire par requête.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Batch 1 → 14 repons/minit · batch 32 → 210 repons/minit sou menm GPU a, men p95 soti 2,1 s pou rive 3,4 s.</p>
+                        <p lang="fr">Batch 1 → 14 réponses/min · batch 32 → 210 réponses/min sur le même GPU, mais p95 passant de 2,1 s à 3,4 s.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini batch maksimòm ak tan tann maksimòm ki akseptab pou ka yo.</p>
+                        <p lang="fr">Chacun définit le batch maximal et l'attente acceptable pour son cas.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-17">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">17</span>
+                        <h3><span lang="ht">Cache KV: Memwa Kalkil La</span><span lang="fr">Cache KV : la mémoire du calcul</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pandan decode a, modèl la sèvi ak memwa mo li te deja wè yo — se cache KV la. San l, se pou w rekalkile tout kontèks la chak fwa, e sa koute chè. Men cache la manje memwa: mezire l pa sesyon epi limite longè kontèks lan.</p>
+                        <p lang="fr">Pendant le décodage, le modèle réutilise la mémoire des mots déjà vus : le cache KV. Sans lui, tout le contexte est recalculé à chaque pas, ce qui coûte très cher. Mais ce cache consomme de la mémoire : à mesurer par session et à borner par la longueur de contexte.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kontèks 8 000 mo → cache KV la ka pran plizyè GB pa sesyon → 4 sesyon paralèl bouche yon kat 24 GB.</p>
+                        <p lang="fr">Contexte de 8 000 mots → plusieurs Go de cache KV par session → quatre sessions parallèles saturent une carte de 24 Go.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun kalkile konbyen sesyon paralèl kat pa yo ka kenbe ak kontèks yo itilize.</p>
+                        <p lang="fr">Chacun calcule le nombre de sessions parallèles que sa carte supporte pour son contexte.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-18">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">18</span>
+                        <h3><span lang="ht">PagedAttention ak vLLM</span><span lang="fr">Attention paginée et vLLM</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Lè chak sesyon rezève yon gwo blòk memwa, anpil plas rete vid. PagedAttention (vLLM) kenbe kontèks la ti moso pa ti moso, konsa plis sesyon antre nan menm kat la. Se pa majik: se jesyon memwa ki fè debi a monte.</p>
+                        <p lang="fr">Quand chaque session réserve un grand bloc de mémoire, beaucoup d'espace reste vide. L'attention paginée (vLLM) alloue le contexte par petits morceaux, donc plus de sessions tiennent sur la même carte. Ce n'est pas de la magie : de la gestion mémoire qui libère le débit.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm GPU a, menm modèl la: sèvis klasik 9 repons/s · vLLM 31 repons/s → se memwa a ki te bloke debi a, pa kalkil la.</p>
+                        <p lang="fr">Même GPU, même modèle : service classique 9 réponses/s · vLLM 31 réponses/s → la mémoire bridait le débit, pas le calcul.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun prepare 2 kesyon pou yon ekip k ap sèvi ak vLLM (oswa sèvè llama.cpp).</p>
+                        <p lang="fr">Chacun prépare 2 questions à poser à une équipe qui sert avec vLLM (ou llama.cpp server).</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-19">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">19</span>
+                        <h3><span lang="ht">Decoding Espekilatif</span><span lang="fr">Décodage spéculatif</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon ti modèl pwopoze plizyè mo, gwo modèl la verifye yo an yon sèl pa. Si pwopozisyon yo souvan bon, menm kalite a rive pi vit. Si yo pa bon, anyen pa vin pi vit — men kalite a pa bese, paske gwo modèl la valide toujou.</p>
+                        <p lang="fr">Un petit modèle propose plusieurs mots, le grand les vérifie en une passe. Si les propositions sont souvent justes, même qualité plus vite ; sinon, pas de gain — mais pas de perte non plus, car le grand modèle valide toujours.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Ti modèl la pase 72% pwopozisyon yo → 1,9 fwa pi vit, menm eval · si akseptasyon an tonbe a 30%, li pafwa pi dousman pase yon sèl modèl.</p>
+                        <p lang="fr">Le petit modèle fait accepter 72 % de ses propositions → 1,9 fois plus rapide, même évaluation ; à 30 % d'acceptation, cela devient parfois plus lent qu'un modèle unique.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun di ki tip repons (fòma estriktire, langaj abityèl) ki ta pèfòman ak metòd sa a.</p>
+                        <p lang="fr">Chacun indique quels types de réponse (format structuré, langage répétitif) gagneraient avec cette méthode.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-20">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">20</span>
+                        <h3><span lang="ht">Chwa Enfrastrikti: GPU, VRAM, Replik</span><span lang="fr">Choix d'infrastructure : GPU, VRAM, répliques</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kalkil la senp: (gwosè modèl + cache KV) → memwa pa replik; (repons pa segond ou vle) → kantite replik. Konpare pri lwe GPU a ak pri API founisè a pou menm volim nan — repons lan chanje selon volim lan.</p>
+                        <p lang="fr">Le calcul est simple : (taille du modèle + cache KV) → mémoire par réplique ; (réponses par seconde visées) → nombre de répliques. Comparer la location de GPU au tarif d'API du fournisseur à volume égal — la réponse change selon le volume.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">2 replik × 24 GB pou 40 repons/minit: lwe GPU ≈ X pa mwa · API ≈ 2,3 X pa mwa → lwe a gen sans sèlman si volim lan estab.</p>
+                        <p lang="fr">Deux répliques × 24 Go pour 40 réponses/min : location GPU ≈ X par mois · API ≈ 2,3 X par mois → la location ne gagne que si le volume est stable.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun kalkile replik yo bezwen pou p95 la, ak volim jodi a ak 3 fwa plis.</p>
+                        <p lang="fr">Chacun calcule les répliques nécessaires pour tenir le p95 au volume actuel et au volume triplé.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- BLÒK 5 -->
+        <section class="course-section" id="block-5">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 5 · Kalite anba Kontraint</span>
+                    <span lang="fr">Bloc 5 · Qualité sous contraintes</span>
+                    <span class="block-meta"><span lang="ht">leson 21–25 · 1 h 50 + poz</span><span lang="fr">leçons 21–25 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-21">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">21</span>
+                        <h3><span lang="ht">Tès Regresyon: Optimize San Kase</span><span lang="fr">Tests de régression : optimiser sans casser</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Chak chanjman pèfòmans se yon chanjman konpòtman. Avan/apre sou menm seri tès la: fòma valab, repons korek, ak ka limit (chif, dat, lang, tèks long). Yon seri 20 a 50 ka ase pou detekte kras la anvan li rive bay itilizatè yo.</p>
+                        <p lang="fr">Tout changement de performance est un changement de comportement. Avant/après sur le même jeu : format valide, justesse, cas limites (chiffres, dates, langues, textes longs). Vingt à cinquante cas suffisent à détecter la casse avant les utilisateurs.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Kwantifikasyon INT4: eval jeneral desann 1 pwen (akseptab) · men 3 ka JSON ki te konn pase tonbe → refize chanjman an jiskaske kalibrasyon an korije l.</p>
+                        <p lang="fr">Quantification INT4 : évaluation générale en baisse d'1 point (acceptable), mais 3 cas JSON précédemment valides échouent → changement refusé tant que le calibrage n'est pas corrigé.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 5 ka regresyon ki dwe toujou pase anvan yo aksepte yon optimizasyon.</p>
+                        <p lang="fr">Chacun écrit les 5 cas de régression qui doivent passer avant toute optimisation acceptée.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-22">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">22</span>
+                        <h3><span lang="ht">Canary ak A/B pou Yon Modèl</span><span lang="fr">Canary et A/B pour un modèle</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Pa baskile 100% trafik la sou yon sèl kout: canary 1% → 5% → 25% → 100%, ak metrik teknik (erè, tan) ak metrik kalite. A/B se mete de modèl an menm tan sou menm trafik la epi deside ak chif. Kenbe ansyen modèl la pare pou retou a.</p>
+                        <p lang="fr">Ne pas basculer 100 % du trafic d'un coup : canary à 1 %, 5 %, 25 %, 100 %, avec métriques techniques (erreurs, latence) et qualité. L'A/B fait tourner deux modèles sur le même trafic et tranche par les chiffres. L'ancien modèle reste prêt pour le retour arrière.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Canary 5% pandan 24 h: erè 0,4% (vs 0,1%) · p95 3,9 s (vs 2,6 s) → kanpe, pa monte nan 25%.</p>
+                        <p lang="fr">Canary à 5 % pendant 24 h : 0,4 % d'erreurs (contre 0,1 %) · p95 à 3,9 s (contre 2,6 s) → on arrête, on ne monte pas à 25 %.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini 3 metrik ki ka fè yo kanpe yon deplwaman otomatikman.</p>
+                        <p lang="fr">Chacun définit les 3 seuils qui doivent arrêter un déploiement automatiquement.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-23">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">23</span>
+                        <h3><span lang="ht">Obsèrvabilite an Prodiksyon</span><span lang="fr">Observabilité en production</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Mezi chak apèl: modèl itilize, vèsyon, token antre ak soti, dire, pri, estati. Ajoute alèt sou p95, sou pousantaj fòma ki pa valab, ak sou depans jou a. Pa janm mete kle API oswa done pèsonèl nan rejis yo — se la obsèrvabilite a vin tounen yon pwoblèm sekirite.</p>
+                        <p lang="fr">Mesurer chaque appel : modèle utilisé, version, jetons d'entrée et de sortie, durée, coût, statut. Ajouter des alertes sur le p95, le taux de formats invalides et la dépense du jour. Jamais de clé d'API ni de donnée personnelle dans les journaux : c'est là que l'observabilité devient un risque.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon liy rejis: {id, modèl, vèsyon, token_antre, token_soti, milisegonn, pri, erè} → apre 1 jou, etap ki chè a parèt klè san debogaj.</p>
+                        <p lang="fr">Une ligne de journal : {id, modèle, version, jetons_entrée, jetons_sortie, millisecondes, coût, erreur} → après une journée, l'étape coûteuse saute aux yeux.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 3 alèt yo ta konfigire demen ak valè ki dwe deklanche yo.</p>
+                        <p lang="fr">Chacun écrit les 3 alertes à configurer dès demain et les valeurs déclencheuses.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-24">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">24</span>
+                        <h3><span lang="ht">Lisans, Done ak Sekirite Modèl</span><span lang="fr">Licences, données et sécurité du modèle</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Verifye lisans modèl la: itilizasyon komèsyal, ak obligasyon sou distilasyon oswa redistribisyon. Done kalibrasyon ak distilasyon yo pa dwe gen done kliyan san otorizasyon. Yon modèl kwantifye oswa konbine se yon nouvo fichye: trete l tankou yon aktif — stockaj sekirize, pa piblik.</p>
+                        <p lang="fr">Vérifier la licence du modèle : usage commercial et obligations sur la distillation ou la redistribution. Les données de calibrage et de distillation ne doivent contenir aucune donnée client non autorisée. Un modèle quantifié ou fusionné est un nouvel actif : stockage sécurisé, exposition publique interdite.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon lisans ki entdi fòme lòt modèl → distilasyon an pa legal menm si li mache teknikman → se pa yon opsyon.</p>
+                        <p lang="fr">Une licence interdisant d'entraîner d'autres modèles → la distillation est illégale même si elle fonctionne techniquement → l'option tombe.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun note lisans modèl pa yo ak 2 restriksyon ki ka touche pwojè a.</p>
+                        <p lang="fr">Chacun note la licence de son modèle et les 2 restrictions qui peuvent toucher son projet.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-25">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">25</span>
+                        <h3><span lang="ht">Degradasyon Gras ak Wout Sekou</span><span lang="fr">Dégradation gracieuse et chemin de secours</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Lè optimizasyon an rate oswa sèvis la rive nan limit li, ki sa itilizatè a jwenn? Plan: bascule sou modèl sekou, redwi kontèks la, reponn pi kout, oswa di klèman ke sèvis la okipe. Pa janm kite yon erè brit ekspoze detay entèn.</p>
+                        <p lang="fr">Quand l'optimisation échoue ou que le service est saturé, que voit l'utilisateur ? Un plan : bascule sur le modèle de secours, réduction du contexte, réponse plus courte, ou message clair de service occupé. Jamais une erreur brute exposant des détails internes.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">GPU a rive nan limit li → bascule otomatik sou ti modèl la ak mesaj « repons lan ka pi kout kounye a » → p95 rete 4 s olye li ale 30 s.</p>
+                        <p lang="fr">GPU saturé → bascule automatique sur le petit modèle avec le message « la réponse peut être plus courte » → p95 maintenu à 4 s au lieu de 30 s.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 3 nivo degradasyon pou ka yo ak siy ki deklanche chak nivo.</p>
+                        <p lang="fr">Chacun écrit les 3 niveaux de dégradation de son cas et le signal qui déclenche chacun.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 6 -->
+        <section class="course-section" id="block-6">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 6 · Desizyon ak Rapò</span>
+                    <span lang="fr">Bloc 6 · Décision et rapport</span>
+                    <span class="block-meta"><span lang="ht">leson 26–30 · 1 h 50 + poz</span><span lang="fr">leçons 26–30 · 1 h 50 + pause</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-26">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">26</span>
+                        <h3><span lang="ht">Etid Ka: Gwo Modèl vs Ti Modèl Kwantifye</span><span lang="fr">Étude de cas : grand modèle vs petit quantifié</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Konpare 4 opsyon sou menm bazlin lan: gwo modèl pa API, gwo modèl kwantifye, ti modèl, ak routing ant yo. Tablo: kalite, p95, pri, memwa, konpleksite. Chwa a se pa « ki pi bon kalite a », se « ki pi bon kalite a nan limit bidjè a ».</p>
+                        <p lang="fr">Comparer quatre options sur la même base line : grand modèle par API, grand modèle quantifié, petit modèle, routage entre les deux. Tableau : qualité, p95, coût, mémoire, complexité. On ne cherche pas la meilleure qualité mais la meilleure qualité dans les bornes du budget.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Eval: 88 / 84 / 74 / 85 · pri relatif: 1,0 / 0,45 / 0,08 / 0,30 → ak yon limit pri 0,25, opsyon ki rete se ti modèl la oswa routing lan.</p>
+                        <p lang="fr">Évaluations : 88 / 84 / 74 / 85 · coûts relatifs : 1,0 / 0,45 / 0,08 / 0,30 → avec un plafond à 0,25, il ne reste que le petit modèle ou le routage.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ranpli tablo 4 opsyon pou ka pa yo epi chwazi youn ak rezon li.</p>
+                        <p lang="fr">Chacun remplit le tableau des 4 options pour son cas et en choisit une en la justifiant.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-27">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">27</span>
+                        <h3><span lang="ht">Prompt oswa Modèl: Ki Levye Ki Pi Vit?</span><span lang="fr">Prompt ou modèle : quel levier est plus rapide ?</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Se prompt lan ak kontèks lan ki bay premye ekonomi yo, pa modèl la: fè enstriksyon yo pi kout, retire egzanp ki pa itil, mande yon sòti pi kout. Lè prompt lan rive nan limit li, se lè sa a kwantifikasyon ak routing yo merite efò a.</p>
+                        <p lang="fr">Les premiers gains viennent du prompt et du contexte, pas du modèle : instructions raccourcies, exemples inutiles retirés, sortie plus courte demandée. Ce n'est qu'ensuite que quantification et routage méritent l'effort.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Prompt 1 800 → 400 token, repons 300 → 120 token: pri pa repons tonbe 41% an 1 jou · kwantifikasyon te pran 1 semèn pou 22%.</p>
+                        <p lang="fr">Prompt de 1 800 à 400 jetons, réponse de 300 à 120 : coût par réponse en baisse de 41 % en une journée, là où la quantification avait demandé une semaine pour 22 %.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun idantifye 2 fraz nan prompt pa yo ki ka disparèt san pèt kalite.</p>
+                        <p lang="fr">Chacun repère 2 phrases de son prompt qui peuvent disparaître sans perte de qualité.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-28">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">28</span>
+                        <h3><span lang="ht">Plan Migrasyon ak Rollback</span><span lang="fr">Plan de migration et rollback</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon migrasyon se yon sekans ki gen retou: nouvo vèsyon an sou 5% trafik, obsève, monte, epi kenbe ansyen vèsyon an pandan X jou. Ekri ki moun ki deside, ki sa ki deklanche retou a, ak kijan pou verifye apre. San plan retou, yon « optimizasyon » vin tounen yon ensidan.</p>
+                        <p lang="fr">Une migration est une séquence réversible : nouvelle version à 5 % du trafic, observation, montée, ancien modèle conservé X jours. Écrire qui décide, ce qui déclenche le retour arrière et comment vérifier après. Sans plan de retour, une optimisation devient un incident.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Plan: J0 canary 5% · J1 25% · J3 100% · J10 retire ansyen vèsyon an · retou = 1 kòmand, 2 minit.</p>
+                        <p lang="fr">Plan : J0 canary 5 % · J1 25 % · J3 100 % · J10 retrait de l'ancienne version · retour arrière = une commande, 2 minutes.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri plan 5 liy pa yo, epi yon patnè di ki sa ki manke ladan l.</p>
+                        <p lang="fr">Chacun écrit son plan en 5 lignes et un binôme dit ce qui manque.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-29">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">29</span>
+                        <h3><span lang="ht">Rapò Pèfòmans ak Chif Onèt</span><span lang="fr">Rapport de performance chiffré et honnête</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Rapò a: sa ki te mezire, kijan, avan/apre, sa ki pa t amelyore, ak limit koni. Mete kondisyon mezi yo (machin, volim, tanperati) — san sa, chif yo pa repwodiktib. Yon rapò ki di « nou pa konnen ankò » pi solid pase yon rapò ki pa gen okenn dout.</p>
+                        <p lang="fr">Le rapport : ce qui a été mesuré, comment, avant/après, ce qui ne s'est pas amélioré, les limites connues. Mentionner les conditions de mesure (machine, volume, température), sinon les chiffres ne sont pas reproductibles. Un rapport qui dit « on ne sait pas encore » vaut mieux qu'un rapport sans doute.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">« p95 soti 3,4 s pou rive 2,1 s a 40 repons/minit sou GPU A; pa teste a 100 repons/minit » → yon lòt moun ka repete eksperyans lan.</p>
+                        <p lang="fr">« p95 de 3,4 s à 2,1 s à 40 réponses/min sur GPU A ; non testé à 100 réponses/min » → un autre peut reproduire l'expérience.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 1 rezilta pozitif, 1 rezilta negatif ak 1 limit koni nan 3 fraz.</p>
+                        <p lang="fr">Chacun écrit en 3 phrases un résultat positif, un résultat négatif et une limite connue.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-30">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">30</span>
+                        <h3><span lang="ht">Prezante Optimizasyon Pa Ou</span><span lang="fr">Présentez votre optimisation</span></h3>
+                        <span class="lesson-time">22 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Prezantasyon final la: bazlin lan, desizyon yo, chif avan/apre, ak sa ou pa t fè. Yon desizyon defann ak chif (« nou kenbe gwo modèl la pou 8% ka difisil yo ») pi itil pase yon demonstrasyon ki chwazi pi bèl egzanp yo.</p>
+                        <p lang="fr">Présentation finale : base line, décisions, chiffres avant/après et ce qui n'a pas été fait. Une décision chiffrée (« le grand modèle reste actif pour les 8 % de cas difficiles ») vaut mieux qu'une démonstration choisie sur les plus beaux exemples.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">5 minit pa moun: 1 ekran tablo konparezon · 1 fraz desizyon · 1 limit ki rete · 1 pwochen aksyon.</p>
+                        <p lang="fr">Cinq minutes chacun : 1 écran avec le tableau comparatif · 1 phrase de décision · 1 limite restante · 1 prochaine action.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Evalyasyon final: chak patisipan prezante epi resevwa 1 kòmantè yon patnè sou ki sa ki klè ak ki sa ki manke.</p>
+                        <p lang="fr">Évaluation finale : chacun présente et reçoit un commentaire d'un binôme sur ce qui est clair et ce qui manque.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- FICH KONFIGIRASYON -->
+        <section class="course-section" id="fich-config">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Fich Konfigirasyon — pou distribiye bay patisipan yo</span>
+                    <span lang="fr">Fiche de configuration — à distribuer aux participants</span>
+                </h2>
+                <p class="section-lead" lang="ht">Konfig pou verifye avan itilize: ranplase sa ki nan [ ] yo, epi mezire sou menm seri tès la avan ak apre chak chanjman.</p>
+                <p class="section-lead" lang="fr">Configurations à vérifier avant usage : remplacez ce qui est entre crochets [ ] et mesurez sur le même jeu de tests, avant et après chaque changement.</p>
+
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Bazlin Reprodiktib</span><span lang="fr">Configuration : base line reproductible</span></h3>
+                        <p class="prompt-text" lang="ht">seri tès = [50] ka ki gen JSON, chif, dat ak lang · tanperati = 0 · seed = [42] · 3 pase · machin = [GPU A | CPU 16 GB] · vèsyon pakè fikse nan requirements.txt · mezire: premye_mo_s, total_s, mo_pa_segond, VRAM_ou_RAM, pri_pa_repons · rapòte p50 ak p95 — jamè mwayèn sèlman.</p>
+                        <p class="prompt-text" lang="fr">jeu de tests = [50] cas couvrant JSON, chiffres, dates et langues · température = 0 · seed = [42] · 3 passes · machine = [GPU A | CPU 16 Go] · versions de paquets épinglées dans requirements.txt · mesurer : premier_mot_s, total_s, mots_par_s, VRAM ou RAM, coût par réponse · reporting p50 et p95 — jamais la moyenne seule.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Kwantifikasyon 4-Bit sou CPU/Metal</span><span lang="fr">Configuration : quantification 4 bits sur CPU/Metal</span></h3>
+                        <p class="prompt-text" lang="ht">llama.cpp: convert --outtype f16 [modèl] → model-F16.gguf · quantize model-F16.gguf model-Q4_K_M.gguf Q4_K_M · konpare pèplisite sou menm tèks eval la · pa defo = Q4_K_M · monte nan Q5_K_M oswa Q6_K sèlman si tès yo montre yon pèt · tès obligatwa: fòma JSON, chif ak dat — pèplisite pou kont li pa deside anyen.</p>
+                        <p class="prompt-text" lang="fr">llama.cpp : convert --outtype f16 [modèle] → model-F16.gguf · quantize model-F16.gguf model-Q4_K_M.gguf Q4_K_M · comparer la perplexité sur le même texte d'évaluation · par défaut = Q4_K_M · passer à Q5_K_M ou Q6_K seulement si les tests montrent une perte · tests obligatoires : format JSON, chiffres et dates — la perplexité seule ne décide pas.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Kwantifikasyon GPU (AWQ / GPTQ)</span><span lang="fr">Configuration : quantification GPU (AWQ / GPTQ)</span></h3>
+                        <p class="prompt-text" lang="ht">kalibrasyon = [128–512] egzanp ki sanble ak trafik reyèl la · AWQ: group_size=[128], zero_compressible · GPTQ: sym=False, desc_act=True sèlman si nesesè (li ralanti) · apre: menm seri tès la, [20–50] ka · si yon sèl kategori kase (egzanp JSON), se kalibrasyon an ki pa bon, pa modèl la · remezire VRAM ak premye_mo p95 avan ak apre.</p>
+                        <p class="prompt-text" lang="fr">calibrage = [128–512] exemples qui ressemblent au trafic réel · AWQ : group_size=[128], zero_compressible · GPTQ : sym=False, desc_act=True seulement si nécessaire (cela ralentit) · après : même jeu de tests, [20–50] cas · si une seule catégorie casse (ex. JSON), le calibrage est mauvais, pas le modèle · remesurer VRAM et premier_mot p95 avant et après.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Sèvis (Batch + Cache KV)</span><span lang="fr">Configuration : service (batch + cache KV)</span></h3>
+                        <p class="prompt-text" lang="ht">python -m vllm.entrypoints.openai.api_server --model [chemin] --max_model_len [4096] --gpu_memory_utilization 0.9 --max_num_seqs [64] --enable_prefix_caching · swivi: okipasyon VRAM, gwosè batch reyèl la, premye_mo p95 · ogmante max_num_seqs pa 2× epi remezire — pa monte l san mezire · repons long → priyorite a se cache KV ak max_model_len; repons kout an kantite → priyorite a se batch.</p>
+                        <p class="prompt-text" lang="fr">python -m vllm.entrypoints.openai.api_server --model [chemin] --max_model_len [4096] --gpu_memory_utilization 0.9 --max_num_seqs [64] --enable_prefix_caching · suivre : occupation VRAM, taille réelle du batch, premier_mot p95 · augmenter max_num_seqs par pas de 2× puis remesurer — jamais à l'aveugle · réponses longues → priorité au cache KV et à max_model_len ; réponses courtes en volume → priorité au batch.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Règ Routing pa Demann</span><span lang="fr">Configuration : règles de routage par requête</span></h3>
+                        <p class="prompt-text" lang="ht">si longè_kontèks &gt; [8000 token] oswa domèn = [matematik | lalwa | medsin] → gwo modèl la · si travay la = fòma, klasman oswa rezime kout → ti modèl la · ti modèl la echwe [2] fwa → pase nan gwo modèl la, pa retay menm bagay la · wout sekou a toujou aktif · mezire chak mwa: % ka ki fini sou gwo modèl la ak pri sa a — si % a monte, se règ la ki pa bon.</p>
+                        <p class="prompt-text" lang="fr">si longueur_contexte &gt; [8000 jetons] ou domaine = [mathématiques | juridique | médical] → grand modèle · tâche = format, classification ou résumé court → petit modèle · [2] échecs du petit modèle → basculer sur le grand, pas de nouvelle tentative identique · secours toujours actif · mesurer chaque mois : % des cas finissant sur le grand modèle et leur coût — si le pourcentage monte, la règle est mauvaise.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card prompt-card--magic">
+                        <h3><span lang="ht">Checklist Avan / Apre · Tout Desizyon Optimizasyon</span><span lang="fr">Checklist avant / après · Toute décision d'optimisation</span></h3>
+                        <p class="prompt-text" lang="ht">Avan: bazlin sou 3 pase · seri tès [20–50] ka ki gen ka limit · SLA ekri (premye_mo p95, pri pa repons, kalite minimal) · lisans modèl la verifye · plan retou = 1 kòmand · Apre: menm seri a, menm machin nan · rezilta pa kategori, pa yon sèl chif global · [1] rezilta negatif ekri · limit ki rete · Desizyon: aksepte / refize / routing ibrid · Si kalite a pa mezire → optimizasyon an pa valab, menm si li rapid.</p>
+                        <p class="prompt-text" lang="fr">Avant : base line sur 3 passes · jeu de [20–50] cas incluant les cas limites · SLA écrit (premier_mot p95, coût par réponse, qualité minimale) · licence du modèle vérifiée · plan de retour = 1 commande · Après : même jeu, même machine · résultats par catégorie, pas un chiffre global · [1] résultat négatif écrit · limites restantes · Décision : accepter / refuser / routage hybride · Sans mesure de qualité, l'optimisation n'est pas validée, même si elle est rapide.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÒT ANIMASYON -->
+        <section class="course-section" id="not-animasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Nòt pou Animasyon — Kreyòl &amp; Fransè</span>
+                    <span lang="fr">Notes d'animation — créole &amp; français</span>
+                </h2>
+
+                <div class="note-grid">
+                    <div class="note">
+                        <h3><span lang="ht">Lang</span><span lang="fr">Langue</span></h3>
+                        <p lang="ht">Eksplike konsèp yo an kreyòl, tradiksyon fransè a anba sou chak slide. Kenbe non paramèt yo, kòmand yo ak metrik yo nan lang orijinal yo (Q4_K_M, max_num_seqs, perplexity, p95) paske se ekriti sa a ou jwenn nan dokimantasyon ak nan mesaj erè yo — tradui entèpretasyon an, jamè non zouti yo.</p>
+                        <p lang="fr">Expliquez les concepts en créole, traduction française en dessous sur chaque diapositive. Conservez les noms de paramètres, de commandes et de métriques dans leur langue d'origine (Q4_K_M, max_num_seqs, perplexity, p95) : c'est cette orthographe qu'affichent la documentation et les messages d'erreur — traduisez l'interprétation, jamais les noms d'outils.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Ritm</span><span lang="fr">Rythme</span></h3>
+                        <p lang="ht">22 minit pa leson: 6 min eksplikasyon + 8 min demonstrasyon + 8 min patisipan yo mezire. 6 poz 10 minit, yon apre chak blòk, fè jounen an rive 12 èdtan. Prepare kapti ekran rezilta yo avan kou a: yon kalkil ka pran 20 minit epi pa dwe bloke klas la — demonstrasyon an dwe montre metòd la, pa tann kalkil la.</p>
+                        <p lang="fr">22 minutes par leçon : 6 min d'explication, 8 min de démonstration, 8 min de mesure par les participants. Six pauses de 10 minutes, une après chaque bloc, portent la journée à 12 heures. Préparez des captures de résultats avant le cours : un calcul peut durer 20 minutes et ne doit pas bloquer la classe — la démonstration montre la méthode, elle n'attend pas le calcul.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></h3>
+                        <p lang="ht">Prepare avan: yon modèl louvri 7B (oswa yon ti 1,5B pou moun ki sou CPU), yon seri [50] ka ki gen JSON, chif, dat ak lang, fichye vèsyon pakè yo, epi yon machin referans ak chif li yo. Si GPU manke, travay la fèt sou CPU ak yon ti modèl: menm konsèp yo, chif diferan — di sa klèman nan kòmansman kou a.</p>
+                        <p lang="fr">Préparer avant le cours : un modèle ouvert de 7B (ou un petit 1,5B pour les participants sur CPU), un jeu de [50] cas couvrant JSON, chiffres, dates et langues, le fichier de versions des paquets et une machine de référence avec ses propres chiffres. Sans GPU, le travail se fait sur CPU avec un petit modèle : mêmes concepts, chiffres différents — dites-le dès le début.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Sekirite</span><span lang="fr">Sécurité</span></h3>
+                        <p lang="ht">Verifye lisans modèl la avan distribye yon vèsyon taye, distile oswa kwantifye: gen modèl ki entdi itilizasyon komèsyal oswa ki egzije yon akò sepere pou derivasyon yo. Pa mete done kliyan nan seri kalibrasyon an — sèlman done piblik oswa done fo. Yon modèl ki pa pase seri tès la pa ale an prodiksyon, menm si li 3× pi rapid, epi kenbe vèsyon orijinal la jouk retou a pa posib ankò.</p>
+                        <p lang="fr">Vérifiez la licence du modèle avant de diffuser une version élaguée, distillée ou quantifiée : certains modèles interdissent l'usage commercial ou exigent un accord séparé pour les dérivés. Aucune donnée client dans le jeu de calibrage — uniquement des données publiques ou fictives. Un modèle qui échoue au jeu de tests ne va pas en production, même trois fois plus rapide, et conservez la version d'origine tant que le retour arrière doit rester possible.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Evalyasyon</span><span lang="fr">Évaluation</span></h3>
+                        <p lang="ht">Nan fen kou a, chak patisipan montre chif avan/apre sou menm seri tès la, yon desizyon ki baze sou chif sa yo (aksepte, refize oswa routing ibrid), ak yon limit koni. Yon konklizyon « optimizasyon sa a pa t meritab pou ka sa a » byen defann se yon rezilta siksè.</p>
+                        <p lang="fr">À la fin du cours, chaque participant présente les chiffres avant/après sur le même jeu de tests, une décision fondée sur ces chiffres (accepter, refuser ou routage hybride) et une limite connue. Conclure « cette optimisation ne valait pas son coût ici » de façon argumentée est un résultat réussi.</p>
+                    </div>
+                </div>
+
+                <p class="course-disclaimer" lang="ht">Nòt: sa a se yon gid animasyon. Non zouti yo ak estanda yo (vLLM, llama.cpp, GGUF, GPTQ, AWQ, PyTorch) se mak oswa pwojè ki evolye vit, epi opsiyon yo chanje ant vèsyon. Chif pèfòmans yo depann de machin nan, modèl la ak chaj la — verifye ak pwòp mezi pa w avan ou bay gwoup la yon valè, yon kòmand oswa yon konparezon.</p>
+                <p class="course-disclaimer" lang="fr">Note : ceci est un guide d'animation. Les noms des outils et standards (vLLM, llama.cpp, GGUF, GPTQ, AWQ, PyTorch) sont des marques ou des projets qui évoluent vite, et leurs options changent entre les versions. Les chiffres de performance dépendent de la machine, du modèle et de la charge — vérifiez avec vos propres mesures avant d'affirmer au groupe une valeur, une commande ou une comparaison.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="course-footer">
+        <div class="course-wrap">
+            <p>
+                <a href="./#track-pro"><span lang="ht">← Retounen nan Parcours Expert</span><span lang="fr">← Retour au Parcours Expert</span></a>
+                · <a href="kou-intro-chatgpt.html"><span lang="ht">Kou 1</span><span lang="fr">Cours 1</span></a>
+                · <a href="kou-ia-images.html"><span lang="ht">Kou 2</span><span lang="fr">Cours 2</span></a>
+                · <a href="kou-otomatisasyon.html"><span lang="ht">Kou 3</span><span lang="fr">Cours 3</span></a>
+                · <a href="kou-fine-tuning.html"><span lang="ht">Kou 4</span><span lang="fr">Cours 4</span></a>
+                · <a href="kou-langchain.html"><span lang="ht">Kou 5</span><span lang="fr">Cours 5</span></a>
+                · Akademi Clairtech · 2026
+            </p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script>
+        (() => {
+            const TITLE = {
+                ht: 'Otimizasyon Modèl yo — Akademi Clairtech',
+                fr: 'Optimisation de Modèles — Akademi Clairtech'
+            };
+            const COPIED = { ht: 'Konfigirasyon an kopye.', fr: 'Configuration copiée.' };
+            const toast = document.getElementById('toast');
+            const buttons = [...document.querySelectorAll('.lang-btn')];
+            let lang = 'ht';
+            let toastTimer;
+
+            function setLang(next) {
+                lang = next === 'fr' ? 'fr' : 'ht';
+                document.documentElement.lang = lang;
+                document.title = TITLE[lang];
+                buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+                try {
+                    localStorage.setItem('akademi-lang', lang);
+                } catch (err) {
+                    /* stockage indisponible : le choix tient pour la page courante */
+                }
+            }
+
+            function showToast(text) {
+                if (!toast) return;
+                toast.textContent = text;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => setLang(button.dataset.lang));
+            });
+
+            document.querySelectorAll('[data-copy]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const card = button.closest('.prompt-card');
+                    const source = card && card.querySelector(`.prompt-text[lang="${lang}"]`);
+                    if (!source) return;
+                    const text = source.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (err) {
+                        const area = document.createElement('textarea');
+                        area.value = text;
+                        area.setAttribute('readonly', '');
+                        area.className = 'sr-only';
+                        document.body.appendChild(area);
+                        area.select();
+                        const ok = document.execCommand('copy');
+                        area.remove();
+                        if (!ok) return;
+                    }
+                    showToast(COPIED[lang]);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('akademi-lang');
+            } catch (err) {
+                /* ignore */
+            }
+            setLang(saved || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'ht'));
+        })();
+    </script>
+</body>
+</html>

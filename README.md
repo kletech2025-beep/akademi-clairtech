@@ -20,6 +20,7 @@ Site vitrine statique pour des cours et astuces autour de l'IA, pour les niveaux
 ├── kou-otomatisasyon.html      # Fiche de cours 3 : Automatisation no-code
 ├── kou-fine-tuning.html        # Fiche de cours 4 : Fine-tuning de LLMs
 ├── kou-langchain.html          # Fiche de cours 5 : Déploiement avec LangChain
+├── kou-optimizasyon.html       # Fiche de cours 6 : Optimisation de Modèles
 ├── course.css                  # Styles des fiches de cours + impression
 ├── assets/
 │   ├── favicon.svg
@@ -51,9 +52,11 @@ Les données sont dans `app.js` :
 
 Il y a une fiche par cours publié : `kou-intro-chatgpt.html` (12 leçons, 3 blocs),
 `kou-ia-images.html` (18 leçons, 6 blocs), `kou-otomatisasyon.html` (15 leçons, 5 blocs),
-`kou-fine-tuning.html` (25 leçons, 5 blocs) et `kou-langchain.html` (22 leçons, 5 blocs).
+`kou-fine-tuning.html` (25 leçons, 5 blocs), `kou-langchain.html` (22 leçons, 5 blocs)
+et `kou-optimizasyon.html` (30 leçons, 6 blocs).
 Chacune porte le plan complet du cours : leçons
-(contenu / exemple / activité), fiche de prompts ou de modèles, et notes d'animation. Le
+(contenu / exemple / activité), fiche de prompts, de modèles ou de configuration, et notes
+d'animation. Le
 contenu est écrit deux fois, en `<span lang="ht">` et
 `<span lang="fr">` : `course.css` masque la langue inactive selon `<html lang>`, et le
 script de la page bascule `document.documentElement.lang` et mémorise le choix en

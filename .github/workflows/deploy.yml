@@ -23,7 +23,7 @@ jobs:
       - name: Stage public files
         run: |
           mkdir -p _site/assets
-          cp index.html styles.css app.js course.css kou-intro-chatgpt.html kou-ia-images.html kou-otomatisasyon.html kou-fine-tuning.html kou-langchain.html .nojekyll _site/
+          cp index.html styles.css app.js course.css kou-intro-chatgpt.html kou-ia-images.html kou-otomatisasyon.html kou-fine-tuning.html kou-langchain.html kou-optimizasyon.html .nojekyll _site/
           rsync -a --exclude='.DS_Store' assets/ _site/assets/
 
       - uses: actions/configure-pages@v5

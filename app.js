@@ -496,7 +496,7 @@
         { title: 'Automatisation No-Code', track: 'amateur', desc: "Connectez vos outils préférés à l'IA sans écrire une ligne de code.", duration: '3 h', lessons: 15, url: 'kou-otomatisasyon.html', note: 'Kreyòl · FR' },
         { title: 'Fine-Tuning de LLMs', track: 'pro', desc: 'Apprenez à adapter des modèles open-source à vos besoins spécifiques.', duration: '10 h', lessons: 25, url: 'kou-fine-tuning.html', note: 'Kreyòl · FR' },
         { title: 'Déploiement avec LangChain', track: 'pro', desc: 'Créez des applications complexes basées sur des chaînes de pensée.', duration: '8 h', lessons: 22, url: 'kou-langchain.html', note: 'Kreyòl · FR' },
-        { title: 'Optimisation de Modèles', track: 'pro', desc: 'Quantisation, pruning et techniques avancées pour la production.', duration: '12 h', lessons: 30 }
+        { title: 'Optimisation de Modèles', track: 'pro', desc: 'Quantisation, pruning et techniques avancées pour la production.', duration: '12 h', lessons: 30, url: 'kou-optimizasyon.html', note: 'Kreyòl · FR' }
     ];
 
     const TIPS = [
