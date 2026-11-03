@@ -430,6 +430,7 @@ html[lang="fr"] [lang="ht"] {
     border: 1px solid var(--glass-border);
     font-size: .92rem;
     line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
 .copy-btn {
@@ -530,6 +531,9 @@ html[lang="fr"] [lang="ht"] {
 
     .plan-table {
         font-size: .85rem;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .plan-table th,

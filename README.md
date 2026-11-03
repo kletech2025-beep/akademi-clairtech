@@ -19,6 +19,7 @@ Site vitrine statique pour des cours et astuces autour de l'IA, pour les niveaux
 ├── kou-ia-images.html          # Fiche de cours 2 : IA générative d'images
 ├── kou-otomatisasyon.html      # Fiche de cours 3 : Automatisation no-code
 ├── kou-fine-tuning.html        # Fiche de cours 4 : Fine-tuning de LLMs
+├── kou-langchain.html          # Fiche de cours 5 : Déploiement avec LangChain
 ├── course.css                  # Styles des fiches de cours + impression
 ├── assets/
 │   ├── favicon.svg
@@ -48,9 +49,10 @@ Les données sont dans `app.js` :
 
 ### Fiches de cours (`kou-*.html`)
 
-`kou-intro-chatgpt.html` (12 leçons, 3 blocs), `kou-ia-images.html` (18 leçons, 6 blocs),
-`kou-otomatisasyon.html` (15 leçons, 5 blocs) et `kou-fine-tuning.html` (25 leçons, 5 blocs)
-portent le plan complet du cours : leçons
+Il y a une fiche par cours publié : `kou-intro-chatgpt.html` (12 leçons, 3 blocs),
+`kou-ia-images.html` (18 leçons, 6 blocs), `kou-otomatisasyon.html` (15 leçons, 5 blocs),
+`kou-fine-tuning.html` (25 leçons, 5 blocs) et `kou-langchain.html` (22 leçons, 5 blocs).
+Chacune porte le plan complet du cours : leçons
 (contenu / exemple / activité), fiche de prompts ou de modèles, et notes d'animation. Le
 contenu est écrit deux fois, en `<span lang="ht">` et
 `<span lang="fr">` : `course.css` masque la langue inactive selon `<html lang>`, et le
@@ -59,8 +61,8 @@ script de la page bascule `document.documentElement.lang` et mémorise le choix 
 l'impression.
 
 Pour ajouter un cours : copier une fiche, remplacer les textes, garder les classes de
-`course.css`, déclarer le fichier dans la liste `cp` du workflow de déploiement, puis
-renseigner `url` et `note` dans `COURSES`.
+`course.css`, déclarer le fichier dans la liste `cp` du workflow de déploiement, l'ajouter
+dans le `footer` des autres fiches, puis renseigner `url` et `note` dans `COURSES`.
 
 La newsletter et les liens marqués `data-soon` sont des démonstrations. Ils affichent
 un message « bientôt disponible » et doivent être branchés avant une mise en production.
