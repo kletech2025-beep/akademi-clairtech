@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kou Fine-Tuning de LLMs — antrennen yon modèl langaj sou pwòp done ou: 25 leson, 10 èdtan, nivo pro. Cours de fine-tuning de LLM en créole haïtien et en français.">
+    <meta name="theme-color" content="#0a0a0c">
+    <meta name="color-scheme" content="dark">
+    <title>Fine-Tuning de LLMs — Akademi Clairtech</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body class="course-page">
+    <a class="skip-link" href="#main">
+        <span lang="ht">Ale dirèk nan kontni an</span>
+        <span lang="fr">Aller au contenu</span>
+    </a>
+
+    <header class="course-topbar">
+        <div class="course-wrap course-topbar-inner">
+            <a class="course-back" href="./">
+                <span lang="ht">← Retounen sou sit la</span>
+                <span lang="fr">← Retour au site</span>
+            </a>
+            <div class="lang-switch" role="group" aria-label="Lang / Langue">
+                <button type="button" class="lang-btn" data-lang="ht" aria-pressed="true">Kreyòl</button>
+                <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">Français</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+        <!-- PREZANTASYON -->
+        <section class="course-hero">
+            <div class="course-wrap">
+                <p class="course-kicker">
+                    <span lang="ht">Kou 4 · Parcours Expert</span>
+                    <span lang="fr">Cours 4 · Parcours Expert</span>
+                </p>
+
+                <h1 class="course-title">
+                    <span lang="ht">Fine-Tuning de LLMs — Antrennen yon Modèl sou Done Ou</span>
+                    <span lang="fr">Fine-Tuning de LLMs — Entraîner un modèle sur vos données</span>
+                </h1>
+
+                <p class="course-objective" lang="ht">
+                    <strong>Objektif jeneral:</strong> nan fen kou a, patisipan yo ap kapab prepare yon dataset, konfigire
+                    yon antrennman LoRA oswa QLoRA sou yon modèl louvri, evalye rezilta a kont yon baz, epi pake modèl la
+                    pou deploye l — ak yon desizyon klè sou lè fine-tuning an merite lajan ak tan.
+                </p>
+                <p class="course-objective" lang="fr">
+                    <strong>Objectif général :</strong> à la fin du cours, les participants savent préparer un jeu de
+                    données, configurer un entraînement LoRA ou QLoRA sur un modèle ouvert, évaluer le résultat contre
+                    une référence et empaqueter le modèle pour le déployer — avec une décision claire sur le moment où
+                    le fine-tuning vaut son coût.
+                </p>
+
+                <dl class="fact-grid">
+                    <div class="fact">
+                        <dt><span lang="ht">Dire</span><span lang="fr">Durée</span></dt>
+                        <dd><span lang="ht">10 èdtan</span><span lang="fr">10 heures</span></dd>
+                        <dd class="fact-sub"><span lang="ht">25 leson × 24 minit</span><span lang="fr">25 leçons × 24 minutes</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Piblik</span><span lang="fr">Public</span></dt>
+                        <dd><span lang="ht">Devlopè ak syantifik done</span><span lang="fr">Développeurs, data scientists</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Konfòtab ak kòd Python</span><span lang="fr">À l'aise pour lire du Python</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Anviwònman</span><span lang="fr">Environnement</span></dt>
+                        <dd><span lang="ht">Colab, Kubernetes oswa yon GPU lokal</span><span lang="fr">Colab, cluster ou GPU local</span></dd>
+                        <dd class="fact-sub"><span lang="ht">PyTorch, Transformers, PEFT</span><span lang="fr">PyTorch, Transformers, PEFT</span></dd>
+                    </div>
+                    <div class="fact">
+                        <dt><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></dt>
+                        <dd><span lang="ht">Yon kont Hugging Face</span><span lang="fr">Un compte Hugging Face</span></dd>
+                        <dd class="fact-sub"><span lang="ht">Ak yon ti dataset pwòp (50 egzanp)</span><span lang="fr">Et un petit jeu de données maison (50 exemples)</span></dd>
+                    </div>
+                </dl>
+
+                <table class="plan-table">
+                    <caption class="sr-only">
+                        <span lang="ht">Estrikti jeneral kou a: 5 blòk, 25 leson, 600 minit</span>
+                        <span lang="fr">Structure générale du cours : 5 blocs, 25 leçons, 600 minutes</span>
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th scope="col"><span lang="ht">Blòk</span><span lang="fr">Bloc</span></th>
+                            <th scope="col"><span lang="ht">Leson</span><span lang="fr">Leçons</span></th>
+                            <th scope="col"><span lang="ht">Objektif</span><span lang="fr">Objectif</span></th>
+                            <th scope="col"><span lang="ht">Dire</span><span lang="fr">Durée</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 1: Baz yo</span><span lang="fr">Bloc 1 : Les bases</span></th>
+                            <td>1–5</td>
+                            <td><span lang="ht">Konprann sa fine-tuning fè reyèlman, diferans li ak prompt ak RAG, epi chwazi modèl baz la.</span><span lang="fr">Comprendre ce que le fine-tuning fait vraiment, ses différences avec le prompting et le RAG, choisir le modèle de base.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 2: Done yo</span><span lang="fr">Bloc 2 : Les données</span></th>
+                            <td>6–10</td>
+                            <td><span lang="ht">Konstwi yon dataset pwòp nan fòma chat, separe train/eval/test, epi kontwole longè ak balans.</span><span lang="fr">Construire un jeu de données propre au format chat, séparer train/eval/test, maîtriser longueur et équilibre.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 3: Antrennman</span><span lang="fr">Bloc 3 : L'entraînement</span></th>
+                            <td>11–15</td>
+                            <td><span lang="ht">Konfigire LoRA/QLoRA, chwazi paramèt yo, epi kouri yon premye antrennman ki rive nan bout san li pa kase.</span><span lang="fr">Configurer LoRA/QLoRA, choisir les hyperparamètres, mener un premier entraînement au bout sans crash.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 4: Evalyasyon</span><span lang="fr">Bloc 4 : L'évaluation</span></th>
+                            <td>16–20</td>
+                            <td><span lang="ht">Mezire si modèl la amelyore vre, detekte sur-ajistman, epi konpare vèsyon yo sou menm baz la.</span><span lang="fr">Mesurer si le modèle s'améliore vraiment, détecter le sur-apprentissage, comparer les versions sur une base commune.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><span lang="ht">Blòk 5: Deplwaman &amp; Limit</span><span lang="fr">Bloc 5 : Déploiement &amp; limites</span></th>
+                            <td>21–25</td>
+                            <td><span lang="ht">Pake, konvèti, sèvi ak modèl la an prodiksyon, epi kalkile pri ak lè pou pa fè l.</span><span lang="fr">Empaqueter, quantifier, servir le modèle en production, calculer le coût et savoir quand s'abstenir.</span></td>
+                            <td>2 h</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOMMÈ -->
+        <section class="course-section">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Sommè leson yo</span>
+                    <span lang="fr">Sommaire des leçons</span>
+                </h2>
+                <ol class="toc">
+                    <li><a href="#lesson-1"><span lang="ht">Kisa Fine-Tuning Fè Reyèlman?</span><span lang="fr">Ce que le fine-tuning fait vraiment</span></a></li>
+                    <li><a href="#lesson-2"><span lang="ht">Prompt, RAG oswa Fine-Tuning?</span><span lang="fr">Prompting, RAG ou fine-tuning ?</span></a></li>
+                    <li><a href="#lesson-3"><span lang="ht">Full, LoRA, QLoRA</span><span lang="fr">Full, LoRA, QLoRA</span></a></li>
+                    <li><a href="#lesson-4"><span lang="ht">Prepare Anviwònman Ou</span><span lang="fr">Préparer son environnement</span></a></li>
+                    <li><a href="#lesson-5"><span lang="ht">Chwazi Modèl Baz La</span><span lang="fr">Choisir le modèle de base</span></a></li>
+                    <li><a href="#lesson-6"><span lang="ht">Fòma yon Dataset Chat</span><span lang="fr">Le format d'un jeu de données chat</span></a></li>
+                    <li><a href="#lesson-7"><span lang="ht">Kolekte Done San Gaspiy</span><span lang="fr">Collecter les données sans gaspiller</span></a></li>
+                    <li><a href="#lesson-8"><span lang="ht">Netwaye: Dedip, Filtè, Kalite</span><span lang="fr">Nettoyer : doublons, filtres, qualité</span></a></li>
+                    <li><a href="#lesson-9"><span lang="ht">Separe Train / Eval / Test</span><span lang="fr">Séparer train / eval / test</span></a></li>
+                    <li><a href="#lesson-10"><span lang="ht">Tokenizasyon ak Limit Kontèks</span><span lang="fr">Tokenisation et limite de contexte</span></a></li>
+                    <li><a href="#lesson-11"><span lang="ht">Chwazi Metrik Siksè</span><span lang="fr">Choisir la métrique de succès</span></a></li>
+                    <li><a href="#lesson-12"><span lang="ht">Konfigire LoRA / QLoRA</span><span lang="fr">Configurer LoRA / QLoRA</span></a></li>
+                    <li><a href="#lesson-13"><span lang="ht">Paramèt Kle yo</span><span lang="fr">Les hyperparamètres clés</span></a></li>
+                    <li><a href="#lesson-14"><span lang="ht">Kouri Premye Antrennman An</span><span lang="fr">Lancer le premier entraînement</span></a></li>
+                    <li><a href="#lesson-15"><span lang="ht">Li Kourbe Pèt la</span><span lang="fr">Lire la courbe de perte</span></a></li>
+                    <li><a href="#lesson-16"><span lang="ht">Evalyasyon Otomatik</span><span lang="fr">Évaluation automatique</span></a></li>
+                    <li><a href="#lesson-17"><span lang="ht">Evalyasyon Imen ak Grille</span><span lang="fr">Évaluation humaine avec grille</span></a></li>
+                    <li><a href="#lesson-18"><span lang="ht">LLM-an-jij: Itilize ak Sispis</span><span lang="fr">LLM-as-judge : usage et prudence</span></a></li>
+                    <li><a href="#lesson-19"><span lang="ht">Detekte Sur-ajistman</span><span lang="fr">Détecter le sur-apprentissage</span></a></li>
+                    <li><a href="#lesson-20"><span lang="ht">Konpare Vèsyon Ak Ablation</span><span lang="fr">Comparer les versions par ablation</span></a></li>
+                    <li><a href="#lesson-21"><span lang="ht">Pake Modèl la</span><span lang="fr">Empaqueter le modèle</span></a></li>
+                    <li><a href="#lesson-22"><span lang="ht">Kantifikasyon ak Optimizasyon</span><span lang="fr">Quantification et optimisation</span></a></li>
+                    <li><a href="#lesson-23"><span lang="ht">Sèvi Ak Modèl Ou</span><span lang="fr">Servir son modèle</span></a></li>
+                    <li><a href="#lesson-24"><span lang="ht">Kat Modèl ak Vèsyon</span><span lang="fr">Model card et versionnement</span></a></li>
+                    <li><a href="#lesson-25"><span lang="ht">Pri, Risk, Lè Pou Pa Fè L</span><span lang="fr">Coût, risques, quand s'abstenir</span></a></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- BLÒK 1 -->
+        <section class="course-section" id="block-1">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 1 · Baz yo</span>
+                    <span lang="fr">Bloc 1 · Les bases</span>
+                    <span class="block-meta"><span lang="ht">leson 1–5 · 2 h</span><span lang="fr">leçons 1–5 · 2 h</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-1">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">1</span>
+                        <h3><span lang="ht">Kisa Fine-Tuning Fè Reyèlman?</span><span lang="fr">Ce que le fine-tuning fait vraiment</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Fine-tuning pa ajoute konesans nan yon modèl — li ajiste fason modèl la reponn: fòma, ton, estrikti fraz. Konesans nouvo vin pa done ou bay nan kontèks la (RAG) oswa pa yon nouvo antrennman sou tèks. Se pou w klè sou sa anvan ou depanse lajan GPU.</p>
+                        <p lang="fr">Le fine-tuning n'ajoute pas de connaissances au modèle — il ajuste sa façon de répondre : format, ton, structure des phrases. Les connaissances nouvelles viennent des données mises en contexte (RAG) ou d'un entraînement sur de nouveaux textes. Clarifiez ce point avant de dépenser en GPU.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Menm baz modèl la ka ekri yon repons legal nan fòma reyalite-desizyon apre 300 egzanp — men li ap toujou inyore yon lwa ki parèt apre dat antrennman an.</p>
+                        <p lang="fr">Le même modèle de base peut rédiger une réponse juridique au format « faits et décision » après 300 exemples — mais il ignorera toujours une loi publiée après sa date d'entraînement.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri yon sèl pwoblèm yo genyen epi klase l: fòma, ton, konpetans, oswa konesans.</p>
+                        <p lang="fr">Chacun écrit un problème qu'il rencontre et le classe : format, ton, compétence ou connaissance.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-2">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">2</span>
+                        <h3><span lang="ht">Prompt, RAG oswa Fine-Tuning?</span><span lang="fr">Prompting, RAG ou fine-tuning ?</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Règ la: kòmanse ak prompt avanse, ajoute RAG si se konesans ki manke, epi sèlman apre sa fine-tune si se konpòtman ki repete ki pa mache. Fine-tune koute tan, GPU ak evalyasyon; RAG chanje chak jou san ou pa reantrennen anyen.</p>
+                        <p lang="fr">Règle : d'abord le prompt avancé, puis le RAG s'il manque des connaissances, et seulement ensuite le fine-tuning si un comportement répété échoue. Le fine-tuning coûte du temps, du GPU et de l'évaluation ; le RAG se met à jour chaque jour sans ré-entraînement.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <ul class="pair">
+                            <li class="bad" lang="ht"><strong>Pi move:</strong> fine-tune pou « konnen pwodwi nou yo » → done a chanje chak semèn, modèl la vin demode.</li>
+                            <li class="bad" lang="fr"><strong>Pire :</strong> fine-tuner pour « connaître nos produits » → les données changent chaque semaine, le modèle devient périmé.</li>
+                            <li class="good" lang="ht"><strong>Pi bon:</strong> RAG pou pwodwi yo + fine-tune sèlman pou fòma repons lan (3 paragraf, ton nou).</li>
+                            <li class="good" lang="fr"><strong>Meilleur :</strong> RAG pour les produits + fine-tuning uniquement pour le format de réponse (3 paragraphes, ton maison).</li>
+                        </ul>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Pran 3 pwoblèm soti Leson 1, deside pou chak youn: prompt, RAG, oswa fine-tuning — epi di poukisa.</p>
+                        <p lang="fr">Prendre 3 problèmes de la leçon 1 et décider pour chacun : prompt, RAG ou fine-tuning — avec la raison.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-3">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">3</span>
+                        <h3><span lang="ht">Full, LoRA, QLoRA</span><span lang="fr">Full, LoRA, QLoRA</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Full ajisteman mete tout pwa yo ajiste — li mande anpil memwa. LoRA ajoute ti matris (adapter) sou kèk kouch sèlman; se 0,1–1% pwa ki bouje. QLoRA fè menm bagay la sou yon modèl 4-bit, konsa yon sèl GPU ka sipòte l. Pou yon premye pwojè, konmanse ak QLoRA.</p>
+                        <p lang="fr">Le full fine-tuning ajuste tous les poids — très gourmand en mémoire. LoRA n'ajoute que de petites matrices (adapters) sur quelques couches ; 0,1 à 1 % des poids bougent. QLoRA fait la même chose sur un modèle quantifié en 4 bits, un seul GPU suffit. Pour un premier projet, commencez par QLoRA.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon modèl 7B: full ≈ plizyè GPU-80GB, LoRA ≈ 1 GPU gwo, QLoRA 4-bit ≈ yon kat 24GB oswa yon abònman Colab. Menm adapter la ka detache epi kole sou lòt vèsyon baz la.</p>
+                        <p lang="fr">Pour un 7B : full ≈ plusieurs GPU 80 Go, LoRA ≈ un gros GPU, QLoRA 4 bits ≈ une carte 24 Go ou un abonnement Colab. Le même adapter peut être détaché et greffé sur une autre version du modèle de base.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri ki metòd li pral itilize pou pwojè pa l, ak ki rezon (done, GPU, risk).</p>
+                        <p lang="fr">Chacun note la méthode retenue pour son projet et la justification (données, GPU, risque).</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-4">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">4</span>
+                        <h3><span lang="ht">Prepare Anviwònman Ou</span><span lang="fr">Préparer son environnement</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Bloke vèsyon yo (python, torch, transformers, peft, datasets) nan yon fichye, kreye yon kont Hugging Face ak yon token li (read), epi tès memwa GPU ou anvan w chwazi gwosè modèl la. Prepare sa avan kou a — se la tan pèdi pi souvan.</p>
+                        <p lang="fr">Épinglez les versions (python, torch, transformers, peft, datasets) dans un fichier, créez un compte Hugging Face avec un token en lecture, testez la mémoire GPU avant de choisir la taille du modèle. Préparez cela avant le cours — c'est là que le temps se perd.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Verifye ak: <code>python -c "import torch; print(torch.cuda.get_device_properties(0))"</code> — si li pa bay 16GB+, pa tanten yon modèl 13B an QLoRA.</p>
+                        <p lang="fr">Vérification : <code>python -c "import torch; print(torch.cuda.get_device_properties(0))"</code> — moins de 16 Go, ne tentez pas un 13B en QLoRA.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Tout moun kouri tès anviwònman an epi poste rezilta a (GPU, vèsyon) nan chanèl gwoup la.</p>
+                        <p lang="fr">Chacun exécute le test d'environnement et publie le résultat (GPU, versions) dans le canal du groupe.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-5">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">5</span>
+                        <h3><span lang="ht">Chwazi Modèl Baz La</span><span lang="fr">Choisir le modèle de base</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Chwazi sou 4 kritè: lisans (eske ou ka itilize l komèsyalman), sipò pou lang ou yo, gwosè ki antre nan GPU ou, ak ekosistèm nan (tokenizer, chat template ki matche). Pi piti modèl ki pase sou yon baz se souvan pi bon chwa — li pi rapid epi pi chè.</p>
+                        <p lang="fr">Quatre critères : licence (usage commercial possible), soutien des langues visées, taille tenant sur votre GPU, écosystème (tokenizer, gabarit de chat cohérent). Le plus petit modèle qui atteint la référence est souvent le meilleur choix — plus rapide et moins cher.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Pou kreyòl ak franse: verifye si modèl la gen bon sipò franse, epi teste 10 prompt san antrennman anvan ou angaje w.</p>
+                        <p lang="fr">Pour le créole et le français : vérifiez le soutien du français, puis testez 10 prompts avant tout entraînement.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun note 2 modèl kandida ak rezon ki fè yo chwazi youn, epi ekri baz la (rezilta 10 prompt yo).</p>
+                        <p lang="fr">Chacun note 2 modèles candidats, la raison du choix et la référence obtenue sur 10 prompts.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 2 -->
+        <section class="course-section" id="block-2">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 2 · Done yo</span>
+                    <span lang="fr">Bloc 2 · Les données</span>
+                    <span class="block-meta"><span lang="ht">leson 6–10 · 2 h</span><span lang="fr">leçons 6–10 · 2 h</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-6">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">6</span>
+                        <h3><span lang="ht">Fòma yon Dataset Chat</span><span lang="fr">Le format d'un jeu de données chat</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Fòma estanda a se JSONL: yon liy = yon egzanp, ak yon lis mesaje ({role, content}). Pa mete done an nan yon sèl gwo tèks. Chat template modèl la dwe aplike otomatikman pa bibliyotèk la — ou pa dwe ekri li manyèlman.</p>
+                        <p lang="fr">Format standard : JSONL, une ligne = un exemple, avec une liste de messages ({role, content}). Ne mettez pas vos données dans un seul bloc de texte. Le gabarit de chat du modèle doit être appliqué par la bibliothèque, jamais à la main.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">{"messages": [{"role": "user", "content": "Konvti nòt sa a an imèl kout."}, {"role": "assistant", "content": "Bonjou, ..."}]}</p>
+                        <p lang="fr">{"messages": [{"role": "user", "content": "Convertis cette note en e-mail court."}, {"role": "assistant", "content": "Bonjour, ..."}]}</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun konvti 5 egzanp pwòp done yo an JSONL epi valide li ak yon ti script.</p>
+                        <p lang="fr">Chacun convertit 5 exemples de ses données en JSONL et les valide avec un petit script.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-7">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">7</span>
+                        <h3><span lang="ht">Kolekte Done San Gaspiy</span><span lang="fr">Collecter les données sans gaspiller</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kòmanse ak 50–200 egzanp ki reprezante vrè travay la, pa ak 5000 ki mele. Pi bon sous la se transkripsyon reyèl (tikè, imèl, chat) ke yon moun valide. Itilize done sentetik sèlman pou ranpli vid ki klè, epi make yo.</p>
+                        <p lang="fr">Commencez par 50 à 200 exemples représentatifs du vrai travail, pas 5 000 mélangés. La meilleure source est la retranscription réelle (tickets, e-mails, chat) validée par un humain. Les données synthétiques ne servent qu'à combler des vides identifiés, et doivent être marquées.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Ranmase 100 tikè sipò reyèl → retire enfòmasyon idantifyan → kite yon moun ki konn travay la reekri 20 repons ki pi bon.</p>
+                        <p lang="fr">Récupérer 100 tickets réels → retirer les identifiants → laisser un expert réécrire les 20 réponses les plus faibles.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini ki sous li genyen, konbyen egzanp reyalis li ka kolekte semèn sa a, ak ki risk konfidansyalite.</p>
+                        <p lang="fr">Chacun liste ses sources, le nombre d'exemples réalistes collectables cette semaine et les risques de confidentialité.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-8">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">8</span>
+                        <h3><span lang="ht">Netwaye: Dedip, Filtè, Kalite</span><span lang="fr">Nettoyer : doublons, filtres, qualité</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twazye anvan w antrenne: retire dedip (menm kesyon an ak menm repons lan), retire liy vid oswa ki kase, retire done pèsonèl, epi filtre repons ki twò kout oswa ki gen erè fòma. Yon sèl dedip ant train ak test ka fè evalyasyon an parfe san valè.</p>
+                        <p lang="fr">Nettoyez avant d'entraîner : doublons (même question-réponse), lignes vides ou cassées, données personnelles, réponses trop courtes ou mal formatées. Un seul doublon entre train et test rend l'évaluation sans valeur.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Fè yon hash sou kontni mesaje itilizatè a → retire liy ki gen menm hash → verifye ke pa gen imel oswa nimewo telefòn ki rete.</p>
+                        <p lang="fr">Hacher le contenu du message utilisateur → supprimer les lignes au même hash → vérifier qu'il ne reste ni e-mail ni téléphone.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri lis 4 tès netwayaj li ap kouri sou dataset pa l, epi nòte sa chak tès retire.</p>
+                        <p lang="fr">Chacun écrit la liste des 4 tests de nettoyage à lancer sur son jeu et note ce que chacun retire.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-9">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">9</span>
+                        <h3><span lang="ht">Separe Train / Eval / Test</span><span lang="fr">Séparer train / eval / test</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa moso: train pou aprann, eval pou chwazi paramèt yo pandan antrennman an, test pou desizyon final la — epi test la pa dwe jamè parèt nan antrennman an. Separe yo sou yon baz ki sanble ak itilizasyon reyèl la, pa ak yon melanj aza si gen seri tanporèl.</p>
+                        <p lang="fr">Trois parts : train pour apprendre, eval pour choisir les hyperparamètres pendant l'entraînement, test pour la décision finale — le test ne doit jamais apparaître à l'entraînement. Séparez selon une distribution proche de l'usage réel, et non au hasard s'il existe une dimension temporelle.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">500 egzanp: 400 train / 50 eval / 50 test. Si se kesyon kliyan, mete kesyon ki soti nan menm moun nan nan yon sèl split.</p>
+                        <p lang="fr">500 exemples : 400 train / 50 eval / 50 test. Pour des questions clients, mettez toutes les questions d'un même client dans un seul split.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini pousantaj split yo ak rezon yo, espesyalman ki jan yo evite fwit done.</p>
+                        <p lang="fr">Chacun définit ses proportions de split et leurs raisons, surtout comment éviter la fuite de données.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-10">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">10</span>
+                        <h3><span lang="ht">Tokenizasyon ak Limit Kontèks</span><span lang="fr">Tokenisation et limite de contexte</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Konte token, pa mo: yon menm tèks kreyòl ka pran plis token pase franse. Mezije distribisyon longè dataset ou, epi deside yon limit (max_seq_length) ki koupe pi piti posib. Ki sa ki depase limit la disparèt san avètisman — se la pifò erè kache.</p>
+                        <p lang="fr">Comptez les jetons, pas les mots : un même texte en créole peut consommer plus de jetons qu'en français. Mesurez la distribution des longueurs et fixez une borne (max_seq_length). Ce qui dépasse disparaît sans avertissement — c'est le bug le mieux caché.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Itilize tokenizer modèl la pou mezire p50, p95, p99 → si p95 = 900 token, yon limit 1024 ap koupe mwens pase 5% egzanp yo.</p>
+                        <p lang="fr">Utilisez le tokenizer du modèle pour mesurer p50, p95, p99 → si p95 = 900 jetons, une borne à 1024 coupe moins de 5 % des exemples.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun mezire longè dataset pa l (oswa yon egzanp 10 liy) epi rapòte p95 la.</p>
+                        <p lang="fr">Chacun mesure les longueurs de son jeu (ou d'un échantillon de 10 lignes) et communique p95.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 3 -->
+        <section class="course-section" id="block-3">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 3 · Antrennman</span>
+                    <span lang="fr">Bloc 3 · L'entraînement</span>
+                    <span class="block-meta"><span lang="ht">leson 11–15 · 2 h</span><span lang="fr">leçons 11–15 · 2 h</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-11">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">11</span>
+                        <h3><span lang="ht">Chwazi Metrik Siksè</span><span lang="fr">Choisir la métrique de succès</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Defini siksè anvan antrennman an, ak yon metrik ki ka mezire: pousantaj repons ki respekte fòma a, nòt imen sou yon grille, oswa ekzaktitid sou yon lis kesyon. Pèt (loss) sel pa sufizan — li di w kijan modèl la aprann, pa si li itil.</p>
+                        <p lang="fr">Définissez le succès avant l'entraînement avec une métrique mesurable : part de réponses au format attendu, note humaine sur grille, exactitude sur une liste de questions. La perte seule ne suffit pas — elle dit comment le modèle apprend, pas s'il est utile.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Objektif: 90% repons JSON valab (vs 60% baz la) epi 4,0/5 sou 30 ka tès imen. Si yo pa atenn, nou pa deplwaye.</p>
+                        <p lang="fr">Cible : 90 % de JSON valides (contre 60 % pour la référence) et 4,0/5 sur 30 cas testés à la main. Sans cela, on ne déploie pas.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri objektif nimewo pa l ak baz la (rezilta modèl san antrennman an).</p>
+                        <p lang="fr">Chacun écrit son objectif chiffré et la valeur de référence du modèle non entraîné.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-12">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">12</span>
+                        <h3><span lang="ht">Konfigire LoRA / QLoRA</span><span lang="fr">Configurer LoRA / QLoRA</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kat paramèt LoRA konte: r (gwosè adapter la), lora_alpha (fòse ajisteman an), dropout, ak target modules (ki kouch yo touche). Pou kòmanse: r=8–16, alpha=2×r, tout kouch atansyon (attention) yo. Pa touche tout an menm tan.</p>
+                        <p lang="fr">Quatre paramètres comptent : r (taille de l'adapter), lora_alpha (force de l'ajustement), dropout et target modules (couches visées). Pour démarrer : r=8–16, alpha=2×r, toutes les couches d'attention. Ne changez pas tout à la fois.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">L40/24GB + yon modèl 7B: load_in_4bit=True, r=16, lora_alpha=32, dropout=0.05, target=q,k,v,o → adapter la peze ~40MB.</p>
+                        <p lang="fr">L40/24 Go + modèle 7B : load_in_4bit=True, r=16, lora_alpha=32, dropout=0.05, cible=q,k,v,o → l'adapter pèse ~40 Mo.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri konfig LoRA pa l la sou 6 liy, epi make ki paramèt yo kite pou teste apre.</p>
+                        <p lang="fr">Chacun écrit sa config LoRA en 6 lignes et marque les paramètres à tester ensuite.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-13">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">13</span>
+                        <h3><span lang="ht">Paramèt Kle yo</span><span lang="fr">Les hyperparamètres clés</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Learning rate pou LoRA anpil pi wo pase pou full tuning (2e-4 se yon bon pwen depa). Epoch: 1–3 pou gwo done, plis pou ti done. Batch size ak gradient accumulation konte menm bagay la pou memwa. Warmup anpeche premye pye yo kraze modèl la.</p>
+                        <p lang="fr">Le learning rate en LoRA est bien plus élevé qu'en full tuning (2e-4 est un bon départ). Epochs : 1 à 3 sur gros volume, davantage sur de petits jeux. Batch size et gradient accumulation jouent sur la mémoire. Le warmup évite que les premiers pas abîment le modèle.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon sèl esè: lr=2e-4, epochs=2, batch=4, grad_accum=4 (efektif 16), warmup_ratio=0.03, bf16, seed fikse.</p>
+                        <p lang="fr">Premier essai : lr=2e-4, epochs=2, batch=4, grad_accum=4 (effectif 16), warmup_ratio=0.03, bf16, graine fixée.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Bay yon konfig ki gen 3 erè volè (lr=2e-5, epochs=20, pa gen eval); gwoup la jwenn yo.</p>
+                        <p lang="fr">Donner une config contenant 3 erreurs volontaires (lr=2e-5, epochs=20, pas d'eval) ; le groupe les trouve.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-14">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">14</span>
+                        <h3><span lang="ht">Kouri Premye Antrennman An</span><span lang="fr">Lancer le premier entraînement</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Kòmanse ak yon ti kouri: 20 egzanp, 1 epoch, pou verifye pipeline a nèt (chajman modèl, template, split, save). Si sa mache, lanse vèsyon konplè a ak save_steps pou gen checkpoint, epi output_dir ki gen dat nan non l. Pa janm kouri yon gwo antrennman san checkpoint.</p>
+                        <p lang="fr">Commencez par un run court : 20 exemples, 1 epoch, pour valider tout le pipeline (chargement, gabarit, split, sauvegarde). Puis lancez le run complet avec save_steps pour avoir des checkpoints et un output_dir daté. Ne lancez jamais un long entraînement sans checkpoint.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Erè tipik: « CUDA out of memory » → solisyon an pa toujou yon GPU pi gwo: bese batch, monte grad_accum, oswa verifye kit gen 2 modèl chaje an menm tan.</p>
+                        <p lang="fr">Erreur typique : « CUDA out of memory » → la solution n'est pas toujours un GPU plus gros : baisser le batch, monter grad_accum, ou vérifier que deux modèles ne sont pas chargés ensemble.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Gwoup la kouri ti kouri a (20 egzanp) ansanm epi regle erè yo youn pa youn.</p>
+                        <p lang="fr">Le groupe lance ensemble le run court (20 exemples) et corrige les erreurs une à une.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-15">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">15</span>
+                        <h3><span lang="ht">Li Kourbe Pèt la</span><span lang="fr">Lire la courbe de perte</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Swiv train loss ak eval loss ansanm. Train ki desann pandan eval ap desann = bon. Train ki desann men eval ap monte = sur-ajistman, kanpe. Tout plat = aprann pa fèt (lr twò piti oswa done twò repetitif). Yon sote = done ki kase oswa batch ki twò piti.</p>
+                        <p lang="fr">Suivez train loss et eval loss ensemble. Les deux baissent : bon signal. Le train baisse et l'eval monte : sur-apprentissage, arrêtez. Un plateau : rien n'est appris (lr trop faible ou données trop répétitives). Un saut : donnée cassée ou batch trop petit.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Montre 4 kourbe san etikèt → gwoup la idantifye: bon, sur-ajiste, plat, ak bri. Se yon egzèsis ki sove plizyè èdtan GPU.</p>
+                        <p lang="fr">Montrer 4 courbes sans étiquette → le groupe identifie : saine, sur-apprise, plate, bruitée. Exercice qui économise des heures de GPU.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri kritè kanpe pa l (ki nivo eval loss, ki epoch) anvan yo gade rezilta kouri a.</p>
+                        <p lang="fr">Chacun écrit son critère d'arrêt (niveau d'eval loss, epoch) avant de regarder les résultats du run.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 4 -->
+        <section class="course-section" id="block-4">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 4 · Evalyasyon</span>
+                    <span lang="fr">Bloc 4 · L'évaluation</span>
+                    <span class="block-meta"><span lang="ht">leson 16–20 · 2 h</span><span lang="fr">leçons 16–20 · 2 h</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-16">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">16</span>
+                        <h3><span lang="ht">Evalyasyon Otomatik</span><span lang="fr">Évaluation automatique</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa kalite tès otomatik: metrik fòma (JSON valab, longè, prezan kle obligatwa), metrik ekzaktitid (match ak repons referans, aksepsyon sinonim), ak metrik langaj (perplexity). Kòmanse ak fòma — se la pifò repons yo echwe epi se mezi ki pi rapid la.</p>
+                        <p lang="fr">Trois familles de tests automatiques : métriques de format (JSON valide, longueur, clés obligatoires), d'exactitude (correspondance à la référence, synonymes tolérés) et de langue (perplexité). Commencez par le format — c'est là que la plupart des réponses échouent, et c'est la mesure la plus rapide.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon script: pase 50 kesyon test → JSON.parse chak repons → rapòte % valid, tan mwayèn, ak 3 pi move repons yo.</p>
+                        <p lang="fr">Un script : parcourir 50 questions de test → JSON.parse de chaque réponse → rendre le % valide, le temps moyen et les 3 pires réponses.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 3 tès otomatik pou pwòp ka yo, ak ki repons ki ta tonbe nan chak tès.</p>
+                        <p lang="fr">Chacun écrit 3 tests automatiques pour son cas et imagine une réponse qui échouerait à chacun.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-17">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">17</span>
+                        <h3><span lang="ht">Evalyasyon Imen ak Grille</span><span lang="fr">Évaluation humaine avec grille</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon grille senp: 4–5 kritè (presizyon, fòma, ton, konplè, pa gen enfòmasyon envante) ak nòt 1–5. Evalye 2 modèl an menm tan san wè ki lon (blind), ak yon lòt moun ki evalye separe pou verifye akò a. San sa, nòt la reflete atant evaluatè a.</p>
+                        <p lang="fr">Grille simple : 4–5 critères (précision, format, ton, complétude, absence d'invention) notés 1–5. Évaluez deux modèles en aveugle, côte à côte, et faites noter par une seconde personne pour mesurer l'accord. Sans cela, la note reflète les attentes de l'évaluateur.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">20 ka × 2 modèl, melange, etikete A/B → chak moun bay nòt → konpare akò a ant evaluatè yo.</p>
+                        <p lang="fr">20 cas × 2 modèles, mélangés, étiquetés A/B → notation individuelle → mesure de l'accord inter-évaluateurs.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Gwoup la itilize grille a sou 5 ka reyèl epi diskite ka yo pa dakò sou yo.</p>
+                        <p lang="fr">Le groupe applique la grille à 5 cas réels et discute les désaccords.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-18">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">18</span>
+                        <h3><span lang="ht">LLM-an-jij: Itilize ak Sispis</span><span lang="fr">LLM-as-judge : usage et prudence</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Yon modèl kapab evalye mil repons pou yon ti pri, men li gen pwenson: li pito repons ki pi long, li pito premye opsyon an, epi li ka pito pwòp estil li. Itilize l pou filtre, pa pou desizyon final, epi kalibre l sou 30 ka imen.</p>
+                        <p lang="fr">Un modèle peut évaluer mille réponses pour un faible coût, mais il a des biais : préférence pour la longueur, pour la première option, et pour son propre style. Servez-vous-en pour filtrer, pas pour trancher, et calibre-le sur 30 cas notés par des humains.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Echange pozisyon A/B sou 20 ka → si jij la chanje opinyon l, se yon pwenson pozisyon. Rapòte akò a ak nòt imen an.</p>
+                        <p lang="fr">Inverser A/B sur 20 cas → si le juge change d'avis, c'est un biais de position. Comparez son accord avec la note humaine.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri prompt jij la ak 3 mezi pwoteksyon (blind, pozisyon ranvèse, kalibrasyon).</p>
+                        <p lang="fr">Chacun écrit son prompt de juge avec 3 garde-fous (aveugle, position inversée, calibration).</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-19">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">19</span>
+                        <h3><span lang="ht">Detekte Sur-ajistman</span><span lang="fr">Détecter le sur-apprentissage</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Sign: modèl la repete fraz egzak soti nan train, li reponn byen sou kesyon ki sanble anpil ak done yo, men l tonbe sou yon ti varyasyon. Teste ak reekriti (menm sans, lòt mo), ak kesyon ki pa nan dataset la. Compare toujou ak baz la, pa ak tèt ou.</p>
+                        <p lang="fr">Signes : le modèle répète des phrases exactes du train, réussit les questions très proches des données et échoue sur une légère variation. Testez avec des reformulations (même sens, autres mots) et des questions absentes du jeu. Comparez toujours à la référence, pas à votre souvenir.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Pran 10 kesyon train, reekri yo ak yon mo diferan → si nòt la tonbe 30 pwen, se memorizasyon, pa aprantisaj.</p>
+                        <p lang="fr">Prendre 10 questions du train, les reformuler à un mot près → une chute de 30 points indique de la mémorisation, pas de l'apprentissage.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 3 varyasyon tès yo ap itilize pou teste rezistans modèl yo.</p>
+                        <p lang="fr">Chacun écrit les 3 variantes de test qu'il utilisera pour éprouver la robustesse de son modèle.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-20">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">20</span>
+                        <h3><span lang="ht">Konpare Vèsyon Ak Ablation</span><span lang="fr">Comparer les versions par ablation</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Chanje yon sèl bagay pa fwa: done, paramèt, oswa modèl baz. Kenje yon tablo senp (vèsyon, sa ki chanje, metrik, konklizyon, pri). San sa w pa janm konnen sa ki te fè amelyorasyon an, epi w pa ka repete l.</p>
+                        <p lang="fr">Changez une seule chose à la fois : données, paramètres ou modèle de base. Tenez un tableau simple (version, modification, métrique, conclusion, coût). Sans cela, vous ignorez ce qui a produit l'amélioration et vous ne pouvez pas la reproduire.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">v1 baz · v2 +100 egzanp fòma (JSON valab 60→88%) · v3 r=32 (88→88%, pa anyen) → kenbe v2, abandone v3.</p>
+                        <p lang="fr">v1 référence · v2 +100 exemples de format (JSON valide 60→88 %) · v3 r=32 (88→88 %, aucun gain) → garder v2, abandonner v3.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ranpli 2 liy tablo ablation pou pwojè yo, ak yon desizyon klè: kenbe oswa abandone.</p>
+                        <p lang="fr">Chacun remplit 2 lignes du tableau d'ablation pour son projet, avec une décision claire : garder ou abandonner.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- BLÒK 5 -->
+        <section class="course-section" id="block-5">
+            <div class="course-wrap">
+                <h2 class="block-title">
+                    <span lang="ht">Blòk 5 · Deplwaman &amp; Limit</span>
+                    <span lang="fr">Bloc 5 · Déploiement &amp; limites</span>
+                    <span class="block-meta"><span lang="ht">leson 21–25 · 2 h</span><span lang="fr">leçons 21–25 · 2 h</span></span>
+                </h2>
+
+                <article class="lesson" id="lesson-21">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">21</span>
+                        <h3><span lang="ht">Pake Modèl la</span><span lang="fr">Empaqueter le modèle</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">De chwa: kenbe adapter separe (ti pwa, fasil pou mete ajou) oswa merge l nan modèl baz la (senp pou deplwaye, men yon sèl gwo fichye). Merge a fè yon sèl fwa, apre evalyasyon final. Kenje tokenizer, chat template ak konfig yo ansanm ak pwa yo — se sa ki fè yon deplwaman repètisab.</p>
+                        <p lang="fr">De options : garder l'adapter séparé (léger, facile à mettre à jour) ou le fusionner avec le modèle de base (déploiement simple, mais un seul gros fichier). La fusion se fait une fois, après l'évaluation finale. Conservez tokenizer, gabarit de chat et configurations avec les poids — c'est ce qui rend un déploiement reproductible.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Anvan merge: verifye adapter la mache sou modèl baz la nan menm vèsyon bibliyotèk la. Apre merge: rekouri 20 ka eval pou konfime nòt la pa tonbe.</p>
+                        <p lang="fr">Avant la fusion : vérifier que l'adapter fonctionne sur la même version de bibliothèque. Après : relancer 20 cas d'évaluation pour confirmer que la note n'a pas chuté.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun deside: adapter separe oswa merge, epi ekri rezon an ak sa ki ka kase.</p>
+                        <p lang="fr">Chacun décide : adapter séparé ou fusion, avec la raison et les risques.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-22">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">22</span>
+                        <h3><span lang="ht">Kantifikasyon ak Optimizasyon</span><span lang="fr">Quantification et optimisation</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Konvti modèl la an 8-bit oswa 4-bit (GGUF, AWQ) pou l antre sou yon machin pi piti epi reponn pi vit. Men kantifikasyon ka koute presizyon — se pou w remezire apre, pa anvan. Toujou mezire 3 bagay: kalite, memwa, ak tan pa repons.</p>
+                        <p lang="fr">Quantifiez le modèle en 8 ou 4 bits (GGUF, AWQ) pour le faire tenir sur une machine plus modeste et gagner en latence. Mais la quantification peut coûter en précision : remesurez après, jamais avant. Mesurez toujours trois choses : qualité, mémoire et temps par réponse.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">7B an 4-bit: ~4GB memwa, repons 2× pi rapid — men si JSON valab tonbe soti 88% rive 71%, rete an 8-bit oswa chanje fòma kantifikasyon an.</p>
+                        <p lang="fr">Un 7B en 4 bits : ~4 Go, réponses 2× plus rapides — mais si le JSON valide tombe de 88 % à 71 %, restez en 8 bits ou changez de schéma de quantification.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri objektif deplwaman an (ki machin, ki tan repons) epi ki nivo kantifikasyon ki sanble apwopriye.</p>
+                        <p lang="fr">Chacun écrit sa cible de déploiement (machine, latence) et le niveau de quantification plausible.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-23">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">23</span>
+                        <h3><span lang="ht">Sèvi Ak Modèl Ou</span><span lang="fr">Servir son modèle</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Twa wout: yon sèvis loue (pi rapid pou kòmanse), yon kontèner sou pwòp machin ou (plis kontwòl, plis travay), oswa lokal pou teste. Mete yon limit tan, yon limit longè, ak yon fason pou wè ki repons ki tonbe. Yon modèl san log se yon modèl ou pa ka korije.</p>
+                        <p lang="fr">Trois voies : un service hébergé (le plus rapide au départ), un conteneur auto-hébergé (plus de contrôle, plus de travail), ou du local pour tester. Ajoutez un timeout, une limite de longueur et un moyen de voir les réponses échouées. Un modèle sans journalisation est un modèle qu'on ne peut pas corriger.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon ti sèvis API: menm chat template ak antrennman an, tan soti, ak yon tès chak 5 minit ki verifye fòma repons lan.</p>
+                        <p lang="fr">Un petit service d'API : même gabarit de chat qu'à l'entraînement, temps de réponse mesuré, et une sonde toutes les 5 minutes vérifiant le format.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun defini kijan l ap teste an prodiksyon: 1 tès otomatik, 1 rapò chak semèn, 1 moun ki gade echantiyon.</p>
+                        <p lang="fr">Chacun définit son contrôle en production : un test automatique, un rapport hebdomadaire, un humain qui regarde un échantillon.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-24">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">24</span>
+                        <h3><span lang="ht">Kat Modèl ak Vèsyon</span><span lang="fr">Model card et versionnement</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Ekri sa modèl la fè, sa li pa fè, ki done itilize, ki limit, ki lisans, ak ki rezilta eval. Make vèsyon an ak yon non ki pèmèt retounen dèyè (baz + done + paramèt). Kat la se pou moun ki pral kenbe pwojè a apre ou — pa pou ou.</p>
+                        <p lang="fr">Documentez ce que le modèle fait, ce qu'il ne fait pas, les données utilisées, les limites, la licence et les résultats d'évaluation. Nommez la version de façon à pouvoir remonter en arrière (base + données + paramètres). Cette fiche est pour celle ou celui qui reprendra le projet — pas pour vous.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Non vèsyon: baz7b--tiketfr--lora-r16--v2 · ak 6 liy: done, metrik, baz, limit koni, lisans, dat.</p>
+                        <p lang="fr">Nom de version : base7b--tickets-fr--lora-r16--v2, avec 6 lignes : données, métrique, référence, limites connues, licence, date.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Chak moun ekri 6 liy kat modèl pou pwojè yo; yon patnè li epi di ki sa ki klè ak ki sa ki pa klè.</p>
+                        <p lang="fr">Chacun écrit les 6 lignes de sa fiche ; un binôme la lit et dit ce qui est clair et ce qui manque.</p>
+                    </div>
+                </article>
+
+                <article class="lesson" id="lesson-25">
+                    <header class="lesson-head">
+                        <span class="lesson-num" aria-hidden="true">25</span>
+                        <h3><span lang="ht">Pri, Risk, Lè Pou Pa Fè L</span><span lang="fr">Coût, risques, quand s'abstenir</span></h3>
+                        <span class="lesson-time">24 min</span>
+                    </header>
+                    <div class="part">
+                        <p class="part-label"><span lang="ht">Kontni</span><span lang="fr">Contenu</span></p>
+                        <p lang="ht">Konpare pri total la: GPU + tan moun + evalyasyon + reantrennman chak fwa done a chanje. Pa fè fine-tuning si: bezwen an chanje chak semèn, ou pa gen done valide, ou pa gen moun pou evalye, oswa yon prompt avanse ak RAG bay 90% rezilta a.</p>
+                        <p lang="fr">Comparez le coût complet : GPU + temps humain + évaluation + réentraînement à chaque changement de données. Évitez le fine-tuning si : le besoin change chaque semaine, vous n'avez pas de données validées, personne pour évaluer, ou si un prompt avancé avec RAG donne déjà 90 % du résultat.</p>
+                    </div>
+                    <div class="part part-example">
+                        <p class="part-label"><span lang="ht">Egzanp pratik</span><span lang="fr">Exemple pratique</span></p>
+                        <p lang="ht">Yon ti kalkil: 3 h GPU + 2 jounen travay + reantrennman chak mwa → konpare ak pri 1000 repons/jou pa yon API. Se kalkil sa a ki dwe deside, pa antouzyasm.</p>
+                        <p lang="fr">Un calcul : 3 h de GPU + 2 jours de travail + réentraînement mensuel, comparés au coût de 1 000 réponses/jour via une API. C'est ce calcul qui doit décider, pas l'enthousiasme.</p>
+                    </div>
+                    <div class="part part-activity">
+                        <p class="part-label"><span lang="ht">Aktivite</span><span lang="fr">Activité</span></p>
+                        <p lang="ht">Evalyasyon final: chak moun prezante desizyon yo (fè / pa fè), ak 3 chif ki sipòte l.</p>
+                        <p lang="fr">Évaluation finale : chacun présente sa décision (faire ou non) appuyée par 3 chiffres.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FICH KONFIGIRASYON -->
+        <section class="course-section" id="fich-konfigirasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Fich Konfigirasyon — pou distribiye bay patisipan yo</span>
+                    <span lang="fr">Fiche de configuration — à distribuer aux participants</span>
+                </h2>
+                <p class="section-lead" lang="ht">Kopye yon blok, ranplase sa ki ant mak [ ] yo, epi adapte l ak bibliyotèk ou ak GPU ou.</p>
+                <p class="section-lead" lang="fr">Copiez un bloc, remplacez ce qui est entre crochets [ ], puis adaptez-le à votre bibliothèque et à votre GPU.</p>
+
+                <div class="prompt-grid">
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Fòma Dataset</span><span lang="fr">Config : format du jeu de données</span></h3>
+                        <p class="prompt-text" lang="ht">JSONL, yon liy = yon egzanp: {"messages":[{"role":"system","content":"[wòl fiks]"},{"role":"user","content":"[demann]"},{"role":"assistant","content":"[repons referans]"}]}. Pa manyèl chat template modèl la — kite bibliyotèk la aplike l.</p>
+                        <p class="prompt-text" lang="fr">JSONL, une ligne = un exemple : {"messages":[{"role":"system","content":"[rôle fixe]"},{"role":"user","content":"[demande]"},{"role":"assistant","content":"[référence]"}]}. Ne manipulez pas le gabarit de chat du modèle — laissez la bibliothèque l'appliquer.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: LoRA / QLoRA</span><span lang="fr">Config : LoRA / QLoRA</span></h3>
+                        <p class="prompt-text" lang="ht">load_in_4bit=[vre|fo], r=[16], lora_alpha=[32], lora_dropout=[0.05], target_modules=[q,k,v,o_proj], bias=none, seed=[fikse]. Yon sèl chanjman pa esè.</p>
+                        <p class="prompt-text" lang="fr">load_in_4bit=[true|false], r=[16], lora_alpha=[32], lora_dropout=[0.05], target_modules=[q,k,v,o_proj], bias=none, seed=[fixe]. Un seul changement par essai.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Argument Antrennman</span><span lang="fr">Config : arguments d'entraînement</span></h3>
+                        <p class="prompt-text" lang="ht">learning_rate=[2e-4], num_train_epochs=[2], per_device_train_batch_size=[4], gradient_accumulation_steps=[4], warmup_ratio=[0.03], bf16=[vre], max_seq_length=[1024], eval_strategy=[steps], save_strategy=[steps], logging_steps=[10].</p>
+                        <p class="prompt-text" lang="fr">learning_rate=[2e-4], num_train_epochs=[2], per_device_train_batch_size=[4], gradient_accumulation_steps=[4], warmup_ratio=[0.03], bf16=[true], max_seq_length=[1024], eval_strategy=[steps], save_strategy=[steps], logging_steps=[10].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Eval Otomatik</span><span lang="fr">Config : évaluation automatique</span></h3>
+                        <p class="prompt-text" lang="ht">Pase [N] kesyon test → mezire: % repons ki respekte fòma · % kle obligatwa prezan · tan mwayèn pa repons · nòt imen sou [20] ka. Rapòte baz la ansanm ak nouvo modèl la.</p>
+                        <p class="prompt-text" lang="fr">Parcourir [N] questions de test → mesurer : % de réponses au format attendu · % de clés obligatoires présentes · temps moyen par réponse · note humaine sur [20] cas. Rendre la référence aux côtés du nouveau modèle.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card">
+                        <h3><span lang="ht">Konfig: Kantifikasyon</span><span lang="fr">Config : quantification</span></h3>
+                        <p class="prompt-text" lang="ht">Ese [8-bit|4-bit|GGUF-Q4] → remezire menm 4 metrik yo apre konvèsyon an → aksepte sèlman si descent la nan kalite a mwens pase [X pwen] epi pri/tan an amelyore.</p>
+                        <p class="prompt-text" lang="fr">Essayer [8 bits | 4 bits | GGUF-Q4] → remesurer les 4 mêmes métriques après conversion → n'accepter que si la perte de qualité est inférieure à [X points] et que le coût ou la latence s'améliore.</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+
+                    <article class="prompt-card prompt-card--magic">
+                        <h3><span lang="ht">Konfig Majik · Tout Pwojè</span><span lang="fr">Config passe-partout · Tout projet</span></h3>
+                        <p class="prompt-text" lang="ht">Pwoblèm: [sa ki pa mache ak prompt la] · Metòd: [prompt avanse | RAG | fine-tune] ak rezon · Baz: [metrik jodi a] · Objektif: [metrik sib] · Done: [N egzanp, sous, split] · GPU: [modèl, memwa] · Eval: [otomatik + [N] ka imen] · Deplwaman: [adapter | merge, kantifikasyon] · Pri: [GPU + tan moun] · Desizyon: [kenbe / abandone].</p>
+                        <p class="prompt-text" lang="fr">Problème : [ce que le prompt ne résout pas] · Méthode : [prompt avancé | RAG | fine-tuning] et pourquoi · Référence : [métrique actuelle] · Cible : [métrique visée] · Données : [N exemples, source, split] · GPU : [modèle, mémoire] · Éval : [automatique + N cas humains] · Déploiement : [adapter | fusion, quantification] · Coût : [GPU + temps humain] · Décision : [garder / abandonner].</p>
+                        <button type="button" class="copy-btn" data-copy><span lang="ht">Kopye</span><span lang="fr">Copier</span></button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- NÒT ANIMASYON -->
+        <section class="course-section" id="not-animasyon">
+            <div class="course-wrap">
+                <h2 class="course-h2">
+                    <span lang="ht">Nòt pou Animasyon — Kreyòl &amp; Fransè</span>
+                    <span lang="fr">Notes d'animation — créole &amp; français</span>
+                </h2>
+
+                <div class="note-grid">
+                    <div class="note">
+                        <h3><span lang="ht">Lang</span><span lang="fr">Langue</span></h3>
+                        <p lang="ht">Eksplike konsèp yo an kreyòl, mete tradiksyon fransè a anba a sou chak slide. Kenbe mo teknik yo an anglè (checkpoint, learning rate, adapter, quantization) paske se konsa yo parèt nan dokimantasyon ak erè yo — eksplike yo yon fwa, epi repete yo.</p>
+                        <p lang="fr">Expliquez les concepts en créole, traduction française en dessous sur chaque diapositive. Gardez les termes techniques en anglais (checkpoint, learning rate, adapter, quantization) car ce sont ceux des documentations et des messages d'erreur — expliquez-les une fois, puis répétez-les.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Ritm</span><span lang="fr">Rythme</span></h3>
+                        <p lang="ht">24 minit pa leson: 6 min eksplikasyon + 8 min demonstrasyon kòd + 10 min patisipan yo teste sou machin yo. Blòk yo se 2 èdtan: kite 10 min detant nan mitan chak blòk. Yon demonstrasyon ki depase tan l manje tan pratik la — se pratik la ki bay konpetans.</p>
+                        <p lang="fr">24 minutes par leçon : 6 min d'explication, 8 min de démonstration de code, 10 min d'essai par les participants. Les blocs durent 2 heures : gardez une pause de 10 minutes en leur milieu. Une démonstration qui déborde vole le temps de pratique — c'est la pratique qui crée la compétence.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Materyèl</span><span lang="fr">Matériel</span></h3>
+                        <p lang="ht">Prepare avan: yon notebook ki kouri sipè (ti kouri 20 egzanp), yon dataset egzanp 50 liy, yon kont Hugging Face, ak yon plan B si GPU a pa disponib (montre demonstrasyon an, pa kouri l). Verifye koneksyon entènèt la — telechajman modèl la ka pran 20 minit.</p>
+                        <p lang="fr">Préparer avant le cours : un notebook qui s'exécute sans accroc (run court de 20 exemples), un jeu d'exemple de 50 lignes, un compte Hugging Face et un plan B si le GPU manque (montrer la démonstration sans l'exécuter). Vérifiez le réseau — le téléchargement d'un modèle peut prendre 20 minutes.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Sekirite &amp; Lisans</span><span lang="fr">Sécurité &amp; licence</span></h3>
+                        <p lang="ht">Pa antrenne ak done reyèl patisipan yo nan kou a — itilize dataset egzanp. Verifye lisans modèl baz la anvan yo pale de itilizasyon komèsyal. Pa pibliye adapter oswa pwa ki ka gen done pèsonèl ladan yo, epi raple lisans done yo ak dat konservasyon an.</p>
+                        <p lang="fr">N'entraînez pas sur les données réelles des participants pendant le cours — utilisez le jeu d'exemple. Vérifiez la licence du modèle de base avant d'évoquer un usage commercial. Ne publiez ni adapter ni poids pouvant contenir des données personnelles, et rappelez la licence des données ainsi que leur durée de conservation.</p>
+                    </div>
+                    <div class="note">
+                        <h3><span lang="ht">Evalyasyon</span><span lang="fr">Évaluation</span></h3>
+                        <p lang="ht">Nan fen kou a, chak patisipan prezante: metrik baz, metrik sib, konfig li chwazi, ak desizyon final la (fè oswa pa fè fine-tuning). Yon desizyon « pa fè l » byen justifye se yon rezilta siksè, pa yon echèk.</p>
+                        <p lang="fr">À la fin du cours, chaque participant présente : métrique de référence, métrique cible, configuration retenue et décision finale (fine-tuner ou non). Une décision « ne pas le faire » bien argumentée est un résultat réussi, pas un échec.</p>
+                    </div>
+                </div>
+
+                <p class="course-disclaimer" lang="ht">Nòt: sa a se yon gid animasyon. Pri GPU, gwosè modèl, limit memwa ak lisans yo chanje kontinyèlman — verifye dokimantasyon ofisyèl zouti yo ak kondisyon lisans chak modèl avan ou bay gwoup la yon valè.</p>
+                <p class="course-disclaimer" lang="fr">Note : ceci est un guide d'animation. Les prix des GPU, les tailles de modèles, les limites mémoire et les licences évoluent en permanence — vérifiez la documentation officielle des outils et la licence de chaque modèle avant d'affirmer une valeur au groupe.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="course-footer">
+        <div class="course-wrap">
+            <p>
+                <a href="./#track-pro"><span lang="ht">← Retounen nan Parcours Expert</span><span lang="fr">← Retour au Parcours Expert</span></a>
+                · <a href="kou-intro-chatgpt.html"><span lang="ht">Kou 1</span><span lang="fr">Cours 1</span></a>
+                · <a href="kou-ia-images.html"><span lang="ht">Kou 2</span><span lang="fr">Cours 2</span></a>
+                · <a href="kou-otomatisasyon.html"><span lang="ht">Kou 3</span><span lang="fr">Cours 3</span></a>
+                · Akademi Clairtech · 2026
+            </p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+    <script>
+        (() => {
+            const TITLE = {
+                ht: 'Fine-Tuning de LLMs — Akademi Clairtech',
+                fr: 'Fine-Tuning de LLMs — Akademi Clairtech'
+            };
+            const COPIED = { ht: 'Konfigirasyon an kopye.', fr: 'Configuration copiée.' };
+            const toast = document.getElementById('toast');
+            const buttons = [...document.querySelectorAll('.lang-btn')];
+            let lang = 'ht';
+            let toastTimer;
+
+            function setLang(next) {
+                lang = next === 'fr' ? 'fr' : 'ht';
+                document.documentElement.lang = lang;
+                document.title = TITLE[lang];
+                buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+                try {
+                    localStorage.setItem('akademi-lang', lang);
+                } catch (err) {
+                    /* stockage indisponible : le choix tient pour la page courante */
+                }
+            }
+
+            function showToast(text) {
+                if (!toast) return;
+                toast.textContent = text;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+
+            buttons.forEach(button => {
+                button.addEventListener('click', () => setLang(button.dataset.lang));
+            });
+
+            document.querySelectorAll('[data-copy]').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const card = button.closest('.prompt-card');
+                    const source = card && card.querySelector(`.prompt-text[lang="${lang}"]`);
+                    if (!source) return;
+                    const text = source.textContent.trim();
+                    try {
+                        await navigator.clipboard.writeText(text);
+                    } catch (err) {
+                        const area = document.createElement('textarea');
+                        area.value = text;
+                        area.setAttribute('readonly', '');
+                        area.className = 'sr-only';
+                        document.body.appendChild(area);
+                        area.select();
+                        const ok = document.execCommand('copy');
+                        area.remove();
+                        if (!ok) return;
+                    }
+                    showToast(COPIED[lang]);
+                });
+            });
+
+            let saved = null;
+            try {
+                saved = localStorage.getItem('akademi-lang');
+            } catch (err) {
+                /* ignore */
+            }
+            setLang(saved || (navigator.language && navigator.language.startsWith('fr') ? 'fr' : 'ht'));
+        })();
+    </script>
+</body>
+</html>

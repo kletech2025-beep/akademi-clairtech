@@ -18,6 +18,7 @@ Site vitrine statique pour des cours et astuces autour de l'IA, pour les niveaux
 ├── kou-intro-chatgpt.html      # Fiche de cours 1 : Introduction à ChatGPT
 ├── kou-ia-images.html          # Fiche de cours 2 : IA générative d'images
 ├── kou-otomatisasyon.html      # Fiche de cours 3 : Automatisation no-code
+├── kou-fine-tuning.html        # Fiche de cours 4 : Fine-tuning de LLMs
 ├── course.css                  # Styles des fiches de cours + impression
 ├── assets/
 │   ├── favicon.svg
@@ -47,8 +48,9 @@ Les données sont dans `app.js` :
 
 ### Fiches de cours (`kou-*.html`)
 
-`kou-intro-chatgpt.html` (12 leçons, 3 blocs), `kou-ia-images.html` (18 leçons, 6 blocs)
-et `kou-otomatisasyon.html` (15 leçons, 5 blocs) portent le plan complet du cours : leçons
+`kou-intro-chatgpt.html` (12 leçons, 3 blocs), `kou-ia-images.html` (18 leçons, 6 blocs),
+`kou-otomatisasyon.html` (15 leçons, 5 blocs) et `kou-fine-tuning.html` (25 leçons, 5 blocs)
+portent le plan complet du cours : leçons
 (contenu / exemple / activité), fiche de prompts ou de modèles, et notes d'animation. Le
 contenu est écrit deux fois, en `<span lang="ht">` et
 `<span lang="fr">` : `course.css` masque la langue inactive selon `<html lang>`, et le
